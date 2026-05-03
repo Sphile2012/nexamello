@@ -15,8 +15,7 @@ export default function Navbar() {
 
   const navLinks = [
     { label: "Services", href: "#services" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "Hosting", href: "#hosting" },
+    { label: "Packages", href: "#hosting" },
     { label: "Process", href: "#workflow" },
     { label: "Add-Ons", href: "#addons" },
     { label: "Why Us", href: "#value" },

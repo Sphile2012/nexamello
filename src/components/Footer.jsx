@@ -8,8 +8,7 @@ export default function Footer() {
 
   const links = [
     { label: "Services", href: "#services" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "Hosting", href: "#hosting" },
+    { label: "Packages", href: "#hosting" },
     { label: "Process", href: "#workflow" },
     { label: "Add-Ons", href: "#addons" },
     { label: "Why Us", href: "#value" },

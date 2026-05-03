@@ -125,7 +125,7 @@ export default function HeroSection({ heroImage }) {
           <Button
             size="lg"
             variant="outline"
-            onClick={() => scrollTo("#pricing")}
+            onClick={() => scrollTo("#hosting")}
             className="font-inter font-semibold rounded-full px-8 py-6 text-base border-border/60 hover:bg-secondary/50 hover:border-primary/40 transition-all duration-300"
           >
             <Code2 className="w-4 h-4 mr-2" />
