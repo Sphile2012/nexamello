@@ -7,17 +7,16 @@ const EMAIL = "poomeigh503@gmail.com";
 const PHONE_1 = "0823562239";
 const PHONE_2 = "0820610949";
 const WA_1 = "27823562239";
-const WA_2 = "27820610949";
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", package: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e, waNumber) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const num = waNumber || WA_1;
     const msg = `Hello NexaWeb Tech Solutions! 👋%0A%0A*New Booking Request*%0A%0A*Name:* ${form.name}%0A*Email:* ${form.email}%0A*Phone:* ${form.phone}%0A*Package:* ${form.package}%0A*Message:* ${form.message}`;
-    window.location.href = `https://wa.me/${num}?text=${msg}`;
+    window.open(`https://wa.me/${WA_1}?text=${msg}`, "_blank");
+    setSubmitted(true);
   };
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
@@ -93,7 +92,7 @@ export default function ContactSection() {
               <ArrowRight className="w-4 h-4 text-border group-hover:text-primary group-hover:translate-x-1 transition-all flex-shrink-0" />
             </a>
 
-            {/* WhatsApp 1 */}
+            {/* WhatsApp */}
             <a
               href={`https://wa.me/${WA_1}?text=Hello%20NexaWeb%20Tech%20Solutions!%20I'm%20interested%20in%20your%20services.`}
               target="_blank"
@@ -106,24 +105,6 @@ export default function ContactSection() {
               <div className="flex-1 min-w-0">
                 <p className="text-xs font-inter font-bold text-[#25D366] uppercase tracking-widest mb-0.5">WhatsApp</p>
                 <p className="font-space font-bold text-foreground">{PHONE_1}</p>
-                <p className="text-xs font-inter text-muted-foreground">Chat instantly</p>
-              </div>
-              <ArrowRight className="w-4 h-4 text-border group-hover:text-[#25D366] group-hover:translate-x-1 transition-all flex-shrink-0" />
-            </a>
-
-            {/* WhatsApp 2 */}
-            <a
-              href={`https://wa.me/${WA_2}?text=Hello%20NexaWeb%20Tech%20Solutions!%20I'm%20interested%20in%20your%20services.`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-4 p-5 rounded-2xl bg-[#25D366]/8 border border-[#25D366]/25 hover:border-[#25D366]/50 hover:bg-[#25D366]/12 transition-all duration-300"
-            >
-              <div className="w-12 h-12 rounded-2xl bg-[#25D366]/15 flex items-center justify-center flex-shrink-0 group-hover:bg-[#25D366]/25 transition-colors">
-                <MessageSquare className="w-5 h-5 text-[#25D366]" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-xs font-inter font-bold text-[#25D366] uppercase tracking-widest mb-0.5">WhatsApp</p>
-                <p className="font-space font-bold text-foreground">{PHONE_2}</p>
                 <p className="text-xs font-inter text-muted-foreground">Chat instantly</p>
               </div>
               <ArrowRight className="w-4 h-4 text-border group-hover:text-[#25D366] group-hover:translate-x-1 transition-all flex-shrink-0" />
@@ -247,27 +228,13 @@ export default function ContactSection() {
                       </div>
 
                       <div className="pt-2 space-y-3">
-                        <p className="text-xs font-inter text-muted-foreground text-center">Choose which WhatsApp to send your booking to:</p>
-                        <div className="grid grid-cols-2 gap-3">
-                          <button
-                            type="submit"
-                            onClick={(e) => handleSubmit(e, WA_1)}
-                            className="flex flex-col items-center justify-center gap-1 py-4 px-3 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 hover:bg-[#25D366]/20 hover:border-[#25D366]/60 transition-all group"
-                          >
-                            <MessageSquare className="w-5 h-5 text-[#25D366]" />
-                            <span className="font-inter font-bold text-foreground text-sm">{PHONE_1}</span>
-                            <span className="text-xs text-muted-foreground">WhatsApp</span>
-                          </button>
-                          <button
-                            type="button"
-                            onClick={(e) => handleSubmit(e, WA_2)}
-                            className="flex flex-col items-center justify-center gap-1 py-4 px-3 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 hover:bg-[#25D366]/20 hover:border-[#25D366]/60 transition-all group"
-                          >
-                            <MessageSquare className="w-5 h-5 text-[#25D366]" />
-                            <span className="font-inter font-bold text-foreground text-sm">{PHONE_2}</span>
-                            <span className="text-xs text-muted-foreground">WhatsApp</span>
-                          </button>
-                        </div>
+                        <button
+                          type="submit"
+                          className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-[#25D366] hover:bg-[#25D366]/90 text-white font-inter font-bold text-base transition-all hover:scale-[1.02] shadow-lg shadow-[#25D366]/25"
+                        >
+                          <MessageSquare className="w-5 h-5" />
+                          Send via WhatsApp
+                        </button>
                         <div className="grid grid-cols-2 gap-3">
                           <Button type="button" variant="outline" className="rounded-xl py-5 font-inter font-semibold border-border/50 hover:bg-secondary/50 hover:border-primary/30 gap-2" asChild>
                             <a href={`tel:${PHONE_1}`}><Phone className="w-4 h-4" />Call Now</a>

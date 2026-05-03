@@ -6,7 +6,6 @@ import ValueSection from "../components/ValueSection";
 import ProcessSection from "../components/ProcessSection";
 import ContactSection from "../components/ContactSection";
 import HostingSection from "../components/HostingSection";
-import TestimonialsSection from "../components/TestimonialsSection";
 import Footer from "../components/Footer";
 
 // Free-to-use Unsplash images (no API key required)
