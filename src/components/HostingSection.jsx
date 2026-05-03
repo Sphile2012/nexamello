@@ -138,15 +138,15 @@ export default function HostingSection() {
                 {/* Price block */}
                 <div className="mb-7">
                   <div className="inline-flex flex-wrap items-baseline gap-2 px-5 py-3 rounded-2xl bg-gradient-to-r from-red-600 to-red-500 shadow-lg mb-3">
-                    <span className="text-white font-inter font-semibold text-sm">ONLY</span>
+                    <span className="text-white font-inter font-semibold text-sm">FROM</span>
                     <span className="font-space font-bold text-4xl sm:text-5xl text-white">R350</span>
-                    <span className="text-white/80 font-inter text-sm">Once-Off</span>
+                    <span className="text-white/80 font-inter text-sm">Once-Off · 1 Page</span>
                     <span className="text-white/50 font-inter text-sm mx-1">+</span>
                     <span className="font-space font-bold text-2xl text-yellow-300">R150</span>
                     <span className="text-white/80 font-inter text-sm">/month</span>
                   </div>
                   <p className="text-sm font-inter text-blue-200/70 leading-relaxed">
-                    Start your online presence with a simple, professional website — perfect for small businesses looking to get online quickly.
+                    Start your online presence with a simple, professional <span className="text-white font-semibold">1-page website</span> — perfect for small businesses looking to get online quickly.
                     <br /><br />
                     Optional <span className="text-white font-semibold">R250/month</span> maintenance plan keeps your site updated, secure &amp; running smoothly.
                     <br />
@@ -178,7 +178,7 @@ export default function HostingSection() {
                   onClick={() => scrollTo("#contact")}
                   className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-inter font-bold text-base transition-all hover:scale-[1.02] shadow-lg shadow-primary/30"
                 >
-                  Get Started — R350
+                  Get Started — R350 · 1 Page
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -211,7 +211,7 @@ export default function HostingSection() {
                   </p>
                   <div className="grid grid-cols-2 gap-3">
                     {[
-                      { value: "R350",  label: "Once-Off Setup",  highlight: true },
+                      { value: "R350",  label: "Once-Off · 1 Page",  highlight: true },
                       { value: "R150",  label: "Per Month (hosting)", highlight: false },
                       { value: "R250",  label: "Per Month (optional maintenance)", highlight: false },
                       { value: "1–3",   label: "Days Delivery",   highlight: false },
