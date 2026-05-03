@@ -1,30 +1,58 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, MessageSquare, Phone, Calendar, Clock, CheckCircle, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, Mail, MessageSquare, Phone, Calendar, Clock, CheckCircle, Zap, Loader2, AlertCircle } from "lucide-react";
 import { useState } from "react";
 
 const EMAIL = "poomeigh503@gmail.com";
 const PHONE_1 = "0823562239";
-const PHONE_2 = "0820610949";
 const WA_1 = "27823562239";
 
 export default function ContactSection() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", package: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const msg = `Hello NexaWeb Tech Solutions! 👋%0A%0A*New Booking Request*%0A%0A*Name:* ${form.name}%0A*Email:* ${form.email}%0A*Phone:* ${form.phone}%0A*Package:* ${form.package}%0A*Message:* ${form.message}`;
-    window.open(`https://wa.me/${WA_1}?text=${msg}`, "_blank");
-    setSubmitted(true);
-  };
+  const [form, setForm] = useState({ name: "", email: "", phone: "", packageInterest: "", message: "" });
+  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("loading");
+    setErrorMsg("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setErrorMsg(data.error || "Something went wrong. Please try WhatsApp.");
+        setStatus("error");
+        return;
+      }
+
+      setStatus("success");
+      // Also open WhatsApp so they get instant confirmation
+      if (data.whatsappUrl) {
+        setTimeout(() => window.open(data.whatsappUrl, "_blank"), 800);
+      }
+    } catch {
+      setErrorMsg("Network error. Please contact us via WhatsApp directly.");
+      setStatus("error");
+    }
+  };
+
+  const reset = () => {
+    setForm({ name: "", email: "", phone: "", packageInterest: "", message: "" });
+    setStatus("idle");
+    setErrorMsg("");
+  };
 
   return (
     <section id="contact" className="py-24 sm:py-32 relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-      {/* Background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-3xl" />
       </div>
@@ -44,7 +72,9 @@ export default function ContactSection() {
           </div>
           <h2 className="font-space font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground">
             Ready to Build Your{" "}
-            <span className="text-primary">Digital Presence?</span>
+            <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+              Digital Presence?
+            </span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-muted-foreground font-inter text-lg">
             Book a consultation or reach out directly — we respond fast.
@@ -52,7 +82,8 @@ export default function ContactSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
-          {/* Left panel */}
+
+          {/* ── Left panel ── */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -70,7 +101,7 @@ export default function ContactSection() {
                 <div className="flex flex-wrap gap-2">
                   <a href={`tel:${PHONE_1}`} className="font-space font-bold text-foreground hover:text-primary transition-colors">{PHONE_1}</a>
                   <span className="text-muted-foreground">/</span>
-                  <a href={`tel:${PHONE_2}`} className="font-space font-bold text-foreground hover:text-primary transition-colors">{PHONE_2}</a>
+                  <a href="tel:0820610949" className="font-space font-bold text-foreground hover:text-primary transition-colors">0820610949</a>
                 </div>
               </div>
               <ArrowRight className="w-4 h-4 text-border group-hover:text-primary group-hover:translate-x-1 transition-all flex-shrink-0" />
@@ -92,7 +123,7 @@ export default function ContactSection() {
               <ArrowRight className="w-4 h-4 text-border group-hover:text-primary group-hover:translate-x-1 transition-all flex-shrink-0" />
             </a>
 
-            {/* WhatsApp */}
+            {/* WhatsApp — single link */}
             <a
               href={`https://wa.me/${WA_1}?text=Hello%20NexaWeb%20Tech%20Solutions!%20I'm%20interested%20in%20your%20services.`}
               target="_blank"
@@ -133,7 +164,7 @@ export default function ContactSection() {
             </div>
           </motion.div>
 
-          {/* Right — booking form */}
+          {/* ── Right — booking form ── */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -143,18 +174,23 @@ export default function ContactSection() {
           >
             <div className="relative rounded-3xl p-px bg-gradient-to-br from-primary/40 via-primary/10 to-border/20">
               <div className="rounded-3xl bg-card p-8 sm:p-10">
-                {submitted ? (
+
+                {/* ── Success state ── */}
+                {status === "success" ? (
                   <div className="flex flex-col items-center justify-center py-16 text-center gap-5">
-                    <div className="w-20 h-20 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
-                      <CheckCircle className="w-10 h-10 text-primary" />
+                    <div className="w-20 h-20 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center">
+                      <CheckCircle className="w-10 h-10 text-green-400" />
                     </div>
-                    <h3 className="font-space font-bold text-2xl text-foreground">Request Sent!</h3>
+                    <h3 className="font-space font-bold text-2xl text-foreground">Message Sent!</h3>
                     <p className="text-muted-foreground font-inter max-w-xs leading-relaxed">
-                      Your booking was sent via WhatsApp. We'll confirm shortly.
+                      We received your request and will contact you shortly. WhatsApp is opening now for instant chat.
                     </p>
-                    <Button variant="outline" className="mt-2 rounded-full border-border/60 px-6" onClick={() => setSubmitted(false)}>
+                    <button
+                      onClick={reset}
+                      className="mt-2 px-6 py-2.5 rounded-full border border-border/60 font-inter font-semibold text-sm text-foreground hover:bg-secondary/50 transition-all"
+                    >
                       Send Another
-                    </Button>
+                    </button>
                   </div>
                 ) : (
                   <>
@@ -167,6 +203,14 @@ export default function ContactSection() {
                         <p className="text-xs font-inter text-muted-foreground">Fill in your details and we'll get back to you</p>
                       </div>
                     </div>
+
+                    {/* Error banner */}
+                    {status === "error" && (
+                      <div className="mb-5 flex items-start gap-3 p-4 rounded-xl bg-red-500/10 border border-red-500/20">
+                        <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+                        <p className="text-sm font-inter text-red-300">{errorMsg}</p>
+                      </div>
+                    )}
 
                     <form onSubmit={handleSubmit} className="space-y-4">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -200,19 +244,17 @@ export default function ContactSection() {
                       <div className="space-y-1.5">
                         <label className="text-xs font-inter font-semibold text-muted-foreground uppercase tracking-widest">Package Interest</label>
                         <select
-                          name="package" value={form.package} onChange={handleChange}
+                          name="packageInterest" value={form.packageInterest} onChange={handleChange}
                           className="w-full px-4 py-3 rounded-xl bg-secondary/40 border border-border/40 text-foreground font-inter text-sm focus:outline-none focus:border-primary/60 focus:bg-secondary/70 transition-all appearance-none cursor-pointer"
                         >
                           <option value="">Select a package...</option>
-                          <optgroup label="Web Design">
-                            <option value="Starter Web Design (R2,500)">Starter Web Design – R2,500</option>
-                            <option value="Business Web Design (R5,000)">Business Web Design – R5,000</option>
-                            <option value="Premium Web Design (R9,000+)">Premium Web Design – R9,000+</option>
+                          <optgroup label="Starter">
+                            <option value="Starter Website (R350 once-off)">Starter Website – R350 once-off</option>
                           </optgroup>
-                          <optgroup label="Hosting & Building">
-                            <option value="Basic Hosting (R2,500)">Basic Hosting – R2,500</option>
-                            <option value="Standard Hosting (R4,500)">Standard Hosting – R4,500</option>
-                            <option value="Pro Hosting (R9,000)">Pro Hosting – R9,000</option>
+                          <optgroup label="Own a Website">
+                            <option value="Basic – Own a Website (R2,500)">Basic – Own a Website – R2,500</option>
+                            <option value="Standard – Own a Website (R4,500)">Standard – Own a Website – R4,500</option>
+                            <option value="Pro – Own a Website (R9,000)">Pro – Own a Website – R9,000</option>
                           </optgroup>
                           <option value="Custom / Not sure yet">Custom / Not sure yet</option>
                         </select>
@@ -228,20 +270,38 @@ export default function ContactSection() {
                       </div>
 
                       <div className="pt-2 space-y-3">
+                        {/* Primary — backend submit */}
                         <button
                           type="submit"
-                          className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-[#25D366] hover:bg-[#25D366]/90 text-white font-inter font-bold text-base transition-all hover:scale-[1.02] shadow-lg shadow-[#25D366]/25"
+                          disabled={status === "loading"}
+                          className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-[#25D366] hover:bg-[#25D366]/90 disabled:opacity-60 disabled:cursor-not-allowed text-white font-inter font-bold text-base transition-all hover:scale-[1.02] shadow-lg shadow-[#25D366]/25"
                         >
-                          <MessageSquare className="w-5 h-5" />
-                          Send via WhatsApp
+                          {status === "loading" ? (
+                            <>
+                              <Loader2 className="w-5 h-5 animate-spin" />
+                              Sending...
+                            </>
+                          ) : (
+                            <>
+                              <MessageSquare className="w-5 h-5" />
+                              Send via WhatsApp
+                            </>
+                          )}
                         </button>
+
                         <div className="grid grid-cols-2 gap-3">
-                          <Button type="button" variant="outline" className="rounded-xl py-5 font-inter font-semibold border-border/50 hover:bg-secondary/50 hover:border-primary/30 gap-2" asChild>
-                            <a href={`tel:${PHONE_1}`}><Phone className="w-4 h-4" />Call Now</a>
-                          </Button>
-                          <Button type="button" variant="outline" className="rounded-xl py-5 font-inter font-semibold border-border/50 hover:bg-secondary/50 hover:border-primary/30 gap-2" asChild>
-                            <a href={`mailto:${EMAIL}`}><Mail className="w-4 h-4" />Send Email</a>
-                          </Button>
+                          <a
+                            href={`tel:${PHONE_1}`}
+                            className="flex items-center justify-center gap-2 py-4 rounded-xl border border-border/50 bg-transparent hover:bg-secondary/50 hover:border-primary/30 font-inter font-semibold text-sm text-foreground transition-all"
+                          >
+                            <Phone className="w-4 h-4" />Call Now
+                          </a>
+                          <a
+                            href={`mailto:${EMAIL}`}
+                            className="flex items-center justify-center gap-2 py-4 rounded-xl border border-border/50 bg-transparent hover:bg-secondary/50 hover:border-primary/30 font-inter font-semibold text-sm text-foreground transition-all"
+                          >
+                            <Mail className="w-4 h-4" />Send Email
+                          </a>
                         </div>
                       </div>
                     </form>
