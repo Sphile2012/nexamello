@@ -1,5 +1,4 @@
-import { Mail, Phone, MessageSquare, ArrowRight } from "lucide-react";
-import Logo from "@/components/Logo";
+import { Globe, Mail, Phone, MessageSquare, ArrowRight } from "lucide-react";
 
 export default function Footer() {
   const scrollTo = (href) => {
@@ -26,7 +25,14 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <Logo size={38} showText={true} className="mb-4" />
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/30">
+                <Globe className="w-5 h-5 text-primary-foreground" />
+              </div>
+              <span className="font-space font-bold text-lg text-foreground">
+                NexaWeb Tech
+              </span>
+            </div>
             <p className="text-sm font-inter text-muted-foreground leading-relaxed mb-5">
               South Africa's fastest web studio. We build modern, high-performing websites that help businesses grow online.
             </p>
