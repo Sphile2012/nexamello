@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Homepage -->
+  <!-- Homepage — Web Design Durban | Nexa Web Solutions -->
   <url>
     <loc>https://www.nexa-websolutions.com/</loc>
     <lastmod>2026-05-04</lastmod>
@@ -9,7 +9,7 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Services -->
+  <!-- Services — Web Design, Hosting, Maintenance -->
   <url>
     <loc>https://www.nexa-websolutions.com/#services</loc>
     <lastmod>2026-05-04</lastmod>
@@ -17,7 +17,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Packages & Pricing -->
+  <!-- Packages & Pricing — Affordable Websites South Africa -->
   <url>
     <loc>https://www.nexa-websolutions.com/#hosting</loc>
     <lastmod>2026-05-04</lastmod>
@@ -41,7 +41,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Why Us -->
+  <!-- Why Choose Nexa Web Solutions -->
   <url>
     <loc>https://www.nexa-websolutions.com/#value</loc>
     <lastmod>2026-05-04</lastmod>
@@ -49,7 +49,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Contact -->
+  <!-- Contact — Web Design Durban -->
   <url>
     <loc>https://www.nexa-websolutions.com/#contact</loc>
     <lastmod>2026-05-04</lastmod>

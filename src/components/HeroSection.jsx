@@ -69,7 +69,7 @@ export default function HeroSection({ heroImage }) {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/25 backdrop-blur-sm">
             <Zap className="w-4 h-4 text-primary" />
             <span className="text-sm font-inter font-semibold text-primary">
-              South Africa's Fastest Web Studio
+              #1 Affordable Web Design in Durban
             </span>
           </div>
           <div className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/25">
@@ -87,10 +87,10 @@ export default function HeroSection({ heroImage }) {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="font-space font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-foreground leading-[1.05] tracking-tighter"
         >
-          We Build Websites
+          Web Design Durban
           <br />
           <span className="bg-gradient-to-r from-primary via-blue-300 to-primary bg-clip-text text-transparent">
-            That Drive Results
+            That Drives Results
           </span>
         </motion.h1>
 
@@ -101,10 +101,10 @@ export default function HeroSection({ heroImage }) {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mt-8 max-w-2xl mx-auto text-lg sm:text-xl font-inter text-muted-foreground leading-relaxed"
         >
-          Modern, high-performing websites for South African businesses.{" "}
-          <span className="text-foreground font-semibold">Delivered in 1–3 days.</span>{" "}
-          Fast, secure, mobile-friendly — starting from{" "}
-          <span className="text-primary font-bold">R2,500</span>.
+          <strong className="text-foreground">Nexa Web Solutions</strong> — affordable website development for small businesses across{" "}
+          <span className="text-foreground font-semibold">Durban, Johannesburg, Cape Town</span> and all of South Africa.{" "}
+          <span className="text-foreground font-semibold">Delivered in 1–3 days</span> from just{" "}
+          <span className="text-primary font-bold">R350</span>.
         </motion.p>
 
         {/* CTA buttons */}

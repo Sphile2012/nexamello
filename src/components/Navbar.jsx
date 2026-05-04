@@ -52,10 +52,10 @@ export default function Navbar() {
             </div>
             <div>
               <span className="font-space font-bold text-lg text-foreground tracking-tight leading-none">
-                NexaWeb
+                Nexa Web
               </span>
               <span className="block text-[10px] font-inter text-muted-foreground leading-none -mt-0.5">
-                Tech Solutions
+                Solutions
               </span>
             </div>
           </motion.div>

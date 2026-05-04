@@ -30,11 +30,11 @@ export default function Footer() {
                 <Globe className="w-5 h-5 text-primary-foreground" />
               </div>
               <span className="font-space font-bold text-lg text-foreground">
-                NexaWeb Tech
+                Nexa Web Solutions
               </span>
             </div>
             <p className="text-sm font-inter text-muted-foreground leading-relaxed mb-5">
-              South Africa's fastest web studio. We build modern, high-performing websites that help businesses grow online.
+              Affordable web design &amp; hosting for small businesses in <strong className="text-foreground">Durban</strong> and across South Africa. Professional websites from <strong className="text-primary">R350</strong>.
             </p>
             <div className="flex gap-3">
               <a
@@ -110,10 +110,10 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-border/40 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs font-inter text-muted-foreground/60">
-            © {new Date().getFullYear()} NexaWeb Tech Solutions. All rights reserved.
+            © {new Date().getFullYear()} Nexa Web Solutions. All rights reserved. | Durban, South Africa
           </p>
           <p className="text-xs font-inter text-muted-foreground/40">
-            Built with ❤️ in South Africa
+            Web Design Durban · Website Development South Africa
           </p>
         </div>
       </div>
