@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Globe, Phone } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
+import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -47,17 +48,7 @@ export default function Navbar() {
             className="flex items-center gap-2.5 cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/30">
-              <Globe className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <div>
-              <span className="font-space font-bold text-lg text-foreground tracking-tight leading-none">
-                NexaWeb
-              </span>
-              <span className="block text-[10px] font-inter text-muted-foreground leading-none -mt-0.5">
-                Tech Solutions
-              </span>
-            </div>
+          <Logo size={38} showText={true} />
           </motion.div>
 
           {/* Desktop nav */}

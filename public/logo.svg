@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Blue background -->
+  <rect width="200" height="200" fill="#1565C0" rx="16"/>
+  <!-- NW monogram in gold/orange -->
+  <!-- N shape: left vertical, diagonal right, right vertical -->
+  <path d="M38 140 L38 65 L72 115 L72 65" stroke="#F5A623" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- W shape: left down, up to middle, down, up to right -->
+  <path d="M72 65 L95 130 L118 85 L141 130 L164 65" stroke="#F5A623" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- NEXA WEB text -->
+  <text x="100" y="168" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="white" text-anchor="middle" letter-spacing="4">NEXA WEB</text>
+</svg>
