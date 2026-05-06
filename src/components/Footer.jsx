@@ -34,7 +34,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm font-inter text-muted-foreground leading-relaxed mb-5">
-              Affordable web design &amp; hosting for small businesses in <strong className="text-foreground">Durban</strong> and across South Africa. Professional websites from <strong className="text-primary">R350</strong>.
+              Affordable web design &amp; hosting for businesses in <strong className="text-foreground">South Africa and worldwide</strong>. Professional websites from <strong className="text-primary">R350</strong>. Remote-friendly — we work with anyone, anywhere.
             </p>
             <div className="flex gap-3">
               <a
@@ -110,10 +110,10 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-border/40 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs font-inter text-muted-foreground/60">
-            © {new Date().getFullYear()} Nexa Web Solutions. All rights reserved. | Durban, South Africa
+            © {new Date().getFullYear()} Nexa Web Solutions. All rights reserved. | Durban, South Africa 🌍 Worldwide
           </p>
           <p className="text-xs font-inter text-muted-foreground/40">
-            Web Design Durban · Website Development South Africa
+            Web Design · Website Development · Global Clients Welcome
           </p>
         </div>
       </div>

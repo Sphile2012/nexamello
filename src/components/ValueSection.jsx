@@ -47,10 +47,11 @@ const categories = [
 
 const points = [
   "Delivered in 1–3 business days",
-  "Ongoing monthly management plans available",
+  "Delivered in 1–3 business days globally",
+  "Serving clients in South Africa and worldwide",
   "Full support from design to launch",
-  "Built specifically for South African businesses",
-  "PayFast & WhatsApp integration included",
+  "Remote-friendly — we work with anyone, anywhere",
+  "PayFast, Stripe & WhatsApp integration",
   "Free consultation before you commit",
 ];
 
@@ -85,7 +86,7 @@ export default function ValueSection() {
               </span>
             </h2>
             <p className="mt-6 text-muted-foreground font-inter text-lg leading-relaxed">
-              Your website is just the beginning. We offer hosting, maintenance, redesigns, SEO, social media setup, analytics, business email, and AI chatbot integration — building recurring value for your business.
+              Your website is just the beginning. We offer hosting, maintenance, redesigns, SEO, social media setup, analytics, business email, and AI chatbot integration — building recurring value for businesses <strong className="text-foreground">across South Africa and worldwide</strong>.
             </p>
 
             <ul className="mt-8 space-y-3">
