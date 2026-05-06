@@ -73,11 +73,11 @@ export default function ContactSection() {
           <h2 className="font-space font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground">
             Ready to Build Your{" "}
             <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-              Digital Presence?
+              Website?
             </span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-muted-foreground font-inter text-lg">
-            Book a consultation or reach out directly — we respond fast.
+            Based in South Africa, serving clients <strong className="text-foreground">worldwide</strong>. Get in touch — we respond fast, wherever you are.
           </p>
         </motion.div>
 
@@ -249,12 +249,15 @@ export default function ContactSection() {
                         >
                           <option value="">Select a package...</option>
                           <optgroup label="Starter">
-                            <option value="Starter Website (R350 once-off)">Starter Website – R350 once-off</option>
+                            <option value="Starter Website (R350 once-off)">Starter Website – R350 once-off (1 page)</option>
                           </optgroup>
                           <optgroup label="Own a Website">
                             <option value="Basic – Own a Website (R2,500)">Basic – Own a Website – R2,500</option>
                             <option value="Standard – Own a Website (R4,500)">Standard – Own a Website – R4,500</option>
                             <option value="Pro – Own a Website (R9,000)">Pro – Own a Website – R9,000</option>
+                          </optgroup>
+                          <optgroup label="International Clients">
+                            <option value="International – Custom Quote">International – Request Custom Quote</option>
                           </optgroup>
                           <option value="Custom / Not sure yet">Custom / Not sure yet</option>
                         </select>

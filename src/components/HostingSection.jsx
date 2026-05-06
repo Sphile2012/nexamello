@@ -107,7 +107,7 @@ export default function HostingSection() {
             </span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-muted-foreground font-inter text-lg">
-            From a simple starter page to a fully custom website — we have a plan for every budget.
+            From a simple starter page to a fully custom website — we have a plan for every budget, <strong className="text-foreground">anywhere in the world</strong>.
           </p>
         </motion.div>
 

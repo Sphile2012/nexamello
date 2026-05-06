@@ -131,17 +131,17 @@ export default function ServicesSection() {
           className="mt-14 p-6 rounded-2xl bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20 flex flex-col sm:flex-row items-center justify-between gap-4"
         >
           <div>
-            <p className="font-space font-bold text-foreground text-lg">Need something custom?</p>
-            <p className="text-sm font-inter text-muted-foreground mt-1">We build tailored solutions for any business need.</p>
+            <p className="font-space font-bold text-foreground text-lg">🌍 We work with clients worldwide</p>
+            <p className="text-sm font-inter text-muted-foreground mt-1">Remote-friendly — we deliver your website anywhere via email, WhatsApp or video call.</p>
           </div>
           <a
-            href="https://wa.me/27823562239?text=Hi!%20I%20need%20a%20custom%20web%20solution."
+            href="https://wa.me/27823562239?text=Hi!%20I%27m%20interested%20in%20a%20website%20from%20outside%20South%20Africa."
             target="_blank"
             rel="noopener noreferrer"
             className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#25D366] text-white font-inter font-semibold text-sm hover:bg-[#25D366]/90 transition-colors"
           >
             <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-            Chat on WhatsApp
+            Get in Touch
           </a>
         </motion.div>
       </div>
