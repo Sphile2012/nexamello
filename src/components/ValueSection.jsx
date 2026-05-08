@@ -46,13 +46,12 @@ const categories = [
 ];
 
 const points = [
-  "Delivered in 1–3 business days",
   "Delivered in 1–3 business days globally",
-  "Serving clients in South Africa and worldwide",
-  "Full support from design to launch",
-  "Remote-friendly — we work with anyone, anywhere",
-  "PayFast, Stripe & WhatsApp integration",
-  "Free consultation before you commit",
+  "Serving clients in South Africa, UK, USA, Australia & beyond",
+  "Full support from design to launch — remotely",
+  "We work with anyone, anywhere in the world",
+  "PayFast, Stripe, PayPal & WhatsApp integration",
+  "Free consultation — no commitment needed",
 ];
 
 const scrollTo = (href) => {

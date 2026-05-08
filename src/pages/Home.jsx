@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import ServicesSection from "../components/ServicesSection";
+import GlobalBanner from "../components/GlobalBanner";
 import AddOnsSection from "../components/AddOnsSection";
 import ValueSection from "../components/ValueSection";
 import ProcessSection from "../components/ProcessSection";
@@ -16,6 +17,7 @@ export default function Home() {
     <div className="min-h-screen bg-background font-inter">
       <Navbar />
       <HeroSection heroImage={HERO_IMAGE} />
+      <GlobalBanner />
       <ServicesSection />
       <HostingSection />
       <ProcessSection />
