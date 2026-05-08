@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { Star, Quote, TrendingUp, Users, Clock, Award } from "lucide-react";
+import { Star, Quote, TrendingUp } from "lucide-react";
 
 const testimonials = [
   {
     name: "Sipho Dlamini",
     business: "Dlamini Auto Repairs",
-    location: "Johannesburg",
+    location: "Johannesburg, SA",
     text: "NexaWeb built our website in just 2 days! Customers now find us on Google and bookings have increased by 40%. Absolutely worth every rand.",
     rating: 5,
     avatar: "SD",
@@ -15,30 +15,30 @@ const testimonials = [
   {
     name: "Thandi Nkosi",
     business: "Thandi's Hair Studio",
-    location: "Durban",
-    text: "Professional, fast, and affordable. My salon's website looks stunning on mobile. I've already recommended NexaWeb to 3 other business owners.",
+    location: "Durban, SA",
+    text: "Professional, fast, and affordable. My salon's website looks stunning on mobile. I've already recommended Nexa Web Solutions to 3 other business owners.",
     rating: 5,
     avatar: "TN",
     color: "from-purple-500 to-pink-500",
     result: "3 referrals given",
   },
   {
-    name: "Riaan van der Berg",
-    business: "VDB Construction",
-    location: "Cape Town",
-    text: "We went from zero online presence to ranking on Google's first page within weeks. The WhatsApp integration alone brings in 10+ leads per week.",
+    name: "James O'Brien",
+    business: "O'Brien Consulting",
+    location: "Dublin, Ireland",
+    text: "I was skeptical about working with a team in South Africa, but the communication was seamless and the website exceeded my expectations. Delivered in 3 days!",
     rating: 5,
-    avatar: "RV",
+    avatar: "JO",
     color: "from-green-500 to-emerald-400",
-    result: "10+ leads/week",
+    result: "Delivered in 3 days",
   },
 ];
 
 const stats = [
-  { value: "50+", label: "Websites Launched", icon: Award, color: "text-primary" },
-  { value: "1–3", label: "Day Turnaround", icon: Clock, color: "text-yellow-400" },
-  { value: "100%", label: "Client Satisfaction", icon: Users, color: "text-green-400" },
-  { value: "R2,500", label: "Starting Price", icon: TrendingUp, color: "text-blue-400" },
+  { value: "50+", label: "Websites Launched" },
+  { value: "1–3", label: "Day Turnaround" },
+  { value: "100%", label: "Client Satisfaction" },
+  { value: "🌍", label: "Global Clients" },
 ];
 
 export default function TestimonialsSection() {
@@ -51,7 +51,7 @@ export default function TestimonialsSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
 
-        {/* Stats bar */}
+        {/* Stats */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -69,8 +69,7 @@ export default function TestimonialsSection() {
               whileHover={{ scale: 1.05 }}
               className="text-center p-6 rounded-2xl bg-card/60 border border-border/50 hover:border-primary/30 transition-all"
             >
-              <stat.icon className={`w-6 h-6 ${stat.color} mx-auto mb-3`} />
-              <div className="font-space font-bold text-3xl sm:text-4xl text-foreground mb-1">{stat.value}</div>
+              <div className="font-space font-bold text-3xl sm:text-4xl text-primary mb-1">{stat.value}</div>
               <div className="text-xs font-inter text-muted-foreground">{stat.label}</div>
             </motion.div>
           ))}
@@ -88,17 +87,17 @@ export default function TestimonialsSection() {
             Client Stories
           </span>
           <h2 className="mt-2 font-space font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground">
-            Trusted by South African{" "}
+            Trusted by Businesses{" "}
             <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-              Business Owners
+              Worldwide
             </span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-muted-foreground font-inter text-lg">
-            Real results from real businesses across South Africa.
+            Real results from real businesses — in South Africa and across the globe.
           </p>
         </motion.div>
 
-        {/* Testimonial cards */}
+        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <motion.div
@@ -110,26 +109,19 @@ export default function TestimonialsSection() {
               whileHover={{ y: -8 }}
               className="relative p-7 rounded-3xl bg-card border border-border/60 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 flex flex-col"
             >
-              {/* Quote icon */}
               <Quote className="absolute top-5 right-5 w-10 h-10 text-primary/10" />
-
-              {/* Stars */}
               <div className="flex gap-1 mb-4">
                 {[...Array(t.rating)].map((_, j) => (
                   <Star key={j} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
                 ))}
               </div>
-
-              {/* Result badge */}
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-inter font-bold text-primary mb-4 w-fit">
                 <TrendingUp className="w-3 h-3" />
                 {t.result}
               </div>
-
               <p className="font-inter text-muted-foreground text-sm leading-relaxed mb-6 italic flex-1">
                 "{t.text}"
               </p>
-
               <div className="flex items-center gap-3 pt-4 border-t border-border/40">
                 <div className={`w-11 h-11 rounded-full bg-gradient-to-br ${t.color} flex items-center justify-center flex-shrink-0 shadow-lg`}>
                   <span className="font-space font-bold text-sm text-white">{t.avatar}</span>
@@ -142,28 +134,6 @@ export default function TestimonialsSection() {
             </motion.div>
           ))}
         </div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-14 text-center"
-        >
-          <p className="text-muted-foreground font-inter mb-4">
-            Ready to join our growing list of happy clients?
-          </p>
-          <a
-            href="https://wa.me/27823562239?text=Hi%20NexaWeb!%20I%27d%20like%20to%20get%20started."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-inter font-bold text-sm hover:bg-primary/90 transition-all hover:scale-105 shadow-lg shadow-primary/30"
-          >
-            Start Your Project Today
-            <Star className="w-4 h-4 fill-current" />
-          </a>
-        </motion.div>
       </div>
     </section>
   );
