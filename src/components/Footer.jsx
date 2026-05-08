@@ -12,6 +12,7 @@ export default function Footer() {
     { label: "Process", href: "#workflow" },
     { label: "Add-Ons", href: "#addons" },
     { label: "Why Us", href: "#value" },
+    { label: "FAQ", href: "#faq" },
     { label: "Contact", href: "#contact" },
   ];
 
