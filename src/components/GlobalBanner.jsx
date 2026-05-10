@@ -62,9 +62,9 @@ export default function GlobalBanner() {
           className="mt-6 text-center px-4 sm:px-6 py-4 rounded-2xl bg-gradient-to-r from-primary/8 via-primary/5 to-transparent border border-primary/15"
         >
           <p className="text-xs sm:text-sm font-inter text-muted-foreground">
-            💱 Prices in <strong className="text-foreground">South African Rand (ZAR)</strong> —{" "}
-            <strong className="text-primary">R500 ≈ $27 USD · £21 GBP · $42 AUD</strong>.{" "}
-            <a href="https://wa.me/27823562239?text=Hi!%20I%27d%20like%20a%20quote%20in%20my%20currency." target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Get a quote in your currency →</a>
+            💰 All prices are in <strong className="text-foreground">South African Rand (ZAR)</strong>.{" "}
+            International clients welcome —{" "}
+            <a href="https://wa.me/27823562239?text=Hi!%20I%27d%20like%20a%20quote%20for%20a%20website." target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">WhatsApp us for a custom quote →</a>
           </p>
         </motion.div>
       </div>
