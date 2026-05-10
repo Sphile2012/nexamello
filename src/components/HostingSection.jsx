@@ -20,6 +20,21 @@ const starterFeatures = [
   { icon: Check,       text: "We Handle EVERYTHING for You" },
 ];
 
+const starterPlans = [
+  {
+    pages: "1 Page",
+    price: "R500",
+    hosting: "R250/month",
+    desc: "Perfect for getting online fast",
+  },
+  {
+    pages: "5 Pages",
+    price: "R1,000",
+    hosting: "R250/month",
+    desc: "More content, more visibility",
+  },
+];
+
 const perfectFor = [
   { icon: Building2, label: "Small Businesses" },
   { icon: Scissors,  label: "Salons & Barbers" },
@@ -137,20 +152,30 @@ export default function HostingSection() {
 
                 {/* Price block */}
                 <div className="mb-7">
-                  <div className="inline-flex flex-wrap items-baseline gap-2 px-5 py-3 rounded-2xl bg-gradient-to-r from-red-600 to-red-500 shadow-lg mb-3">
-                    <span className="text-white font-inter font-semibold text-sm">FROM</span>
-                    <span className="font-space font-bold text-4xl sm:text-5xl text-white">R350</span>
-                    <span className="text-white/80 font-inter text-sm">Once-Off · 1 Page</span>
-                    <span className="text-white/50 font-inter text-sm mx-1">+</span>
-                    <span className="font-space font-bold text-2xl text-yellow-300">R150</span>
-                    <span className="text-white/80 font-inter text-sm">/month</span>
+                  <div className="space-y-3 mb-4">
+                    {starterPlans.map((plan) => (
+                      <div key={plan.pages} className="flex items-center justify-between px-5 py-4 rounded-2xl bg-gradient-to-r from-red-600 to-red-500 shadow-lg">
+                        <div>
+                          <span className="text-white font-inter font-semibold text-sm block">{plan.pages}</span>
+                          <span className="text-white/70 font-inter text-xs">{plan.desc}</span>
+                        </div>
+                        <div className="text-right">
+                          <span className="font-space font-bold text-3xl text-white">{plan.price}</span>
+                          <span className="text-white/70 font-inter text-xs block">once-off</span>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                  <p className="text-sm font-inter text-blue-200/70 leading-relaxed">
-                    Start your online presence with a simple, professional <span className="text-white font-semibold">1-page website</span> — perfect for small businesses looking to get online quickly.
-                    <br /><br />
-                    Optional <span className="text-white font-semibold">R250/month</span> maintenance plan keeps your site updated, secure &amp; running smoothly.
+                  <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 border border-white/20">
+                    <Server className="w-4 h-4 text-yellow-300 flex-shrink-0" />
+                    <span className="text-sm font-inter text-white">
+                      Hosting: <span className="font-bold text-yellow-300">R250/month</span> — keeps your site live
+                    </span>
+                  </div>
+                  <p className="mt-3 text-sm font-inter text-blue-200/70 leading-relaxed">
+                    Start your online presence with a simple, professional website — perfect for small businesses looking to get online quickly.
                     <br />
-                    <span className="text-blue-300/60 text-xs mt-1 block">Domain excluded.</span>
+                    <span className="text-blue-300/60 text-xs mt-1 block">Domain excluded. Optional R250/month maintenance plan available.</span>
                   </p>
                 </div>
 
