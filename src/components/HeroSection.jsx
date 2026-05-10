@@ -24,7 +24,7 @@ export default function HeroSection() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-inter font-semibold mb-6"
         >
           <Globe className="w-4 h-4" />
-          Serving South Africa &amp; Clients Worldwide
+          Serving South Africa & Clients Worldwide
         </motion.div>
 
         {/* Main headline */}
@@ -162,10 +162,10 @@ export default function HeroSection() {
           className="flex flex-wrap items-center justify-center gap-2"
         >
           <span className="text-xs font-inter text-muted-foreground/50 mr-1">Serving:</span>
-          {["🇿🇦 South Africa", "🇬🇧 UK", "🇺🇸 USA", "🇦🇺 Australia", "🌍 &amp; More"].map((c) => (
-            <span key={c} className="text-xs font-inter text-muted-foreground/70 px-2.5 py-1 rounded-full bg-card/40 border border-border/30"
-              dangerouslySetInnerHTML={{ __html: c }}
-            />
+          {["🇿🇦 South Africa", "🇬🇧 UK", "🇺🇸 USA", "🇦🇺 Australia", "🌍 & More"].map((c) => (
+            <span key={c} className="text-xs font-inter text-muted-foreground/70 px-2.5 py-1 rounded-full bg-card/40 border border-border/30">
+              {c}
+            </span>
           ))}
         </motion.div>
       </div>
