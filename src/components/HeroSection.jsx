@@ -1,23 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Zap, Shield, Smartphone, Globe, Code2, Star, CheckCircle } from "lucide-react";
+import { ArrowRight, Star, Globe, Zap, Clock } from "lucide-react";
 
-const countries = [
-  { flag: "🇿🇦", name: "South Africa" },
-  { flag: "🇬🇧", name: "UK" },
-  { flag: "🇺🇸", name: "USA" },
-  { flag: "🇦🇺", name: "Australia" },
-  { flag: "🇨🇦", name: "Canada" },
-  { flag: "🌍", name: "& More" },
-];
-
-const stats = [
-  { value: "1–3", label: "Day Delivery", icon: Zap, color: "text-yellow-400", bg: "bg-yellow-400/10" },
-  { value: "100%", label: "Mobile Ready", icon: Smartphone, color: "text-green-400", bg: "bg-green-400/10" },
-  { value: "SSL", label: "Secure", icon: Shield, color: "text-blue-400", bg: "bg-blue-400/10" },
-  { value: "Global", label: "Reach", icon: Globe, color: "text-primary", bg: "bg-primary/10" },
-];
-
-export default function HeroSection({ heroImage }) {
+export default function HeroSection() {
   const scrollTo = (href) => {
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -25,164 +9,127 @@ export default function HeroSection({ heroImage }) {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Background layers */}
-      <div className="absolute inset-0">
-        <img src={heroImage} alt="" className="w-full h-full object-cover opacity-[0.07]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
-      </div>
+      {/* Simple gradient background — no heavy image */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/8 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600/6 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Grid */}
-      <div className="absolute inset-0 opacity-[0.025]" style={{
-        backgroundImage: `linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)`,
-        backgroundSize: "72px 72px",
-      }} />
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-12">
 
-      {/* Orbs */}
-      <div className="absolute top-1/4 -left-32 w-[700px] h-[700px] bg-primary/8 rounded-full blur-[120px]" />
-      <div className="absolute bottom-1/4 -right-32 w-[600px] h-[600px] bg-blue-600/6 rounded-full blur-[100px]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[80px]" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-12 sm:py-16 lg:py-20">
-
-        {/* Top badges */}
+        {/* Urgency badge */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6 sm:mb-8"
+          transition={{ duration: 0.4 }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/15 border border-orange-500/30 text-orange-400 text-sm font-inter font-semibold mb-6"
         >
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm">
-            <Globe className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary" />
-            <span className="text-[10px] sm:text-xs font-inter font-semibold text-primary uppercase tracking-wider">Serving Clients Worldwide</span>
-          </div>
-          <div className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-yellow-500/10 border border-yellow-500/20">
-            {[...Array(5)].map((_, i) => <Star key={i} className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-yellow-400 fill-yellow-400" />)}
-            <span className="text-[10px] sm:text-xs font-inter font-semibold text-yellow-400 ml-1">5-Star Rated</span>
-          </div>
+          <Clock className="w-4 h-4" />
+          Limited slots available this month — book now
         </motion.div>
 
-        {/* Main headline */}
+        {/* Main headline — big, bold, immediate */}
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="font-space font-bold text-4xl sm:text-6xl lg:text-7xl xl:text-8xl text-foreground leading-[1.05] tracking-tighter mb-5 sm:mb-6"
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="font-space font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground leading-[1.1] tracking-tight mb-4"
         >
-          Professional Websites
+          Professional Website
           <br />
-          <span className="bg-gradient-to-r from-primary via-blue-300 to-cyan-400 bg-clip-text text-transparent">
-            For Any Business, Anywhere
+          <span className="bg-gradient-to-r from-primary via-blue-300 to-primary bg-clip-text text-transparent">
+            From Just R500
           </span>
         </motion.h1>
 
-        {/* Subheadline */}
+        {/* Short, punchy subtext */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="max-w-2xl mx-auto text-base sm:text-lg lg:text-xl font-inter text-muted-foreground leading-relaxed mb-8 sm:mb-10"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-base sm:text-lg font-inter text-muted-foreground max-w-xl mx-auto mb-8 leading-relaxed"
         >
-          <strong className="text-foreground">Nexa Web Solutions</strong> builds fast, modern, mobile-friendly websites for businesses across{" "}
-          <span className="text-foreground font-semibold">South Africa and worldwide</span>.{" "}
-          Delivered in <span className="text-foreground font-semibold">1–3 days</span> — from just{" "}
-          <span className="text-primary font-bold">R500</span>.
+          Get your business online in <strong className="text-foreground">1–3 days</strong>.
+          Mobile-friendly, fast, and built to get you customers —
+          in South Africa and worldwide.
         </motion.p>
 
-        {/* CTAs */}
+        {/* Primary CTA — WhatsApp first */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 mb-5 sm:mb-6 w-full sm:w-auto"
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8"
         >
-          <button
-            onClick={() => scrollTo("#contact")}
-            className="group w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-inter font-bold text-base shadow-2xl shadow-primary/30 hover:shadow-primary/50 hover:bg-primary/90 transition-all duration-300 hover:scale-105"
+          <a
+            href="https://wa.me/27823562239?text=Hi%20Nexa%20Web%20Solutions!%20I%20want%20the%20R500%20website%20%F0%9F%91%8D"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#22c55e] text-white font-inter font-bold text-base transition-all hover:scale-105 shadow-xl shadow-[#25D366]/30"
           >
-            Get Your Free Quote
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
+            <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+            WhatsApp — Get Started Now
+          </a>
           <button
             onClick={() => scrollTo("#hosting")}
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-border/60 text-foreground font-inter font-semibold text-base hover:bg-secondary/60 hover:border-primary/40 transition-all duration-300"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-border/60 text-foreground font-inter font-semibold text-base hover:bg-secondary/50 hover:border-primary/40 transition-all"
           >
-            <Code2 className="w-4 h-4 text-primary" />
             View Packages
+            <ArrowRight className="w-4 h-4" />
           </button>
         </motion.div>
 
-        {/* WhatsApp link */}
+        {/* Trust signals — quick scan */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="mb-10 sm:mb-12"
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="flex flex-wrap items-center justify-center gap-4 mb-10"
         >
-          <a
-            href="https://wa.me/27823562239?text=Hi%20Nexa%20Web%20Solutions!%20I%27d%20like%20a%20free%20quote."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-inter text-[#25D366] hover:text-[#25D366]/80 transition-colors"
-          >
-            <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
-            Chat on WhatsApp — we reply fast
-          </a>
+          {[
+            { icon: Star, text: "5-Star Rated", color: "text-yellow-400" },
+            { icon: Zap, text: "1–3 Day Delivery", color: "text-primary" },
+            { icon: Globe, text: "Worldwide Clients", color: "text-green-400" },
+          ].map((item) => (
+            <div key={item.text} className="flex items-center gap-1.5 text-sm font-inter text-muted-foreground">
+              <item.icon className={`w-4 h-4 ${item.color}`} />
+              <span>{item.text}</span>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Quick social proof */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="max-w-sm mx-auto p-4 rounded-2xl bg-card/60 border border-border/50"
+        >
+          <div className="flex gap-1 justify-center mb-2">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+            ))}
+          </div>
+          <p className="text-sm font-inter text-muted-foreground italic">
+            "Site looks amazing! Got 3 new clients in the first week."
+          </p>
+          <p className="text-xs font-inter text-primary font-semibold mt-1.5">
+            — Thandi N., Hair Studio, Durban
+          </p>
         </motion.div>
 
         {/* Countries */}
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.55 }}
-          className="mb-10 sm:mb-14"
-        >
-          <p className="text-xs font-inter text-muted-foreground/50 uppercase tracking-widest mb-3">We serve clients in</p>
-          <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
-            {countries.map((c) => (
-              <span key={c.name} className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-secondary/50 border border-border/40 text-xs font-inter text-muted-foreground hover:border-primary/30 transition-colors">
-                {c.flag} {c.name}
-              </span>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 max-w-2xl mx-auto"
-        >
-          {stats.map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.7 + i * 0.08 }}
-              className={`flex flex-col items-center gap-1.5 sm:gap-2 p-3 sm:p-4 rounded-2xl ${s.bg} border border-border/30 hover:border-primary/30 transition-all`}
-            >
-              <s.icon className={`w-4 h-4 ${s.color}`} />
-              <span className="font-space font-bold text-lg sm:text-xl text-foreground">{s.value}</span>
-              <span className="text-[10px] sm:text-[11px] font-inter text-muted-foreground text-center">{s.label}</span>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.6 }}
-          className="mt-12 sm:mt-16 flex flex-col items-center gap-2"
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="mt-8 flex flex-wrap items-center justify-center gap-2"
         >
-          <span className="text-[11px] font-inter text-muted-foreground/40 uppercase tracking-widest">Scroll</span>
-          <motion.div
-            animate={{ y: [0, 7, 0] }}
-            transition={{ repeat: Infinity, duration: 1.6 }}
-            className="w-5 h-8 rounded-full border border-border/30 flex items-start justify-center pt-1.5"
-          >
-            <div className="w-1 h-2 rounded-full bg-primary/50" />
-          </motion.div>
+          <span className="text-xs font-inter text-muted-foreground/50 mr-1">Serving:</span>
+          {["🇿🇦 SA", "🇬🇧 UK", "🇺🇸 USA", "🇦🇺 AUS", "🌍 More"].map((c) => (
+            <span key={c} className="text-xs font-inter text-muted-foreground/70 px-2.5 py-1 rounded-full bg-card/40 border border-border/30">
+              {c}
+            </span>
+          ))}
         </motion.div>
       </div>
     </section>
