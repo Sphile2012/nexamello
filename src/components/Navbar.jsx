@@ -1,14 +1,21 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Globe, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X, Globe, Zap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("");
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+      const sections = ["services","hosting","workflow","addons","value","faq","contact"];
+      for (const id of sections.reverse()) {
+        const el = document.getElementById(id);
+        if (el && window.scrollY >= el.offsetTop - 120) { setActive(id); break; }
+      }
+    };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -30,52 +37,64 @@ export default function Navbar() {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/95 backdrop-blur-xl border-b border-border/60 shadow-lg shadow-black/20"
-          : "bg-transparent"
-      }`}
-    >
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      scrolled
+        ? "bg-background/90 backdrop-blur-2xl border-b border-border/40 shadow-2xl shadow-black/30"
+        : "bg-transparent"
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-16 lg:h-[72px]">
 
           {/* Logo */}
-          <motion.div
+          <motion.button
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex items-center gap-2.5 cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="flex items-center gap-2.5 group"
           >
-            <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/30">
-              <Globe className="w-5 h-5 text-primary-foreground" />
+            <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center shadow-lg shadow-primary/30 group-hover:shadow-primary/50 transition-all duration-300 group-hover:scale-105">
+              <Globe className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />
+              <div className="absolute inset-0 rounded-xl bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
-            <div>
-              <span className="font-space font-bold text-lg text-foreground tracking-tight leading-none">
+            <div className="text-left">
+              <span className="font-space font-bold text-[15px] sm:text-[17px] text-foreground tracking-tight leading-none block">
                 Nexa Web
               </span>
-              <span className="block text-[10px] font-inter text-muted-foreground leading-none -mt-0.5">
+              <span className="text-[9px] sm:text-[10px] font-inter text-primary/80 leading-none block tracking-wide">
                 Solutions
               </span>
             </div>
-          </motion.div>
+          </motion.button>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-0.5">
-            {navLinks.map((link, i) => (
-              <motion.button
-                key={link.label}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.05, duration: 0.3 }}
-                onClick={() => scrollTo(link.href)}
-                className="px-3.5 py-2 text-sm font-inter font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-secondary/50 relative group"
-              >
-                {link.label}
-                <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary rounded-full group-hover:w-4 transition-all duration-300" />
-              </motion.button>
-            ))}
+          <div className="hidden lg:flex items-center gap-0.5">
+            {navLinks.map((link, i) => {
+              const id = link.href.replace("#", "");
+              const isActive = active === id;
+              return (
+                <motion.button
+                  key={link.label}
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.05, duration: 0.3 }}
+                  onClick={() => scrollTo(link.href)}
+                  className={`relative px-3.5 py-2 text-sm font-inter font-medium rounded-lg transition-all duration-200 ${
+                    isActive
+                      ? "text-primary bg-primary/10"
+                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/60"
+                  }`}
+                >
+                  {link.label}
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-indicator"
+                      className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-primary rounded-full"
+                    />
+                  )}
+                </motion.button>
+              );
+            })}
           </div>
 
           {/* Desktop CTAs */}
@@ -83,31 +102,33 @@ export default function Navbar() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="hidden md:flex items-center gap-3"
+            className="hidden md:flex items-center gap-2.5"
           >
             <a
               href="https://wa.me/27823562239"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-sm font-inter font-semibold text-[#25D366] border border-[#25D366]/30 rounded-full px-4 py-2 hover:bg-[#25D366]/10 transition-all duration-200"
+              className="flex items-center gap-1.5 text-sm font-inter font-semibold text-[#25D366] border border-[#25D366]/25 rounded-full px-4 py-2 hover:bg-[#25D366]/10 hover:border-[#25D366]/50 transition-all duration-200"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
               WhatsApp
             </a>
-            <Button
+            <button
               onClick={() => scrollTo("#contact")}
-              className="font-inter font-semibold rounded-full px-5 shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all hover:scale-105"
+              className="flex items-center gap-1.5 text-sm font-inter font-bold bg-primary text-primary-foreground rounded-full px-5 py-2 hover:bg-primary/90 shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-200 hover:scale-105"
             >
+              <Zap className="w-3.5 h-3.5" />
               Free Quote
-            </Button>
+            </button>
           </motion.div>
 
-          {/* Mobile menu button */}
+          {/* Mobile toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-foreground rounded-lg hover:bg-secondary/50 transition-colors"
+            className="md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-secondary/60 text-foreground hover:bg-secondary transition-all duration-300"
+            aria-label="Toggle menu"
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
@@ -119,38 +140,47 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25 }}
-            className="md:hidden bg-background/98 backdrop-blur-xl border-b border-border overflow-hidden"
+            transition={{ duration: 0.2 }}
+            className="md:hidden bg-background/98 backdrop-blur-2xl border-b border-border/50 overflow-hidden"
           >
             <div className="px-4 py-4 space-y-1">
-              {navLinks.map((link, i) => (
-                <motion.button
-                  key={link.label}
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.04 }}
-                  onClick={() => scrollTo(link.href)}
-                  className="block w-full text-left px-4 py-3 text-sm font-inter font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-xl transition-colors"
-                >
-                  {link.label}
-                </motion.button>
-              ))}
-              <div className="pt-3 space-y-2">
+              {navLinks.map((link, i) => {
+                const id = link.href.replace("#", "");
+                const isActive = active === id;
+                return (
+                  <motion.button
+                    key={link.label}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.04 }}
+                    onClick={() => scrollTo(link.href)}
+                    className={`block w-full text-left px-4 min-h-[44px] flex items-center text-sm font-inter font-medium rounded-xl transition-all duration-200 ${
+                      isActive
+                        ? "text-primary bg-primary/10"
+                        : "text-muted-foreground hover:text-foreground hover:bg-secondary/60"
+                    }`}
+                  >
+                    {link.label}
+                  </motion.button>
+                );
+              })}
+              <div className="pt-3 grid grid-cols-2 gap-2">
                 <a
                   href="https://wa.me/27823562239"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#25D366]/10 border border-[#25D366]/25 text-[#25D366] font-inter font-semibold text-sm"
+                  className="flex items-center justify-center gap-2 min-h-[44px] rounded-xl bg-[#25D366]/10 border border-[#25D366]/25 text-[#25D366] font-inter font-semibold text-sm transition-all duration-300 hover:bg-[#25D366]/20"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
-                  Chat on WhatsApp
+                  WhatsApp
                 </a>
-                <Button
+                <button
                   onClick={() => scrollTo("#contact")}
-                  className="w-full font-inter font-semibold rounded-xl py-5"
+                  className="flex items-center justify-center gap-1.5 min-h-[44px] rounded-xl bg-primary text-primary-foreground font-inter font-bold text-sm transition-all duration-300 hover:bg-primary/90 hover:scale-105"
                 >
-                  Get Free Quote
-                </Button>
+                  <Zap className="w-3.5 h-3.5" />
+                  Free Quote
+                </button>
               </div>
             </div>
           </motion.div>

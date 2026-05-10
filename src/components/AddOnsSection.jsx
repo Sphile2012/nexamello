@@ -54,7 +54,7 @@ const addOns = [
 
 export default function AddOnsSection() {
   return (
-    <section id="addons" className="py-24 sm:py-32 relative">
+    <section id="addons" className="py-20 sm:py-28 lg:py-32 relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -63,9 +63,9 @@ export default function AddOnsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm font-inter font-semibold text-primary uppercase tracking-widest mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs sm:text-sm font-inter font-semibold text-primary uppercase tracking-widest mb-4">
             <Plus className="w-3.5 h-3.5" />
             Enhance Your Package
           </span>
@@ -75,7 +75,7 @@ export default function AddOnsSection() {
               Add-Ons
             </span>
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-muted-foreground font-inter text-lg">
+          <p className="mt-4 max-w-2xl mx-auto text-muted-foreground font-inter text-base sm:text-lg">
             Supercharge your website with powerful extras tailored to your business needs.
           </p>
         </motion.div>
@@ -89,15 +89,15 @@ export default function AddOnsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.07 }}
               whileHover={{ y: -4, scale: 1.02 }}
-              className="group flex items-start gap-4 p-5 rounded-2xl bg-card/50 border border-border/50 hover:border-primary/30 hover:bg-card hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
+              className="group flex items-start gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl bg-card/50 border border-border/50 hover:border-primary/30 hover:bg-card hover:shadow-lg hover:shadow-black/20 transition-all duration-300"
             >
-              <div className={`w-12 h-12 rounded-xl ${addon.bg} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`w-11 h-11 rounded-xl ${addon.bg} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
                 <addon.icon className={`w-5 h-5 ${addon.color}`} />
               </div>
-              <div className="flex-1">
+              <div className="flex-1 min-w-0">
                 <div className="flex items-start justify-between gap-2">
-                  <h3 className="font-space font-semibold text-foreground">{addon.name}</h3>
-                  <span className={`text-sm font-inter font-bold ${addon.color} flex-shrink-0`}>
+                  <h3 className="font-space font-semibold text-foreground text-sm sm:text-base">{addon.name}</h3>
+                  <span className={`text-xs sm:text-sm font-inter font-bold ${addon.color} flex-shrink-0`}>
                     {addon.price}
                   </span>
                 </div>
@@ -115,22 +115,22 @@ export default function AddOnsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-10 max-w-5xl mx-auto p-6 rounded-2xl bg-gradient-to-r from-primary/10 to-transparent border border-primary/20 flex flex-col sm:flex-row items-center justify-between gap-4"
+          className="mt-8 sm:mt-10 max-w-5xl mx-auto p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-primary/10 to-transparent border border-primary/20 flex flex-col sm:flex-row items-center justify-between gap-4"
         >
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 text-center sm:text-left">
             <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center flex-shrink-0">
               <Bot className="w-5 h-5 text-primary" />
             </div>
             <div>
               <p className="font-space font-bold text-foreground">Bundle & Save</p>
-              <p className="text-sm font-inter text-muted-foreground">Add 3+ extras and get a custom discount.</p>
+              <p className="text-xs sm:text-sm font-inter text-muted-foreground">Add 3+ extras and get a custom discount.</p>
             </div>
           </div>
           <a
             href="https://wa.me/27823562239?text=Hi!%20I%27d%20like%20to%20bundle%20some%20add-ons."
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-primary/40 text-primary font-inter font-semibold text-sm hover:bg-primary/10 transition-colors"
+            className="w-full sm:w-auto flex-shrink-0 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-primary/40 text-primary font-inter font-semibold text-sm hover:bg-primary/10 transition-all duration-300 hover:scale-105"
           >
             Ask about bundles
             <ArrowRight className="w-4 h-4" />

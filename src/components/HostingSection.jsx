@@ -98,7 +98,7 @@ const ownPlans = [
 
 export default function HostingSection() {
   return (
-    <section id="hosting" className="py-24 sm:py-32 relative">
+    <section id="hosting" className="py-20 sm:py-28 lg:py-32 relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -109,9 +109,9 @@ export default function HostingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="text-center mb-12 sm:mb-14"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm font-inter font-semibold text-primary uppercase tracking-widest mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs sm:text-sm font-inter font-semibold text-primary uppercase tracking-widest mb-4">
             <Server className="w-3.5 h-3.5" />
             Packages & Pricing
           </span>
@@ -121,13 +121,13 @@ export default function HostingSection() {
               Online Today
             </span>
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-muted-foreground font-inter text-lg">
+          <p className="mt-4 max-w-2xl mx-auto text-muted-foreground font-inter text-base sm:text-lg">
             From a simple starter page to a fully custom website — we have a plan for every budget, <strong className="text-foreground">anywhere in the world</strong>.
           </p>
         </motion.div>
 
         {/* ══════════════════════════════════════════
-            STARTER CARD — R350 once-off
+            STARTER CARD
         ══════════════════════════════════════════ */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -139,28 +139,28 @@ export default function HostingSection() {
           <div className="rounded-3xl overflow-hidden border border-primary/25 bg-[#0b1a30] shadow-2xl shadow-primary/10">
 
             {/* Top banner */}
-            <div className="bg-gradient-to-r from-primary via-blue-500 to-primary px-6 py-3 text-center">
-              <p className="font-space font-bold text-white text-sm sm:text-base uppercase tracking-widest">
+            <div className="bg-gradient-to-r from-primary via-blue-500 to-primary px-4 sm:px-6 py-3 text-center">
+              <p className="font-space font-bold text-white text-xs sm:text-sm lg:text-base uppercase tracking-widest">
                 🚀 Professional Website + Hosting Package
               </p>
             </div>
 
-            <div className="p-8 sm:p-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div className="p-5 sm:p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
 
               {/* ── Left column ── */}
               <div className="flex flex-col">
 
                 {/* Price block */}
-                <div className="mb-7">
+                <div className="mb-6 sm:mb-7">
                   <div className="space-y-3 mb-4">
                     {starterPlans.map((plan) => (
-                      <div key={plan.pages} className="flex items-center justify-between px-5 py-4 rounded-2xl bg-gradient-to-r from-red-600 to-red-500 shadow-lg">
+                      <div key={plan.pages} className="flex items-center justify-between px-4 sm:px-5 py-3 sm:py-4 rounded-2xl bg-gradient-to-r from-red-600 to-red-500 shadow-lg">
                         <div>
                           <span className="text-white font-inter font-semibold text-sm block">{plan.pages}</span>
                           <span className="text-white/70 font-inter text-xs">{plan.desc}</span>
                         </div>
                         <div className="text-right">
-                          <span className="font-space font-bold text-3xl text-white">{plan.price}</span>
+                          <span className="font-space font-bold text-2xl sm:text-3xl text-white">{plan.price}</span>
                           <span className="text-white/70 font-inter text-xs block">once-off</span>
                         </div>
                       </div>
@@ -168,11 +168,11 @@ export default function HostingSection() {
                   </div>
                   <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 border border-white/20">
                     <Server className="w-4 h-4 text-yellow-300 flex-shrink-0" />
-                    <span className="text-sm font-inter text-white">
+                    <span className="text-xs sm:text-sm font-inter text-white">
                       Hosting: <span className="font-bold text-yellow-300">R250/month</span> — keeps your site live
                     </span>
                   </div>
-                  <p className="mt-3 text-sm font-inter text-blue-200/70 leading-relaxed">
+                  <p className="mt-3 text-xs sm:text-sm font-inter text-blue-200/70 leading-relaxed">
                     Start your online presence with a simple, professional website — perfect for small businesses looking to get online quickly.
                     <br />
                     <span className="text-blue-300/60 text-xs mt-1 block">Domain excluded. Optional R250/month maintenance plan available.</span>
@@ -180,30 +180,30 @@ export default function HostingSection() {
                 </div>
 
                 {/* Features */}
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-2.5 sm:space-y-3 mb-7 sm:mb-8">
                   {starterFeatures.map((f) => (
                     <li key={f.text} className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-primary/25 border border-primary/40 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-primary" />
                       </div>
-                      <span className="text-sm font-inter text-blue-100">{f.text}</span>
+                      <span className="text-xs sm:text-sm font-inter text-blue-100">{f.text}</span>
                     </li>
                   ))}
                 </ul>
 
                 {/* No stress banner */}
-                <div className="px-5 py-3 rounded-xl bg-gradient-to-r from-orange-600 to-orange-500 text-center mb-6">
-                  <p className="text-sm font-inter font-bold text-white">
+                <div className="px-4 sm:px-5 py-3 rounded-xl bg-gradient-to-r from-orange-600 to-orange-500 text-center mb-5 sm:mb-6">
+                  <p className="text-xs sm:text-sm font-inter font-bold text-white">
                     No Stress. No Tech Skills Needed. We Do It All.
                   </p>
                 </div>
 
-                {/* CTA — scroll to contact */}
+                {/* CTA */}
                 <button
                   onClick={() => scrollTo("#contact")}
-                  className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-inter font-bold text-base transition-all hover:scale-[1.02] shadow-lg shadow-primary/30"
+                  className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-inter font-bold text-sm sm:text-base transition-all duration-300 hover:scale-[1.02] shadow-lg shadow-primary/30"
                 >
-                  Get Started — R350 · 1 Page
+                  Get Started — R500 · 1 Page
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -216,14 +216,14 @@ export default function HostingSection() {
                   <p className="text-xs font-inter font-bold text-yellow-400 uppercase tracking-widest mb-3">
                     Perfect for:
                   </p>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3">
                     {perfectFor.map((item) => (
                       <div
                         key={item.label}
-                        className="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-colors"
+                        className="flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-colors"
                       >
                         <item.icon className="w-4 h-4 text-primary flex-shrink-0" />
-                        <span className="text-sm font-inter text-blue-100">{item.label}</span>
+                        <span className="text-xs sm:text-sm font-inter text-blue-100">{item.label}</span>
                       </div>
                     ))}
                   </div>
@@ -234,42 +234,42 @@ export default function HostingSection() {
                   <p className="text-xs font-inter font-bold text-blue-300/60 uppercase tracking-widest mb-3">
                     What you pay:
                   </p>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3">
                     {[
-                      { value: "R350",  label: "Once-Off · 1 Page",  highlight: true },
-                      { value: "R150",  label: "Per Month (hosting)", highlight: false },
+                      { value: "R500",  label: "Once-Off · 1 Page",  highlight: true },
+                      { value: "R250",  label: "Per Month (hosting)", highlight: false },
                       { value: "R250",  label: "Per Month (optional maintenance)", highlight: false },
                       { value: "1–3",   label: "Days Delivery",   highlight: false },
                     ].map((s) => (
                       <div
                         key={s.label}
-                        className={`text-center p-4 rounded-xl border transition-colors ${
+                        className={`text-center p-3 sm:p-4 rounded-xl border transition-colors ${
                           s.highlight
                             ? "bg-primary/15 border-primary/30"
                             : "bg-white/5 border-white/10"
                         }`}
                       >
-                        <p className={`font-space font-bold text-2xl ${s.highlight ? "text-primary" : "text-white"}`}>
+                        <p className={`font-space font-bold text-xl sm:text-2xl ${s.highlight ? "text-primary" : "text-white"}`}>
                           {s.value}
                         </p>
-                        <p className="text-xs font-inter text-blue-200/60 mt-1 leading-tight">{s.label}</p>
+                        <p className="text-[10px] sm:text-xs font-inter text-blue-200/60 mt-1 leading-tight">{s.label}</p>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Contact options */}
-                <div className="grid grid-cols-2 gap-3 mt-auto">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3 mt-auto">
                   <a
                     href="tel:0823562239"
-                    className="flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 text-sm font-inter font-semibold text-blue-100 transition-colors"
+                    className="flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 text-xs sm:text-sm font-inter font-semibold text-blue-100 transition-all duration-300"
                   >
                     <Phone className="w-4 h-4 text-primary" />
                     Call Us
                   </a>
                   <a
                     href="mailto:poomeigh503@gmail.com"
-                    className="flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 text-sm font-inter font-semibold text-blue-100 transition-colors"
+                    className="flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 text-xs sm:text-sm font-inter font-semibold text-blue-100 transition-all duration-300"
                   >
                     <Mail className="w-4 h-4 text-primary" />
                     Email Us
@@ -281,23 +281,23 @@ export default function HostingSection() {
         </motion.div>
 
         {/* ══════════════════════════════════════════
-            OWN A WEBSITE — R2,500 / R4,500 / R9,000
+            OWN A WEBSITE
         ══════════════════════════════════════════ */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10"
+          className="text-center mb-8 sm:mb-10"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm font-inter font-semibold text-primary uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs sm:text-sm font-inter font-semibold text-primary uppercase tracking-widest mb-3">
             <Star className="w-3.5 h-3.5" fill="currentColor" />
             Own a Website
           </div>
           <h3 className="font-space font-bold text-2xl sm:text-3xl text-foreground">
             Full Ownership Packages
           </h3>
-          <p className="mt-2 text-muted-foreground font-inter">
+          <p className="mt-2 text-sm sm:text-base text-muted-foreground font-inter">
             Your website, your asset. Pay once, own it forever.
           </p>
         </motion.div>
@@ -308,9 +308,9 @@ export default function HostingSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex justify-center mb-10"
+          className="flex justify-center mb-8 sm:mb-10"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary/10 border border-primary/25">
+          <div className="inline-flex items-center gap-3 px-5 sm:px-6 py-3 rounded-full bg-primary/10 border border-primary/25">
             <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             <span className="font-inter font-semibold text-foreground text-sm sm:text-base">
               Monthly hosting fee: <span className="text-primary font-bold">R250/month</span>
@@ -318,7 +318,7 @@ export default function HostingSection() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
           {ownPlans.map((plan, i) => (
             <motion.div
               key={plan.name}
@@ -340,7 +340,7 @@ export default function HostingSection() {
                 </div>
               )}
 
-              <div className={`h-full rounded-3xl p-7 ${plan.highlighted ? "bg-card" : "bg-card/60"}`}>
+              <div className={`h-full rounded-3xl p-6 sm:p-7 ${plan.highlighted ? "bg-card" : "bg-card/60"}`}>
                 <div className="mb-5">
                   <span className={`inline-block px-3 py-1 rounded-full text-xs font-inter font-bold uppercase tracking-widest mb-3 ${
                     plan.highlighted ? "bg-primary/20 text-primary" : "bg-secondary text-muted-foreground"
@@ -348,28 +348,28 @@ export default function HostingSection() {
                     {plan.name}
                   </span>
                   <div className="flex items-baseline gap-1">
-                    <span className="font-space font-bold text-4xl text-foreground">{plan.price}</span>
+                    <span className="font-space font-bold text-3xl sm:text-4xl text-foreground">{plan.price}</span>
                   </div>
                   <p className="text-xs font-inter text-primary font-semibold mt-1">{plan.label}</p>
                   <p className="text-xs font-inter text-muted-foreground mt-0.5">{plan.monthly}</p>
                 </div>
 
-                <ul className="space-y-2.5 mb-7">
+                <ul className="space-y-2 sm:space-y-2.5 mb-6 sm:mb-7">
                   {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-3">
+                    <li key={feature} className="flex items-center gap-2.5 sm:gap-3">
                       <div className={`w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 ${
                         plan.highlighted ? "bg-primary/20" : "bg-secondary"
                       }`}>
                         <Check className="w-2.5 h-2.5 text-primary" />
                       </div>
-                      <span className="text-sm font-inter text-muted-foreground">{feature}</span>
+                      <span className="text-xs sm:text-sm font-inter text-muted-foreground">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
                 <button
                   onClick={() => scrollTo("#contact")}
-                  className={`w-full flex items-center justify-center gap-2 py-3.5 rounded-full font-inter font-semibold text-sm transition-all hover:scale-[1.02] group ${
+                  className={`w-full flex items-center justify-center gap-2 py-3.5 rounded-full font-inter font-semibold text-sm transition-all duration-300 hover:scale-[1.02] group ${
                     plan.highlighted
                       ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25"
                       : "bg-secondary text-foreground hover:bg-secondary/80 border border-border/50"
@@ -388,7 +388,7 @@ export default function HostingSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-8 text-sm font-inter text-muted-foreground italic"
+          className="text-center mt-8 text-xs sm:text-sm font-inter text-muted-foreground italic"
         >
           All packages include a R1,500 non-refundable booking deposit. Balance due on completion.
         </motion.p>
