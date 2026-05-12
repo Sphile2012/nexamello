@@ -35,7 +35,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm font-inter text-muted-foreground leading-relaxed mb-5 max-w-xs">
-              Affordable web design &amp; hosting for businesses in <strong className="text-foreground">South Africa and worldwide</strong>. Professional websites from <strong className="text-primary">R500</strong>. Remote-friendly — we work with anyone, anywhere.
+              Affordable web design &amp; hosting for businesses in <strong className="text-foreground">South Africa and worldwide</strong>. <strong className="text-primary">4-page sites from R500</strong> once-off; full builds &amp; hosting from <strong className="text-foreground">R250/mo</strong>. Remote-friendly — we work with anyone, anywhere.
             </p>
             <div className="flex gap-3">
               <a

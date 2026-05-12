@@ -4,7 +4,7 @@ import { MessageSquare } from "lucide-react";
 export default function StickyWhatsApp() {
   return (
     <motion.a
-      href="https://wa.me/27823562239?text=Hi%20Nexa%20Web%20Solutions!%20I%20want%20the%20R500%20website%20%F0%9F%91%8D"
+      href="https://wa.me/27823562239?text=Hi%20Nexa%20Web%20Solutions!%20I%27d%20like%20a%20free%20consult%20%E2%80%94%204-page%20(R500)%20or%20full%20site%20quote.%20%F0%9F%91%8D"
       target="_blank"
       rel="noopener noreferrer"
       initial={{ scale: 0, opacity: 0 }}

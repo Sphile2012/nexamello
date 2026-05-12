@@ -232,14 +232,13 @@ export default function ContactSection() {
                         <label className="text-[11px] font-inter font-bold text-muted-foreground uppercase tracking-widest">Package Interest</label>
                         <select name="packageInterest" value={form.packageInterest} onChange={handleChange} className={`${inputClass} appearance-none cursor-pointer`}>
                           <option value="">Select a package...</option>
-                          <optgroup label="Starter Packages">
-                            <option value="Starter 1 Page (R500)">Starter — 1 Page · R500 once-off</option>
-                            <option value="Starter 5 Pages (R1,000)">Starter — 5 Pages · R1,000 once-off</option>
+                          <optgroup label="Website build (once-off)">
+                            <option value="4-Page Starter (R500)">4-page starter · R500 once-off</option>
+                            <option value="Full Website (R2,500)">Full website · R2,500 once-off</option>
+                            <option value="Scale / Custom (from R5,000)">Scale / shop-ready · from R5,000 (quote)</option>
                           </optgroup>
-                          <optgroup label="Own a Website">
-                            <option value="Basic – Own a Website (R2,500)">Basic — Own a Website · R2,500</option>
-                            <option value="Standard – Own a Website (R4,500)">Standard — Own a Website · R4,500</option>
-                            <option value="Pro – Own a Website (R9,000)">Pro — Own a Website · R9,000</option>
+                          <optgroup label="Hosting">
+                            <option value="Hosting only (R250/mo)">Hosting package · R250/month</option>
                           </optgroup>
                           <optgroup label="International">
                             <option value="International – Custom Quote">International — Request Custom Quote</option>

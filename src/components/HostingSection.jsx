@@ -22,16 +22,18 @@ const starterFeatures = [
 
 const starterPlans = [
   {
-    pages: "1 Page",
+    pages: "4 Page Website",
     price: "R500",
     hosting: "R250/month",
-    desc: "Perfect for getting online fast",
+    desc: "Services, about, contact & more — look legit fast",
+    variant: "green",
   },
   {
-    pages: "5 Pages",
-    price: "R1,000",
+    pages: "Full Website",
+    price: "R2,500",
     hosting: "R250/month",
-    desc: "More content, more visibility",
+    desc: "Complete presence — built to win trust & leads",
+    variant: "red",
   },
 ];
 
@@ -44,13 +46,13 @@ const perfectFor = [
 
 const ownPlans = [
   {
-    name: "Basic",
-    price: "R2,500",
-    label: "Own a Website",
+    name: "Essential",
+    price: "R500",
+    label: "4 pages · once-off",
     monthly: "+ R250/mo hosting",
     highlighted: false,
     features: [
-      "1–3 Page Website",
+      "4-page professional website",
       "5 GB SSD Storage",
       "SSL Security Certificate",
       "Unlimited* Traffic",
@@ -61,13 +63,13 @@ const ownPlans = [
     ],
   },
   {
-    name: "Standard",
-    price: "R4,500",
-    label: "Own a Website",
+    name: "Complete",
+    price: "R2,500",
+    label: "Full website · once-off",
     monthly: "+ R250/mo hosting",
     highlighted: true,
     features: [
-      "4–6 Page Website",
+      "Full multi-section website",
       "15 GB SSD Storage",
       "SSL Security Certificate",
       "Unlimited* Traffic",
@@ -78,20 +80,20 @@ const ownPlans = [
     ],
   },
   {
-    name: "Pro",
-    price: "R9,000",
-    label: "Own a Website",
+    name: "Scale",
+    price: "From R5,000",
+    label: "Custom / shop-ready",
     monthly: "+ R250/mo hosting",
     highlighted: false,
     features: [
-      "Unlimited Custom Pages",
+      "Custom scope & extra pages",
       "35 GB SSD Storage",
       "SSL Security Certificate",
       "Unlimited* Traffic",
       "300 Mailboxes",
-      "Full SEO + Speed Optimization",
-      "Payment Integration",
-      "Analytics Dashboard",
+      "Advanced SEO + Speed Optimization",
+      "Payment / bookings integration",
+      "Analytics dashboard",
     ],
   },
 ];
@@ -122,7 +124,7 @@ export default function HostingSection() {
             </span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-muted-foreground font-inter text-base sm:text-lg">
-            From a simple starter page to a fully custom website — we have a plan for every budget, <strong className="text-foreground">anywhere in the world</strong>.
+            Look professional, get found on Google, and turn WhatsApp chats into customers — from <strong className="text-foreground">R500</strong> once-off plus hosting. Serving clients <strong className="text-foreground">everywhere</strong>.
           </p>
         </motion.div>
 
@@ -154,7 +156,14 @@ export default function HostingSection() {
                 <div className="mb-6 sm:mb-7">
                   <div className="space-y-3 mb-4">
                     {starterPlans.map((plan) => (
-                      <div key={plan.pages} className="flex items-center justify-between px-4 sm:px-5 py-3 sm:py-4 rounded-2xl bg-gradient-to-r from-red-600 to-red-500 shadow-lg">
+                      <div
+                        key={plan.pages}
+                        className={`flex items-center justify-between px-4 sm:px-5 py-3 sm:py-4 rounded-2xl shadow-lg ${
+                          plan.variant === "green"
+                            ? "bg-gradient-to-r from-emerald-600 to-green-500"
+                            : "bg-gradient-to-r from-red-600 to-red-500"
+                        }`}
+                      >
                         <div>
                           <span className="text-white font-inter font-semibold text-sm block">{plan.pages}</span>
                           <span className="text-white/70 font-inter text-xs">{plan.desc}</span>
@@ -166,14 +175,14 @@ export default function HostingSection() {
                       </div>
                     ))}
                   </div>
-                  <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 border border-white/20">
-                    <Server className="w-4 h-4 text-yellow-300 flex-shrink-0" />
+                  <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-sky-600/90 to-blue-600/90 border border-white/20">
+                    <Server className="w-4 h-4 text-cyan-200 flex-shrink-0" />
                     <span className="text-xs sm:text-sm font-inter text-white">
-                      Hosting: <span className="font-bold text-yellow-300">R250/month</span> — keeps your site live
+                      Hosting package: <span className="font-bold text-cyan-200">R250/month</span> — keeps your site fast & online
                     </span>
                   </div>
                   <p className="mt-3 text-xs sm:text-sm font-inter text-blue-200/70 leading-relaxed">
-                    Start your online presence with a simple, professional website — perfect for small businesses looking to get online quickly.
+                    No DIY stress — we design, connect WhatsApp, and help you show up on Google. Tell us your business name and we&apos;ll guide the rest.
                     <br />
                     <span className="text-blue-300/60 text-xs mt-1 block">Domain excluded. Optional R250/month maintenance plan available.</span>
                   </p>
@@ -203,7 +212,7 @@ export default function HostingSection() {
                   onClick={() => scrollTo("#contact")}
                   className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-inter font-bold text-sm sm:text-base transition-all duration-300 hover:scale-[1.02] shadow-lg shadow-primary/30"
                 >
-                  Get Started — R500 · 1 Page
+                  Free WhatsApp consult — from R500 · 4 pages
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -236,10 +245,10 @@ export default function HostingSection() {
                   </p>
                   <div className="grid grid-cols-2 gap-2 sm:gap-3">
                     {[
-                      { value: "R500",  label: "Once-Off · 1 Page",  highlight: true },
-                      { value: "R250",  label: "Per Month (hosting)", highlight: false },
-                      { value: "R250",  label: "Per Month (optional maintenance)", highlight: false },
-                      { value: "1–3",   label: "Days Delivery",   highlight: false },
+                      { value: "R500",  label: "Once-off · 4-page site",  highlight: true },
+                      { value: "R2,500", label: "Once-off · full website", highlight: false },
+                      { value: "R250",  label: "Per month · hosting", highlight: false },
+                      { value: "1–3",   label: "Days · typical delivery",   highlight: false },
                     ].map((s) => (
                       <div
                         key={s.label}
@@ -375,7 +384,7 @@ export default function HostingSection() {
                       : "bg-secondary text-foreground hover:bg-secondary/80 border border-border/50"
                   }`}
                 >
-                  Own a Website — {plan.name}
+                  Get a quote — {plan.name}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
@@ -388,9 +397,11 @@ export default function HostingSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-8 text-xs sm:text-sm font-inter text-muted-foreground italic"
+          className="text-center mt-8 text-xs sm:text-sm font-inter text-muted-foreground italic max-w-2xl mx-auto"
         >
-          All packages include a R1,500 non-refundable booking deposit. Balance due on completion.
+          <strong className="text-foreground not-italic">4-page starter (R500):</strong> paid in full when you book.
+          {" "}
+          <strong className="text-foreground not-italic">Full website &amp; custom builds:</strong> R1,500 non-refundable booking deposit, balance on completion before go-live.
         </motion.p>
       </div>
     </section>

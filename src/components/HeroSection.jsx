@@ -49,13 +49,13 @@ export default function HeroSection() {
           className="max-w-2xl mx-auto mb-8"
         >
           <p className="text-lg sm:text-xl font-inter text-muted-foreground leading-relaxed mb-4">
-            Right now, your potential customers are searching Google for exactly what you offer.
-            <strong className="text-foreground"> Don't let them find your competitor instead.</strong>
+            Right now, people are searching Google for businesses like yours.
+            <strong className="text-foreground"> A sharp website turns those searches into WhatsApp messages and calls.</strong>
           </p>
           <p className="text-base sm:text-lg font-inter text-muted-foreground leading-relaxed">
-            For just <strong className="text-primary text-xl">R500</strong>, Nexa Web Solutions puts your business on the map —
-            a stunning, mobile-friendly website delivered in <strong className="text-foreground">1–3 days</strong>.
-            No tech skills needed. No stress. <strong className="text-foreground">We handle everything.</strong>
+            <strong className="text-primary text-xl">R500</strong> gets you a proper <strong className="text-foreground">4-page</strong> site (not a single landing strip).
+            Need the full treatment? <strong className="text-foreground">Full website from R2,500</strong> once-off, plus <strong className="text-foreground">R250/month</strong> hosting.
+            Live in <strong className="text-foreground">1–3 days</strong>. No tech skills — <strong className="text-foreground">we handle everything.</strong>
           </p>
         </motion.div>
 
@@ -68,8 +68,8 @@ export default function HeroSection() {
         >
           {[
             { icon: Zap, text: "Live in 1–3 Days", color: "text-primary" },
-            { icon: Smartphone, text: "Mobile-First Design", color: "text-blue-400" },
-            { icon: TrendingUp, text: "Built to Get Clients", color: "text-green-400" },
+            { icon: Smartphone, text: "WhatsApp-Ready", color: "text-blue-400" },
+            { icon: TrendingUp, text: "Built for More Leads", color: "text-green-400" },
             { icon: Users, text: "SA & Worldwide", color: "text-yellow-400" },
           ].map((item, i) => (
             <motion.div
@@ -92,13 +92,13 @@ export default function HeroSection() {
           transition={{ duration: 0.5, delay: 0.45 }}
           className="max-w-lg mx-auto mb-8 p-5 rounded-2xl bg-card/60 border border-primary/20"
         >
-          <p className="text-sm font-inter font-bold text-primary uppercase tracking-wider mb-3">What you get for R500</p>
+          <p className="text-sm font-inter font-bold text-primary uppercase tracking-wider mb-3">What you get for R500 (4 pages)</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left">
             {[
-              "Professional 1-page website",
+              "4-page professional layout",
               "Mobile & desktop ready",
               "Fast loading speed",
-              "WhatsApp contact button",
+              "WhatsApp click-to-chat",
               "Your branding & colours",
               "Delivered in 1–3 days",
             ].map((item) => (
@@ -118,13 +118,13 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8"
         >
           <a
-            href="https://wa.me/27823562239?text=Hi%20Nexa%20Web%20Solutions!%20I%20want%20the%20R500%20website%20%F0%9F%91%8D"
+            href="https://wa.me/27823562239?text=Hi%20Nexa%20Web%20Solutions!%20I%27d%20like%20the%20R500%204-page%20website%20(or%20full%20site%20quote).%20%F0%9F%91%8D"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#22c55e] text-white font-inter font-bold text-base transition-all hover:scale-105 shadow-xl shadow-[#25D366]/30"
           >
             <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-            WhatsApp Us — Start for R500
+            WhatsApp — Free consult · From R500
           </a>
           <button
             onClick={() => scrollTo("#hosting")}
