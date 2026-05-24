@@ -6,41 +6,21 @@ const categories = [
   {
     icon: TrendingUp,
     title: "Monetization",
-    gradient: "from-orange-500/20 to-orange-500/5",
-    border: "border-orange-500/20 hover:border-orange-500/40",
-    iconBg: "bg-orange-500/15",
-    iconColor: "text-orange-400",
-    dot: "bg-orange-400",
     items: ["Subscriptions", "Premium Products", "Ad Space", "Affiliate Programs"],
   },
   {
     icon: ShieldCheck,
     title: "Trust & Credibility",
-    gradient: "from-green-500/20 to-green-500/5",
-    border: "border-green-500/20 hover:border-green-500/40",
-    iconBg: "bg-green-500/15",
-    iconColor: "text-green-400",
-    dot: "bg-green-400",
     items: ["Client Reviews", "SSL Certificates", "Privacy Policies", "Professional Portfolio"],
   },
   {
     icon: Rocket,
     title: "Growth & Marketing",
-    gradient: "from-primary/20 to-primary/5",
-    border: "border-primary/20 hover:border-primary/40",
-    iconBg: "bg-primary/15",
-    iconColor: "text-primary",
-    dot: "bg-primary",
     items: ["SEO Strategy", "Email Marketing", "Social Media Integration", "Blog Content"],
   },
   {
     icon: MousePointer,
     title: "Usability",
-    gradient: "from-purple-500/20 to-purple-500/5",
-    border: "border-purple-500/20 hover:border-purple-500/40",
-    iconBg: "bg-purple-500/15",
-    iconColor: "text-purple-400",
-    dot: "bg-purple-400",
     items: ["Mobile Optimization", "Fast Load Speed", "Easy Navigation", "Accessible Design"],
   },
 ];
@@ -74,21 +54,21 @@ export default function ValueSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs sm:text-sm font-jakarta font-semibold text-primary uppercase tracking-widest mb-4">
-              <Sparkles className="w-3.5 h-3.5" />
+            <span className="inline-flex items-center gap-3 text-xs font-dm font-medium tracking-[0.18em] text-primary uppercase mb-8">
+              <div className="w-8 h-[1px] bg-primary" />
               Why Choose Us
             </span>
-            <h2 className="mt-2 font-jakarta font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground leading-tight">
+            <h2 className="mt-2 font-playfair font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground leading-tight">
               We Don't Just Build —{" "}
-              <span className="bg-gradient-to-r from-primary via-blue-500 to-indigo-600 bg-clip-text text-transparent">
+              <span className="text-primary">
                 We Grow
               </span>
             </h2>
-            <p className="mt-5 sm:mt-6 text-muted-foreground font-jakarta text-base sm:text-lg leading-relaxed">
-              Your website is just the beginning. We offer hosting, maintenance, redesigns, SEO, social media setup, analytics, business email, and AI chatbot integration — building recurring value for businesses <strong className="text-foreground">across South Africa and worldwide</strong>.
+            <p className="mt-5 sm:mt-6 text-muted-foreground font-dm text-base sm:text-lg leading-[1.8] font-light">
+              Your website is just the beginning. We offer hosting, maintenance, redesigns, SEO, social media setup, analytics, business email, and AI chatbot integration — building recurring value for businesses <strong className="text-foreground font-medium">across South Africa and worldwide</strong>.
             </p>
-            <p className="mt-4 text-muted-foreground font-jakarta text-base sm:text-lg leading-relaxed">
-              To make sure clients book us and purchase websites from us, we lead with proof of what we can build. We share our live work — like the <strong className="text-foreground">Bright Future Holders / SkillWise</strong> site, a fully functional, MICT SETA-accredited training platform with course pages, a shop, reviews, and a sign-in system — so clients can see we deliver real, professional websites, not templates. For those just starting out or on a budget, we offer a <strong className="text-primary">portfolio website for just R250</strong> (sample: uphumeh.netlify.app), which removes the price barrier and gets them in the door. We make it easy to say yes — clear pricing, quick WhatsApp communication, and a simple process from first chat to live website. We target small businesses, freelancers, students, and training providers across South Africa who need an online presence but don't know where to start. Word of mouth, showcasing our sites on social media, and following up with every lead consistently turns interest into bookings. Clients choose us because we're local, affordable, fast, and we build sites that actually work.
+            <p className="mt-4 text-muted-foreground font-dm text-base sm:text-lg leading-[1.8] font-light">
+              To make sure clients book us and purchase websites from us, we lead with proof of what we can build. We share our live work — like the <strong className="text-foreground font-medium">Bright Future Holders / SkillWise</strong> site, a fully functional, MICT SETA-accredited training platform with course pages, a shop, reviews, and a sign-in system — so clients can see we deliver real, professional websites, not templates. For those just starting out or on a budget, we offer a <strong className="text-primary font-medium">portfolio website for just R250</strong> (sample: uphumeh.netlify.app), which removes the price barrier and gets them in the door. We make it easy to say yes — clear pricing, quick WhatsApp communication, and a simple process from first chat to live website. We target small businesses, freelancers, students, and training providers across South Africa who need an online presence but don't know where to start. Word of mouth, showcasing our sites on social media, and following up with every lead consistently turns interest into bookings. Clients choose us because we're local, affordable, fast, and we build sites that actually work.
             </p>
 
             <ul className="mt-6 sm:mt-8 space-y-2.5 sm:space-y-3">
@@ -99,7 +79,7 @@ export default function ValueSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className="flex items-center gap-3 text-sm font-jakarta text-foreground"
+                  className="flex items-center gap-3 text-sm font-dm text-foreground"
                 >
                   <div className="w-5 h-5 rounded-full bg-primary/15 flex items-center justify-center flex-shrink-0">
                     <CheckCircle className="w-3.5 h-3.5 text-primary" />
@@ -112,7 +92,7 @@ export default function ValueSection() {
             <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3">
               <button
                 onClick={() => scrollTo("#contact")}
-                className="w-full sm:w-auto font-jakarta font-bold rounded-full px-8 py-5 gap-2 shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-300 hover:scale-105 bg-primary text-primary-foreground inline-flex items-center justify-center"
+                className="w-full sm:w-auto font-dm font-medium rounded px-8 py-5 gap-2 shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-300 bg-primary text-primary-foreground inline-flex items-center justify-center"
               >
                 Start Your Project Today
                 <ArrowRight className="w-4 h-4" />
@@ -121,7 +101,7 @@ export default function ValueSection() {
                 href="https://wa.me/27823562239?text=Hi!%20I%27d%20like%20a%20free%20consultation."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-[#25D366]/30 text-[#25D366] font-jakarta font-semibold text-sm hover:bg-[#25D366]/10 transition-all duration-300"
+                className="w-full sm:w-auto btn-outline"
               >
                 Free Consultation
               </a>
@@ -129,7 +109,7 @@ export default function ValueSection() {
           </motion.div>
 
           {/* Right grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-border border border-border overflow-hidden rounded">
             {categories.map((cat, i) => (
               <motion.div
                 key={cat.title}
@@ -137,22 +117,21 @@ export default function ValueSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                whileHover={{ y: -6, scale: 1.02 }}
-                className={`p-4 sm:p-5 rounded-2xl bg-gradient-to-br ${cat.gradient} border ${cat.border} transition-all duration-300`}
+                className="premium-card"
               >
-                <div className={`w-10 h-10 rounded-xl ${cat.iconBg} flex items-center justify-center mb-3`}>
-                  <cat.icon className={`w-5 h-5 ${cat.iconColor}`} />
+                <div className="w-10 h-10 rounded bg-secondary flex items-center justify-center mb-3">
+                  <cat.icon className="w-5 h-5 text-primary" />
                 </div>
-                <h3 className="font-jakarta font-semibold text-foreground mb-2 sm:mb-3 text-sm sm:text-base">
+                <h3 className="font-dm font-semibold text-foreground mb-2 sm:mb-3 text-sm sm:text-base">
                   {cat.title}
                 </h3>
                 <ul className="space-y-1.5 sm:space-y-2">
                   {cat.items.map((item) => (
                     <li
                       key={item}
-                      className="text-xs font-jakarta text-muted-foreground flex items-center gap-2"
+                      className="text-xs font-dm text-muted-foreground flex items-center gap-2 font-light"
                     >
-                      <span className={`w-1.5 h-1.5 rounded-full ${cat.dot} flex-shrink-0`} />
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
                       {item}
                     </li>
                   ))}
