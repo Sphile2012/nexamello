@@ -10,7 +10,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
-      const sections = ["services","hosting","workflow","addons","value","faq","contact"];
+      const sections = ["services", "hosting", "workflow", "addons", "value", "faq", "contact"];
       for (const id of sections.reverse()) {
         const el = document.getElementById(id);
         if (el && window.scrollY >= el.offsetTop - 120) { setActive(id); break; }
@@ -37,11 +37,10 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrolled
-        ? "bg-background/90 backdrop-blur-2xl border-b border-border/40 shadow-2xl shadow-black/30"
-        : "bg-transparent"
-    }`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+      ? "bg-white/95 backdrop-blur-xl border-b border-gray-200 shadow-lg"
+      : "bg-transparent"
+      }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-[72px]">
 
@@ -53,15 +52,15 @@ export default function Navbar() {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="flex items-center gap-2.5 group"
           >
-            <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center shadow-lg shadow-primary/30 group-hover:shadow-primary/50 transition-all duration-300 group-hover:scale-105">
+            <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-all duration-300 group-hover:scale-105">
               <Globe className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />
               <div className="absolute inset-0 rounded-xl bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
             <div className="text-left">
-              <span className="font-space font-bold text-[15px] sm:text-[17px] text-foreground tracking-tight leading-none block">
+              <span className="font-jakarta font-bold text-[15px] sm:text-[17px] text-foreground tracking-tight leading-none block">
                 Nexa Web
               </span>
-              <span className="text-[9px] sm:text-[10px] font-inter text-primary/80 leading-none block tracking-wide">
+              <span className="text-[9px] sm:text-[10px] font-jakarta text-primary/90 leading-none block tracking-wide">
                 Solutions
               </span>
             </div>
@@ -79,11 +78,10 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.05, duration: 0.3 }}
                   onClick={() => scrollTo(link.href)}
-                  className={`relative px-3.5 py-2 text-sm font-inter font-medium rounded-lg transition-all duration-200 ${
-                    isActive
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/60"
-                  }`}
+                  className={`relative px-3.5 py-2 text-sm font-jakarta font-medium rounded-lg transition-all duration-200 ${isActive
+                    ? "text-primary bg-primary/10"
+                    : "text-muted-foreground hover:text-foreground hover:bg-gray-100"
+                    }`}
                 >
                   {link.label}
                   {isActive && (
@@ -108,14 +106,14 @@ export default function Navbar() {
               href="https://wa.me/27823562239"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-sm font-inter font-semibold text-[#25D366] border border-[#25D366]/25 rounded-full px-4 py-2 hover:bg-[#25D366]/10 hover:border-[#25D366]/50 transition-all duration-200"
+              className="flex items-center gap-1.5 text-sm font-jakarta font-semibold text-[#25D366] border border-[#25D366]/25 rounded-full px-4 py-2 hover:bg-[#25D366]/10 hover:border-[#25D366]/50 transition-all duration-200"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
               WhatsApp
             </a>
             <button
               onClick={() => scrollTo("#contact")}
-              className="flex items-center gap-1.5 text-sm font-inter font-bold bg-primary text-primary-foreground rounded-full px-5 py-2 hover:bg-primary/90 shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-200 hover:scale-105"
+              className="flex items-center gap-1.5 text-sm font-jakarta font-bold bg-primary text-primary-foreground rounded-full px-5 py-2 hover:bg-primary/90 shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-200 hover:scale-105"
             >
               <Zap className="w-3.5 h-3.5" />
               Free Quote
@@ -125,7 +123,7 @@ export default function Navbar() {
           {/* Mobile toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-secondary/60 text-foreground hover:bg-secondary transition-all duration-300"
+            className="md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-gray-100 text-foreground hover:bg-gray-200 transition-all duration-300"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -141,7 +139,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-background/98 backdrop-blur-2xl border-b border-border/50 overflow-hidden"
+            className="md:hidden bg-white/98 backdrop-blur-xl border-b border-gray-200 overflow-hidden"
           >
             <div className="px-4 py-4 space-y-1">
               {navLinks.map((link, i) => {
@@ -154,11 +152,10 @@ export default function Navbar() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.04 }}
                     onClick={() => scrollTo(link.href)}
-                    className={`block w-full text-left px-4 min-h-[44px] flex items-center text-sm font-inter font-medium rounded-xl transition-all duration-200 ${
-                      isActive
-                        ? "text-primary bg-primary/10"
-                        : "text-muted-foreground hover:text-foreground hover:bg-secondary/60"
-                    }`}
+                    className={`block w-full text-left px-4 min-h-[44px] flex items-center text-sm font-jakarta font-medium rounded-xl transition-all duration-200 ${isActive
+                      ? "text-primary bg-primary/10"
+                      : "text-muted-foreground hover:text-foreground hover:bg-gray-100"
+                      }`}
                   >
                     {link.label}
                   </motion.button>
@@ -169,14 +166,14 @@ export default function Navbar() {
                   href="https://wa.me/27823562239"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 min-h-[44px] rounded-xl bg-[#25D366]/10 border border-[#25D366]/25 text-[#25D366] font-inter font-semibold text-sm transition-all duration-300 hover:bg-[#25D366]/20"
+                  className="flex items-center justify-center gap-2 min-h-[44px] rounded-xl bg-[#25D366]/10 border border-[#25D366]/25 text-[#25D366] font-jakarta font-semibold text-sm transition-all duration-300 hover:bg-[#25D366]/20"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
                   WhatsApp
                 </a>
                 <button
                   onClick={() => scrollTo("#contact")}
-                  className="flex items-center justify-center gap-1.5 min-h-[44px] rounded-xl bg-primary text-primary-foreground font-inter font-bold text-sm transition-all duration-300 hover:bg-primary/90 hover:scale-105"
+                  className="flex items-center justify-center gap-1.5 min-h-[44px] rounded-xl bg-primary text-primary-foreground font-jakarta font-bold text-sm transition-all duration-300 hover:bg-primary/90 hover:scale-105"
                 >
                   <Zap className="w-3.5 h-3.5" />
                   Free Quote

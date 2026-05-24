@@ -74,18 +74,21 @@ export default function ValueSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs sm:text-sm font-inter font-semibold text-primary uppercase tracking-widest mb-4">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs sm:text-sm font-jakarta font-semibold text-primary uppercase tracking-widest mb-4">
               <Sparkles className="w-3.5 h-3.5" />
-              Beyond The Website
+              Why Choose Us
             </span>
-            <h2 className="mt-2 font-space font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground leading-tight">
+            <h2 className="mt-2 font-jakarta font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground leading-tight">
               We Don't Just Build —{" "}
-              <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary via-blue-500 to-indigo-600 bg-clip-text text-transparent">
                 We Grow
               </span>
             </h2>
-            <p className="mt-5 sm:mt-6 text-muted-foreground font-inter text-base sm:text-lg leading-relaxed">
+            <p className="mt-5 sm:mt-6 text-muted-foreground font-jakarta text-base sm:text-lg leading-relaxed">
               Your website is just the beginning. We offer hosting, maintenance, redesigns, SEO, social media setup, analytics, business email, and AI chatbot integration — building recurring value for businesses <strong className="text-foreground">across South Africa and worldwide</strong>.
+            </p>
+            <p className="mt-4 text-muted-foreground font-jakarta text-base sm:text-lg leading-relaxed">
+              To make sure clients book us and purchase websites from us, we lead with proof of what we can build. We share our live work — like the <strong className="text-foreground">Bright Future Holders / SkillWise</strong> site, a fully functional, MICT SETA-accredited training platform with course pages, a shop, reviews, and a sign-in system — so clients can see we deliver real, professional websites, not templates. For those just starting out or on a budget, we offer a <strong className="text-primary">portfolio website for just R250</strong> (sample: uphumeh.netlify.app), which removes the price barrier and gets them in the door. We make it easy to say yes — clear pricing, quick WhatsApp communication, and a simple process from first chat to live website. We target small businesses, freelancers, students, and training providers across South Africa who need an online presence but don't know where to start. Word of mouth, showcasing our sites on social media, and following up with every lead consistently turns interest into bookings. Clients choose us because we're local, affordable, fast, and we build sites that actually work.
             </p>
 
             <ul className="mt-6 sm:mt-8 space-y-2.5 sm:space-y-3">
@@ -96,7 +99,7 @@ export default function ValueSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className="flex items-center gap-3 text-sm font-inter text-foreground"
+                  className="flex items-center gap-3 text-sm font-jakarta text-foreground"
                 >
                   <div className="w-5 h-5 rounded-full bg-primary/15 flex items-center justify-center flex-shrink-0">
                     <CheckCircle className="w-3.5 h-3.5 text-primary" />
@@ -107,18 +110,18 @@ export default function ValueSection() {
             </ul>
 
             <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3">
-              <Button
+              <button
                 onClick={() => scrollTo("#contact")}
-                className="w-full sm:w-auto font-inter font-bold rounded-full px-8 py-5 gap-2 shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-300 hover:scale-105"
+                className="w-full sm:w-auto font-jakarta font-bold rounded-full px-8 py-5 gap-2 shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-300 hover:scale-105 bg-primary text-primary-foreground inline-flex items-center justify-center"
               >
                 Start Your Project Today
                 <ArrowRight className="w-4 h-4" />
-              </Button>
+              </button>
               <a
                 href="https://wa.me/27823562239?text=Hi!%20I%27d%20like%20a%20free%20consultation."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-[#25D366]/30 text-[#25D366] font-inter font-semibold text-sm hover:bg-[#25D366]/10 transition-all duration-300"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-[#25D366]/30 text-[#25D366] font-jakarta font-semibold text-sm hover:bg-[#25D366]/10 transition-all duration-300"
               >
                 Free Consultation
               </a>
@@ -140,14 +143,14 @@ export default function ValueSection() {
                 <div className={`w-10 h-10 rounded-xl ${cat.iconBg} flex items-center justify-center mb-3`}>
                   <cat.icon className={`w-5 h-5 ${cat.iconColor}`} />
                 </div>
-                <h3 className="font-space font-semibold text-foreground mb-2 sm:mb-3 text-sm sm:text-base">
+                <h3 className="font-jakarta font-semibold text-foreground mb-2 sm:mb-3 text-sm sm:text-base">
                   {cat.title}
                 </h3>
                 <ul className="space-y-1.5 sm:space-y-2">
                   {cat.items.map((item) => (
                     <li
                       key={item}
-                      className="text-xs font-inter text-muted-foreground flex items-center gap-2"
+                      className="text-xs font-jakarta text-muted-foreground flex items-center gap-2"
                     >
                       <span className={`w-1.5 h-1.5 rounded-full ${cat.dot} flex-shrink-0`} />
                       {item}
