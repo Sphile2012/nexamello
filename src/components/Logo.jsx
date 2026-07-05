@@ -1,7 +1,7 @@
 export default function Logo({ size = 40, showText = true, className = "" }) {
   return (
     <div className={`flex items-center gap-2.5 ${className}`}>
-      {/* QPC Logo mark */}
+      {/* Nexa Web Logo mark */}
       <svg
         width={size}
         height={size}
@@ -13,32 +13,32 @@ export default function Logo({ size = 40, showText = true, className = "" }) {
         {/* Dark blue background */}
         <rect width="200" height="200" fill="#1a2847" rx="20" />
 
-        {/* QPC text - simplified geometric design */}
+        {/* NEXA text - simplified geometric design */}
         <text
           x="100"
           y="90"
           fontFamily="Arial, sans-serif"
-          fontSize="60"
+          fontSize="48"
           fontWeight="700"
           fill="white"
           textAnchor="middle"
-          letterSpacing="8"
+          letterSpacing="4"
         >
-          QPC
+          NEXA
         </text>
 
-        {/* IT SOLUTIONS text */}
+        {/* TECH SOLUTIONS text */}
         <text
           x="100"
           y="140"
           fontFamily="Arial, sans-serif"
-          fontSize="18"
+          fontSize="16"
           fontWeight="400"
           fill="#60a5fa"
           textAnchor="middle"
-          letterSpacing="6"
+          letterSpacing="4"
         >
-          IT SOLUTIONS
+          TECH SOLUTIONS
         </text>
       </svg>
 
@@ -46,10 +46,10 @@ export default function Logo({ size = 40, showText = true, className = "" }) {
       {showText && (
         <div>
           <span className="font-sans font-bold text-lg text-foreground tracking-tight leading-none block">
-            QPC
+            Nexa Web
           </span>
           <span className="text-[10px] font-sans text-cyan-400 leading-none block -mt-0.5">
-            IT Solutions
+            Tech Solutions
           </span>
         </div>
       )}
