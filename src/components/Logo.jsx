@@ -1,7 +1,7 @@
 export default function Logo({ size = 40, showText = true, className = "" }) {
   return (
     <div className={`flex items-center gap-2.5 ${className}`}>
-      {/* SVG Logo mark */}
+      {/* QPC Logo mark */}
       <svg
         width={size}
         height={size}
@@ -10,52 +10,46 @@ export default function Logo({ size = 40, showText = true, className = "" }) {
         xmlns="http://www.w3.org/2000/svg"
         className="flex-shrink-0"
       >
-        {/* Blue background */}
-        <rect width="200" height="200" fill="#1565C0" rx="20" />
+        {/* Dark blue background */}
+        <rect width="200" height="200" fill="#1a2847" rx="20" />
 
-        {/* N — left vertical + diagonal + right vertical */}
-        <path
-          d="M36 142 L36 62 L70 112 L70 62"
-          stroke="#F5A623"
-          strokeWidth="14"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          fill="none"
-        />
-
-        {/* W — connected from N's right leg */}
-        <path
-          d="M70 62 L93 128 L116 82 L139 128 L162 62"
-          stroke="#F5A623"
-          strokeWidth="14"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          fill="none"
-        />
-
-        {/* NEXA WEB text inside */}
+        {/* QPC text - simplified geometric design */}
         <text
-          x="99"
-          y="170"
+          x="100"
+          y="90"
           fontFamily="Arial, sans-serif"
-          fontSize="15"
+          fontSize="60"
           fontWeight="700"
           fill="white"
           textAnchor="middle"
-          letterSpacing="3"
+          letterSpacing="8"
         >
-          NEXA WEB
+          QPC
+        </text>
+
+        {/* IT SOLUTIONS text */}
+        <text
+          x="100"
+          y="140"
+          fontFamily="Arial, sans-serif"
+          fontSize="18"
+          fontWeight="400"
+          fill="#60a5fa"
+          textAnchor="middle"
+          letterSpacing="6"
+        >
+          IT SOLUTIONS
         </text>
       </svg>
 
       {/* Brand name text next to logo */}
       {showText && (
         <div>
-          <span className="font-space font-bold text-lg text-foreground tracking-tight leading-none block">
-            NexaWeb
+          <span className="font-sans font-bold text-lg text-foreground tracking-tight leading-none block">
+            QPC
           </span>
-          <span className="text-[10px] font-inter text-muted-foreground leading-none block -mt-0.5">
-            Tech Solutions
+          <span className="text-[10px] font-sans text-cyan-400 leading-none block -mt-0.5">
+            IT Solutions
           </span>
         </div>
       )}

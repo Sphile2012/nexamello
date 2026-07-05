@@ -6,26 +6,26 @@
 
 @layer base {
   :root {
-    --background: 45 20% 98%;
-    --foreground: 0 0% 5%;
-    --card: 45 20% 98%;
-    --card-foreground: 0 0% 5%;
-    --popover: 45 20% 98%;
-    --popover-foreground: 0 0% 5%;
-    --primary: 38 45% 55%;
+    --background: 220 40% 12%;
+    --foreground: 0 0% 98%;
+    --card: 220 35% 15%;
+    --card-foreground: 0 0% 98%;
+    --popover: 220 35% 15%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 200 100% 50%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 45 15% 94%;
-    --secondary-foreground: 0 0% 5%;
-    --muted: 45 15% 94%;
-    --muted-foreground: 0 0% 45%;
-    --accent: 38 45% 55%;
+    --secondary: 220 30% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 30% 20%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 190 100% 45%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 38 45% 55%;
-    --radius: 0.25rem;
+    --border: 220 30% 25%;
+    --input: 220 30% 25%;
+    --ring: 200 100% 50%;
+    --radius: 0.5rem;
   }
 }
 
@@ -388,4 +388,82 @@ img {
 /* Button base improvements */
 button {
   cursor: pointer;
+}
+
+/* Hero gradient background */
+.hero-gradient {
+  background: linear-gradient(135deg, #0a1628 0%, #162447 50%, #1f4068 100%);
+  position: relative;
+}
+
+/* Hero pattern overlay */
+.hero-pattern {
+  background-image: 
+    linear-gradient(30deg, rgba(59, 130, 246, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(59, 130, 246, 0.1) 87.5%, rgba(59, 130, 246, 0.1)),
+    linear-gradient(150deg, rgba(59, 130, 246, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(59, 130, 246, 0.1) 87.5%, rgba(59, 130, 246, 0.1)),
+    linear-gradient(30deg, rgba(59, 130, 246, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(59, 130, 246, 0.1) 87.5%, rgba(59, 130, 246, 0.1)),
+    linear-gradient(150deg, rgba(59, 130, 246, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(59, 130, 246, 0.1) 87.5%, rgba(59, 130, 246, 0.1));
+  background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px;
+}
+
+/* Device mockups */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.laptop-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.laptop-screen {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: #1e293b;
+  border-radius: 12px 12px 0 0;
+  border: 8px solid #334155;
+  border-bottom: 0;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transform: rotateY(-5deg) rotateX(2deg);
+}
+
+.laptop-base {
+  width: 110%;
+  height: 12px;
+  background: linear-gradient(to bottom, #475569, #334155);
+  border-radius: 0 0 8px 8px;
+  margin: 0 -5%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-container {
+  width: 180px;
+  position: relative;
+}
+
+.mobile-screen {
+  width: 100%;
+  aspect-ratio: 9/19;
+  background: #1e293b;
+  border-radius: 32px;
+  border: 10px solid #334155;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  position: relative;
+}
+
+.mobile-screen::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 5px;
+  background: #475569;
+  border-radius: 10px;
+  z-index: 10;
 }

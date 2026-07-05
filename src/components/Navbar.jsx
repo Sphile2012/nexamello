@@ -52,16 +52,16 @@ export default function Navbar() {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="flex items-center gap-2.5 group"
           >
-            <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-all duration-300 group-hover:scale-105">
-              <Globe className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />
-              <div className="absolute inset-0 rounded-xl bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-all duration-300 group-hover:scale-105 border border-cyan-400/30">
+              <span className="text-white font-bold text-xs">QPC</span>
+              <div className="absolute inset-0 rounded-xl bg-cyan-400/10 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
             <div className="text-left">
-              <span className="font-playfair font-bold text-[15px] sm:text-[17px] text-foreground tracking-tight leading-none block">
-                Nexa Web
+              <span className="font-sans font-bold text-[15px] sm:text-[17px] text-foreground tracking-tight leading-none block">
+                QPC
               </span>
-              <span className="text-[9px] sm:text-[10px] font-dm text-primary/90 leading-none block tracking-wide">
-                Solutions
+              <span className="text-[9px] sm:text-[10px] font-sans text-cyan-400 leading-none block tracking-wide">
+                IT Solutions
               </span>
             </div>
           </motion.button>
