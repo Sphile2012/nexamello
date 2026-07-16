@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { Globe, Clock, CreditCard, MessageSquare, ShieldCheck, Zap } from "lucide-react";
 
 const features = [
-  { icon: Globe, title: "Worldwide Delivery", desc: "South Africa, UK, USA, Australia, Canada and beyond." },
-  { icon: Clock, title: "1–3 Day Turnaround", desc: "Fast delivery guaranteed. Most sites live within 3 days." },
-  { icon: CreditCard, title: "Flexible Payments", desc: "PayFast, EFT, PayPal & Stripe. International clients welcome." },
-  { icon: MessageSquare, title: "Remote Friendly", desc: "WhatsApp, email or video call — no in-person needed." },
-  { icon: ShieldCheck, title: "SSL & Security", desc: "Every website includes SSL and security hardening." },
-  { icon: Zap, title: "No Tech Skills Needed", desc: "We handle everything. You just approve and go live." },
+  { icon: Globe, title: "Proven Global Track Record", desc: "50+ websites launched across South Africa, UK, USA, Australia & beyond." },
+  { icon: Clock, title: "Guaranteed On-Time Delivery", desc: "100% on-time record. Your deadline matters — we never miss it." },
+  { icon: CreditCard, title: "Transparent Pricing", desc: "No hidden fees, no surprises. What you see is what you pay." },
+  { icon: MessageSquare, title: "Human Support (No Bots)", desc: "Real people respond in hours via WhatsApp, email or video call." },
+  { icon: ShieldCheck, title: "Enterprise-Grade Security", desc: "SSL certificates, GDPR compliance & security audits on every site." },
+  { icon: Zap, title: "Modern Tech Stack", desc: "React, Tailwind CSS & optimized hosting — built for speed & scale." },
 ];
 
 export default function GlobalBanner() {
@@ -24,11 +24,14 @@ export default function GlobalBanner() {
           className="text-center mb-8 sm:mb-10"
         >
           <h2 className="font-playfair font-bold text-2xl sm:text-3xl lg:text-4xl text-foreground">
-            Why Businesses Worldwide Choose{" "}
+            Why Smart Businesses Choose{" "}
             <span className="text-primary">
               Nexa Web Solutions
             </span>
           </h2>
+          <p className="mt-3 max-w-2xl mx-auto text-sm sm:text-base text-muted-foreground font-dm">
+            It's not just about price — it's about <strong className="text-foreground">quality, reliability, and results.</strong>
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border overflow-hidden rounded">

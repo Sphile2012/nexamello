@@ -2,11 +2,14 @@ import { motion } from "framer-motion";
 import { MessageSquare } from "lucide-react";
 
 export default function StickyWhatsApp() {
+  const handleWhatsApp = () => {
+    const message = encodeURIComponent("Hi Nexa Web Solutions! I'd like to discuss getting a website that converts visitors into clients. 🚀");
+    window.open(`https://wa.me/27823562239?text=${message}`, '_blank');
+  };
+
   return (
-    <motion.a
-      href="https://wa.me/27823562239?text=Hi%20Nexa%20Web%20Solutions!%20I%27d%20like%20a%20free%20consult%20%E2%80%94%204-page%20(R500)%20or%20full%20site%20quote.%20%F0%9F%91%8D"
-      target="_blank"
-      rel="noopener noreferrer"
+    <motion.button
+      onClick={handleWhatsApp}
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 2, duration: 0.4, type: "spring" }}
@@ -20,6 +23,6 @@ export default function StickyWhatsApp() {
       {/* Pulse ring */}
       <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-[#25D366] rounded-full animate-ping opacity-75" />
       <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-white rounded-full" />
-    </motion.a>
+    </motion.button>
   );
 }
