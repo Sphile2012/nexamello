@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=UnifrakturMaguntia&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -72,8 +72,45 @@
     font-family: 'DM Sans', sans-serif;
   }
 
+  .font-gothic {
+    font-family: 'UnifrakturMaguntia', cursive;
+  }
+
   .text-gradient {
     @apply bg-gradient-to-r from-primary to-primary-foreground bg-clip-text text-transparent;
+  }
+
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #f4e4c1 0%, #e5c287 25%, #d4af37 50%, #e5c287 75%, #f4e4c1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+  }
+
+  .ornate-border {
+    border: 3px solid;
+    border-image: linear-gradient(135deg, #d4af37 0%, #f4e4c1 50%, #d4af37 100%) 1;
+    position: relative;
+  }
+
+  .ornate-border::before,
+  .ornate-border::after {
+    content: '✦';
+    position: absolute;
+    font-size: 1.5rem;
+    color: #d4af37;
+  }
+
+  .ornate-border::before {
+    top: -0.75rem;
+    left: -0.75rem;
+  }
+
+  .ornate-border::after {
+    bottom: -0.75rem;
+    right: -0.75rem;
   }
 
   .glow {
