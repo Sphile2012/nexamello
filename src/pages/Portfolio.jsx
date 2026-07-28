@@ -15,6 +15,22 @@ export default function Portfolio() {
       tech: ["React", "Node.js", "MongoDB", "Stripe"]
     },
     {
+      title: "Bloom Skills & Beauty",
+      category: "Salon & Training",
+      description: "Professional nail salon website with booking system, service showcase, and beginner nail course enrollment.",
+      image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&q=80",
+      link: "https://bloomskillsandbeauty.com",
+      tech: ["React", "Booking System", "Payment Gateway", "CMS"]
+    },
+    {
+      title: "Drive Agency",
+      category: "Car Finance Matchmaking",
+      description: "South Africa's car matchmaking service connecting buyers with dealerships and finance options.",
+      image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80",
+      link: "https://luyandatest.netlify.app",
+      tech: ["React", "Tailwind CSS", "Forms", "Lead Generation"]
+    },
+    {
       title: "Personal Portfolio",
       category: "Portfolio Website",
       description: "Modern portfolio showcasing web development projects with smooth animations and responsive design.",
