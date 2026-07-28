@@ -22,17 +22,17 @@ const starterFeatures = [
 
 const starterPlans = [
   {
-    pages: "4 Page Website",
-    price: "R500",
-    hosting: "R250/month",
-    desc: "Services, about, contact & more — look legit fast",
+    pages: "Professional Website",
+    price: "R2,500",
+    hosting: "Hosting Included",
+    desc: "Complete presence — built to win trust & leads",
     variant: "green",
   },
   {
-    pages: "Full Website",
-    price: "R2,500",
-    hosting: "R250/month",
-    desc: "Complete presence — built to win trust & leads",
+    pages: "E-Commerce Website",
+    price: "From R5,000",
+    hosting: "Hosting Included",
+    desc: "Full online store with payment gateway",
     variant: "red",
   },
 ];
@@ -46,27 +46,10 @@ const perfectFor = [
 
 const ownPlans = [
   {
-    name: "Essential",
-    price: "R500",
-    label: "4 pages · once-off",
-    monthly: "+ R250/mo hosting",
-    highlighted: false,
-    features: [
-      "4-page professional website",
-      "5 GB SSD Storage",
-      "SSL Security Certificate",
-      "Unlimited* Traffic",
-      "50 Mailboxes",
-      "WhatsApp Integration",
-      "Mobile Responsive",
-      "cPanel Access",
-    ],
-  },
-  {
-    name: "Complete",
+    name: "Professional",
     price: "R2,500",
     label: "Full website · once-off",
-    monthly: "+ R250/mo hosting",
+    monthly: "Hosting Included",
     highlighted: true,
     features: [
       "Full multi-section website",
@@ -80,20 +63,37 @@ const ownPlans = [
     ],
   },
   {
-    name: "Scale",
+    name: "E-Commerce",
     price: "From R5,000",
-    label: "Custom / shop-ready",
-    monthly: "+ R250/mo hosting",
+    label: "Online store · once-off",
+    monthly: "Hosting Included",
     highlighted: false,
     features: [
-      "Custom scope & extra pages",
-      "35 GB SSD Storage",
+      "Full online store setup",
+      "Product management system",
+      "Payment gateway integration",
       "SSL Security Certificate",
       "Unlimited* Traffic",
-      "300 Mailboxes",
-      "Advanced SEO + Speed Optimization",
-      "Payment / bookings integration",
-      "Analytics dashboard",
+      "Order management",
+      "Inventory tracking",
+      "Advanced SEO + Analytics",
+    ],
+  },
+  {
+    name: "Enterprise",
+    price: "Custom Quote",
+    label: "Large-scale projects",
+    monthly: "Hosting Included",
+    highlighted: false,
+    features: [
+      "Custom scope & features",
+      "Unlimited storage",
+      "SSL Security Certificate",
+      "Unlimited* Traffic",
+      "Priority support",
+      "Advanced integrations",
+      "Custom API development",
+      "Dedicated account manager",
     ],
   },
 ];
@@ -124,7 +124,7 @@ export default function HostingSection() {
             </span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-muted-foreground font-inter text-base sm:text-lg">
-            Look professional, get found on Google, and turn WhatsApp chats into customers — from <strong className="text-foreground">R500</strong> once-off plus hosting. Serving clients <strong className="text-foreground">everywhere</strong>.
+            Look professional, get found on Google, and turn WhatsApp chats into customers — from <strong className="text-foreground">R2,500</strong> once-off with hosting included. Serving clients <strong className="text-foreground">everywhere</strong>.
           </p>
         </motion.div>
 
@@ -178,13 +178,13 @@ export default function HostingSection() {
                   <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-sky-600/90 to-blue-600/90 border border-white/20">
                     <Server className="w-4 h-4 text-cyan-200 flex-shrink-0" />
                     <span className="text-xs sm:text-sm font-inter text-white">
-                      Hosting package: <span className="font-bold text-cyan-200">R250/month</span> — keeps your site fast & online
+                      <span className="font-bold text-cyan-200">Hosting Included</span> — keeps your site fast & online
                     </span>
                   </div>
                   <p className="mt-3 text-xs sm:text-sm font-inter text-blue-200/70 leading-relaxed">
                     No DIY stress — we design, connect WhatsApp, and help you show up on Google. Tell us your business name and we&apos;ll guide the rest.
                     <br />
-                    <span className="text-blue-300/60 text-xs mt-1 block">Domain excluded. Optional R250/month maintenance plan available.</span>
+                    <span className="text-blue-300/60 text-xs mt-1 block">Domain excluded. Optional maintenance plan available.</span>
                   </p>
                 </div>
 
@@ -212,7 +212,7 @@ export default function HostingSection() {
                   onClick={() => scrollTo("#contact")}
                   className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-inter font-bold text-sm sm:text-base transition-all duration-300 hover:scale-[1.02] shadow-lg shadow-primary/30"
                 >
-                  Free WhatsApp consult — from R500 · 4 pages
+                  Free WhatsApp consult — from R2,500
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -245,9 +245,9 @@ export default function HostingSection() {
                   </p>
                   <div className="grid grid-cols-2 gap-2 sm:gap-3">
                     {[
-                      { value: "R500",  label: "Once-off · 4-page site",  highlight: true },
-                      { value: "R2,500", label: "Once-off · full website", highlight: false },
-                      { value: "R250",  label: "Per month · hosting", highlight: false },
+                      { value: "R2,500", label: "Professional Website", highlight: true },
+                      { value: "R5,000+", label: "E-Commerce Store", highlight: false },
+                      { value: "Included",  label: "Hosting Package", highlight: false },
                       { value: "1–3",   label: "Days · typical delivery",   highlight: false },
                     ].map((s) => (
                       <div
@@ -311,7 +311,7 @@ export default function HostingSection() {
           </p>
         </motion.div>
 
-        {/* Monthly fee badge */}
+        {/* Hosting included badge */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -322,7 +322,7 @@ export default function HostingSection() {
           <div className="inline-flex items-center gap-3 px-5 sm:px-6 py-3 rounded-full bg-primary/10 border border-primary/25">
             <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             <span className="font-inter font-semibold text-foreground text-sm sm:text-base">
-              Monthly hosting fee: <span className="text-primary font-bold">R250/month</span>
+              <span className="text-primary font-bold">Hosting Included</span> in all packages
             </span>
           </div>
         </motion.div>
@@ -399,9 +399,9 @@ export default function HostingSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center mt-8 text-xs sm:text-sm font-inter text-muted-foreground italic max-w-2xl mx-auto"
         >
-          <strong className="text-foreground not-italic">4-page starter (R500):</strong> paid in full when you book.
+          <strong className="text-foreground not-italic">Professional websites (R2,500):</strong> R1,500 non-refundable booking deposit, balance on completion before go-live.
           {" "}
-          <strong className="text-foreground not-italic">Full website &amp; custom builds:</strong> R1,500 non-refundable booking deposit, balance on completion before go-live.
+          <strong className="text-foreground not-italic">E-Commerce & custom builds:</strong> R1,500 deposit, balance per quote on completion.
         </motion.p>
       </div>
     </section>

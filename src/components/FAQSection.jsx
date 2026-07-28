@@ -3,13 +3,13 @@ import { useState } from "react";
 import { ChevronDown, HelpCircle, MessageSquare } from "lucide-react";
 
 const faqs = [
-  { q: "How much does a website cost?", a: "Our 4-page starter is R500 once-off; a full website is R2,500 once-off — plus R250/month hosting. Larger or shop-ready sites are quoted from R5,000. WhatsApp us for a clear recommendation." },
+  { q: "How much does a website cost?", a: "Professional websites start from R2,500 once-off with hosting included. E-commerce stores start from R5,000. WhatsApp us for a clear recommendation based on your needs." },
   { q: "How long does it take to build my website?", a: "Most websites are delivered within 1–3 business days after we receive your content and deposit. Complex projects may take slightly longer — we'll give you a clear timeline upfront." },
   { q: "Do you work with clients outside South Africa?", a: "Yes! We work with clients worldwide. Everything is done remotely via WhatsApp, email, or video call. We accept international payments and deliver your website online." },
   { q: "What do I need to provide to get started?", a: "Just your business name, logo (if you have one), the text/content you want on the site, and any images. Don't have these? No problem — we can help you with content and source images." },
-  { q: "What is the R1,500 booking deposit for?", a: "For full website and custom builds, the R1,500 non-refundable deposit secures your slot and kicks off design. The R500 four-page package is paid in full upfront instead. Balance on larger projects is due when you're happy, before we go live." },
+  { q: "What is the R1,500 booking deposit for?", a: "The R1,500 non-refundable deposit secures your slot and kicks off design. Balance is due when you're happy with the website, before we go live." },
   { q: "Will my website work on mobile phones?", a: "Absolutely. Every website we build is fully responsive and mobile-friendly. Over 70% of web traffic comes from mobile devices, so this is a priority for us." },
-  { q: "Can I update my website myself after it's built?", a: "Yes. We can build on WordPress or provide a simple CMS so you can update content yourself. Alternatively, our R250/month maintenance plan covers all updates for you." },
+  { q: "Can I update my website myself after it's built?", a: "Yes. We can build on WordPress or provide a simple CMS so you can update content yourself. Alternatively, our optional maintenance plan covers all updates for you." },
   { q: "What payment methods do you accept?", a: "We accept EFT/bank transfer, PayFast, and for international clients we can arrange payment via PayPal or Stripe. Contact us to discuss." },
 ];
 

@@ -46,27 +46,27 @@ export default function Services() {
 
   const packages = [
     {
-      name: "Starter",
-      price: "R500",
-      period: "once-off",
-      description: "Perfect for personal portfolios and small businesses",
-      features: ["4 Pages", "Mobile Responsive", "Contact Form", "Basic SEO", "Free SSL"],
-      popular: false
-    },
-    {
       name: "Professional",
       price: "R2,500",
       period: "once-off",
-      description: "Ideal for growing businesses and organizations",
-      features: ["10+ Pages", "Custom Design", "CMS Integration", "Advanced SEO", "E-Commerce Ready", "Analytics"],
+      description: "Perfect for small businesses and growing companies",
+      features: ["Up to 10 Pages", "Custom Design", "Mobile Responsive", "Contact Form", "Basic SEO", "Free SSL", "1 Month Support"],
       popular: true
+    },
+    {
+      name: "E-Commerce",
+      price: "From R5,000",
+      period: "once-off",
+      description: "Complete online store with full functionality",
+      features: ["Unlimited Products", "Shopping Cart", "Payment Gateway", "Order Management", "Inventory System", "Advanced SEO", "3 Months Support"],
+      popular: false
     },
     {
       name: "Enterprise",
       price: "Custom",
       period: "quote",
-      description: "Full-scale solutions for large businesses",
-      features: ["Unlimited Pages", "Custom Features", "API Integration", "Dedicated Support", "Performance Optimization", "Ongoing Maintenance"],
+      description: "Full-scale custom solutions for large businesses",
+      features: ["Custom Features", "API Integration", "Advanced Analytics", "Multi-language", "Dedicated Support", "Performance Optimization", "Ongoing Maintenance"],
       popular: false
     }
   ];

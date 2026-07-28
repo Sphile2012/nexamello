@@ -36,9 +36,9 @@ export default function ProcessSection() {
   ];
 
   const examples = [
-    { plan: "4-Page Starter", total: "R500", deposit: "R500 (full)", balance: "—" },
-    { plan: "Full Website", total: "R2,500", deposit: "R1,500", balance: "R1,000" },
-    { plan: "Scale / Custom", total: "From R5,000", deposit: "R1,500", balance: "Per quote" },
+    { plan: "Professional Website", total: "R2,500", deposit: "R1,500", balance: "R1,000" },
+    { plan: "E-Commerce Store", total: "From R5,000", deposit: "R1,500", balance: "Per quote" },
+    { plan: "Enterprise / Custom", total: "Custom Quote", deposit: "R1,500", balance: "Per quote" },
   ];
 
   return (
@@ -165,8 +165,8 @@ export default function ProcessSection() {
           </div>
 
           <p className="text-xs sm:text-sm font-inter text-muted-foreground text-center mt-6 sm:mt-8 max-w-2xl mx-auto">
-            The <span className="text-primary font-semibold">R1,500 booking fee</span> (non-refundable) applies to full website and larger builds.
-            The <span className="text-primary font-semibold">R500 four-page starter</span> is paid in full when you book. Remaining balances are due on completion before go-live.
+            The <span className="text-primary font-semibold">R1,500 booking fee</span> (non-refundable) applies to all projects and secures your slot.
+            Remaining balances are due on completion before go-live. All packages include hosting.
           </p>
         </motion.div>
       </div>
