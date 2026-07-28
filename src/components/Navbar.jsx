@@ -38,7 +38,7 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-      ? "bg-background/95 backdrop-blur-xl border-b border-border shadow-lg"
+      ? "bg-black/80 backdrop-blur-xl border-b border-white/10"
       : "bg-transparent"
       }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,7 +57,7 @@ export default function Navbar() {
               <div className="absolute inset-0 rounded-xl bg-cyan-400/10 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
             <div className="text-left">
-              <span className="font-sans font-bold text-[15px] sm:text-[17px] text-foreground tracking-tight leading-none block">
+              <span className="font-sans font-bold text-[15px] sm:text-[17px] text-white tracking-tight leading-none block">
                 Nexa Web
               </span>
               <span className="text-[9px] sm:text-[10px] font-sans text-cyan-400 leading-none block tracking-wide">
@@ -79,8 +79,8 @@ export default function Navbar() {
                   transition={{ delay: i * 0.05, duration: 0.3 }}
                   onClick={() => scrollTo(link.href)}
                   className={`relative px-3.5 py-2 text-sm font-dm font-medium rounded transition-all duration-200 ${isActive
-                    ? "text-primary bg-primary/10"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                    ? "text-white bg-white/10"
+                    : "text-white/70 hover:text-white hover:bg-white/5"
                     }`}
                 >
                   {link.label}
