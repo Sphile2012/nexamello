@@ -2,18 +2,22 @@ import { Globe, Mail, Phone, MessageSquare, ArrowRight } from "lucide-react";
 
 export default function Footer() {
   const scrollTo = (href) => {
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (href.startsWith('#')) {
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    } else if (href.startsWith('/#')) {
+      window.location.href = href;
+    } else {
+      window.location.href = href;
+    }
   };
 
   const links = [
-    { label: "Services", href: "#services" },
-    { label: "Packages", href: "#hosting" },
-    { label: "Process", href: "#workflow" },
-    { label: "Add-Ons", href: "#addons" },
-    { label: "Why Us", href: "#value" },
-    { label: "FAQ", href: "#faq" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: "Portfolio", href: "/portfolio" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/#contact" },
   ];
 
   return (

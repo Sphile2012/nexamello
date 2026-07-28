@@ -21,19 +21,23 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { label: "Services", href: "#services" },
-    { label: "Packages", href: "#hosting" },
-    { label: "Process", href: "#workflow" },
-    { label: "Add-Ons", href: "#addons" },
-    { label: "Why Us", href: "#value" },
-    { label: "FAQ", href: "#faq" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: "Portfolio", href: "/portfolio" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/#contact" },
   ];
 
   const scrollTo = (href) => {
     setIsOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (href.startsWith('#')) {
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    } else if (href.startsWith('/#')) {
+      window.location.href = href;
+    } else {
+      window.location.href = href;
+    }
   };
 
   return (
@@ -49,7 +53,7 @@ export default function Navbar() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            onClick={() => window.location.href = '/'}
             className="flex items-center gap-2.5 group"
           >
             <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-all duration-300 group-hover:scale-105 border border-cyan-400/30">
