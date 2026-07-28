@@ -253,11 +253,27 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
+          {/* Sliding Company Name */}
+          <motion.div 
+            className="mb-12 overflow-hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 1 }}
+          >
+            <motion.div
+              animate={{ x: ['-100%', '0%'] }}
+              transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
+              className="text-sm sm:text-base text-white/30 font-light tracking-[0.3em] whitespace-nowrap"
+            >
+              NEXA TECH SOLUTIONS
+            </motion.div>
+          </motion.div>
+
           {/* Minimal Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
             className="inline-block mb-8"
           >
             <div className="px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">

@@ -17,9 +17,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative border-t border-border pt-12 sm:pt-16 pb-8 overflow-hidden bg-secondary">
+    <footer className="relative border-t border-white/10 pt-12 sm:pt-16 pb-8 overflow-hidden bg-black">
       {/* Background glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-white/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 mb-10 sm:mb-12 text-center sm:text-left">
@@ -30,12 +30,12 @@ export default function Footer() {
               <div className="w-9 h-9 rounded bg-primary flex items-center justify-center shadow-lg shadow-primary/30">
                 <Globe className="w-5 h-5 text-primary-foreground" />
               </div>
-              <span className="font-playfair font-bold text-lg text-foreground">
+              <span className="font-playfair font-bold text-lg text-white">
                 Nexa Web Solutions
               </span>
             </div>
-            <p className="text-sm font-dm text-muted-foreground leading-[1.8] font-light mb-5 max-w-xs">
-              Affordable web design &amp; hosting for businesses in <strong className="text-foreground font-medium">South Africa and worldwide</strong>. <strong className="text-primary font-medium">4-page sites from R500</strong> once-off; full builds &amp; hosting from <strong className="text-foreground font-medium">R250/mo</strong>. Remote-friendly — we work with anyone, anywhere.
+            <p className="text-sm font-dm text-white/50 leading-[1.8] font-light mb-5 max-w-xs">
+              Affordable web design &amp; hosting for businesses in <strong className="text-white font-medium">South Africa and worldwide</strong>.
             </p>
             <div className="flex gap-3">
               <a
@@ -66,13 +66,13 @@ export default function Footer() {
 
           {/* Navigation */}
           <div className="flex flex-col items-center sm:items-start">
-            <h4 className="font-playfair font-semibold text-foreground mb-4">Quick Links</h4>
+            <h4 className="font-playfair font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2 sm:space-y-2.5">
               {links.map((link) => (
                 <li key={link.label}>
                   <button
                     onClick={() => scrollTo(link.href)}
-                    className="text-sm font-dm text-muted-foreground hover:text-primary transition-all duration-200 flex items-center gap-1.5 group font-light"
+                    className="text-sm font-dm text-white/50 hover:text-white transition-all duration-200 flex items-center gap-1.5 group font-light"
                   >
                     <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" />
                     {link.label}
@@ -84,9 +84,9 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="flex flex-col items-center sm:items-start">
-            <h4 className="font-playfair font-semibold text-foreground mb-4">Get In Touch</h4>
+            <h4 className="font-playfair font-semibold text-white mb-4">Get In Touch</h4>
             <div className="space-y-3">
-              <a href="tel:0823562239" className="flex items-center gap-3 text-sm font-dm text-muted-foreground hover:text-primary transition-all duration-200 group font-light">
+              <a href="tel:0823562239" className="flex items-center gap-3 text-sm font-dm text-white/50 hover:text-white transition-all duration-200 group font-light">
                 <div className="w-8 h-8 rounded bg-background flex items-center justify-center group-hover:bg-primary/10 transition-colors">
                   <Phone className="w-3.5 h-3.5" />
                 </div>
@@ -112,12 +112,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-6 sm:pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-          <p className="text-xs font-dm text-muted-foreground/60 font-light">
-            © {new Date().getFullYear()} Nexa Web Solutions. All rights reserved. | Durban, South Africa 🌍 Worldwide
+        <div className="pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <p className="text-xs font-dm text-white/40 font-light">
+            © {new Date().getFullYear()} Nexa Web Solutions. All rights reserved.
           </p>
-          <p className="text-xs font-dm text-muted-foreground/40 font-light">
-            Web Design · Website Development · Global Clients Welcome
+          <p className="text-xs font-dm text-white/30 font-light">
+            Made with precision · Designed for the world
           </p>
         </div>
       </div>
