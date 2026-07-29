@@ -4,58 +4,58 @@ import { Check, Star, ArrowRight } from "lucide-react";
 export default function AgencyPricing() {
   const packages = [
     {
-      name: "Website Package",
+      name: "Professional Website",
       price: "R2,500",
       period: "once-off",
       description: "Professional website delivered in 3-5 days to establish your online presence",
       features: [
         "Professional website (3-5 days delivery)",
+        "Up to 10 pages",
         "Mobile-responsive design",
         "SEO-friendly structure",
         "Contact form & WhatsApp integration",
-        "Hosting included (first year)",
+        "Hosting included",
         "SSL security certificate",
-        "Google Business setup",
         "30-day support included"
       ],
-      popular: false,
+      popular: true,
       cta: "Get Started"
     },
     {
-      name: "Growth Package",
-      price: "R7,500",
-      period: "/month",
-      description: "Complete digital marketing to attract customers and grow your business",
+      name: "E-Commerce Website",
+      price: "From R5,000",
+      period: "once-off",
+      description: "Complete online store with payment gateway and product management",
       features: [
-        "Website included (if needed)",
-        "Social media management (3 platforms)",
-        "8-12 posts per month",
-        "Google Ads or Meta Ads management",
-        "SEO optimization",
-        "Graphic design (flyers, posts, ads)",
-        "Monthly strategy & analytics reports",
-        "Priority WhatsApp support"
-      ],
-      popular: true,
-      cta: "Most Popular"
-    },
-    {
-      name: "Full-Service Package",
-      price: "R15,000",
-      period: "/month",
-      description: "Everything your business needs to dominate your market and scale fast",
-      features: [
-        "Complete brand identity & website",
-        "Multi-channel marketing campaigns",
-        "Unlimited content & graphic design",
-        "Video production & motion graphics",
-        "Google Ads + Meta Ads + SEO",
-        "Email marketing campaigns",
-        "24/7 dedicated account manager",
-        "Weekly strategy calls & optimization"
+        "Full e-commerce setup",
+        "Product management system",
+        "Shopping cart & checkout",
+        "Payment gateway integration",
+        "Order management",
+        "Inventory tracking",
+        "Mobile-responsive design",
+        "SEO optimization & analytics"
       ],
       popular: false,
-      cta: "Scale Fast"
+      cta: "Start Selling"
+    },
+    {
+      name: "Custom Solution",
+      price: "Custom Quote",
+      period: "",
+      description: "Tailored solutions for unique business requirements and large-scale projects",
+      features: [
+        "Custom features & functionality",
+        "Advanced integrations",
+        "Multi-language support",
+        "Custom design & branding",
+        "API development",
+        "Advanced analytics",
+        "Priority support",
+        "Scalable architecture"
+      ],
+      popular: false,
+      cta: "Contact Us"
     }
   ];
 
@@ -76,10 +76,10 @@ export default function AgencyPricing() {
             </div>
           </div>
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-light text-white mb-6">
-            Choose Your<span className="font-normal"> Package</span>
+            Simple<span className="font-normal"> Pricing</span>
           </h2>
           <p className="text-xl text-white/50 font-light max-w-2xl mx-auto">
-            Flexible pricing plans designed to scale with your business
+            Professional websites from R2,500 • E-commerce from R5,000
           </p>
         </motion.div>
 
@@ -165,7 +165,7 @@ export default function AgencyPricing() {
           className="mt-16 text-center"
         >
           <p className="text-white/50 font-light mb-6">
-            Serving startups, SMEs, restaurants, salons, real estate, healthcare, retail, and professional services across South Africa.
+            All packages include hosting, SSL security, mobile-responsive design, and 30-day support.
           </p>
           <button
             onClick={() => {
@@ -174,7 +174,7 @@ export default function AgencyPricing() {
             }}
             className="px-10 py-5 bg-white/5 border border-white/20 text-white rounded-full font-medium hover:bg-white/10 backdrop-blur-sm transition-all duration-300"
           >
-            Request Custom Quote
+            Need Something Custom?
           </button>
         </motion.div>
       </div>

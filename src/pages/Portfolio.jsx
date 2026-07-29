@@ -8,24 +8,24 @@ export default function Portfolio() {
   const projects = [
     {
       title: "Bright Future Holders",
-      category: "Training Platform",
-      description: "MICT SETA-accredited training platform with course management, e-commerce, and student authentication.",
+      category: "Training Platform & E-Commerce",
+      description: "MICT SETA-accredited training platform with course management, e-commerce, student authentication, and payment integration.",
       image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
       link: "https://brightfutureholders.co.za",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"]
+      tech: ["React", "Node.js", "E-Commerce", "Authentication", "Payment Gateway"]
     },
     {
       title: "Bloom Skills & Beauty",
-      category: "Salon & Training",
-      description: "Professional nail salon website with booking system, service showcase, and beginner nail course enrollment.",
+      category: "Salon & Beauty Services",
+      description: "Professional nail salon website with booking system, service showcase, and beginner nail course enrollment in Durban.",
       image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&q=80",
       link: "https://bloomskillsandbeauty.com",
-      tech: ["React", "Booking System", "Payment Gateway", "CMS"]
+      tech: ["React", "Booking System", "Payment Integration", "CMS"]
     },
     {
       title: "Drive Agency",
       category: "Car Finance Matchmaking",
-      description: "South Africa's car matchmaking service connecting buyers with dealerships and finance options.",
+      description: "South Africa's premier car finance matchmaking service connecting buyers with dealerships and flexible finance options.",
       image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80",
       link: "https://luyandatest.netlify.app",
       tech: ["React", "Tailwind CSS", "Forms", "Lead Generation"]
@@ -33,42 +33,10 @@ export default function Portfolio() {
     {
       title: "Personal Portfolio",
       category: "Portfolio Website",
-      description: "Modern portfolio showcasing web development projects with smooth animations and responsive design.",
+      description: "Modern developer portfolio showcasing web development projects with smooth animations and responsive design.",
       image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
       link: "https://uphumehmjoli.netlify.app",
-      tech: ["React", "Tailwind CSS", "Framer Motion"]
-    },
-    {
-      title: "E-Commerce Platform",
-      category: "Online Store",
-      description: "Full-featured e-commerce solution with product management, cart, and secure checkout.",
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
-      link: "#",
-      tech: ["React", "Redux", "Stripe", "Firebase"]
-    },
-    {
-      title: "Restaurant Website",
-      category: "Business Website",
-      description: "Elegant restaurant website with online reservations, menu display, and contact forms.",
-      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
-      link: "#",
-      tech: ["HTML", "CSS", "JavaScript", "PHP"]
-    },
-    {
-      title: "Real Estate Platform",
-      category: "Property Listings",
-      description: "Property listing platform with advanced search, filters, and virtual tours.",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
-      link: "#",
-      tech: ["React", "Next.js", "PostgreSQL"]
-    },
-    {
-      title: "Corporate Website",
-      category: "Business Website",
-      description: "Professional corporate website with service pages, team profiles, and blog.",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
-      link: "#",
-      tech: ["WordPress", "PHP", "MySQL"]
+      tech: ["React", "Tailwind CSS", "Framer Motion", "Responsive Design"]
     }
   ];
 
@@ -88,10 +56,10 @@ export default function Portfolio() {
               <span className="text-sm text-white/70 font-light">Our Work</span>
             </div>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-white mb-6">
-              Selected<span className="font-normal"> Projects</span>
+              Our<span className="font-normal"> Portfolio</span>
             </h1>
             <p className="text-xl text-white/50 font-light max-w-2xl mx-auto">
-              Websites that make an impact
+              Real projects, real results—websites that work
             </p>
           </motion.div>
         </div>
@@ -100,7 +68,7 @@ export default function Portfolio() {
       {/* Projects Grid */}
       <section className="relative px-6 py-20">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {projects.map((project, index) => (
               <motion.div
                 key={index}
