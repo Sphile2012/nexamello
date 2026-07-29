@@ -37,15 +37,15 @@ export default function AgencyHero() {
 
           {/* Main Headline */}
           <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-white leading-[0.9] tracking-tight">
-            We Build Brands<br />
+            We Design Brands,<br />
             <span className="font-normal bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              That Get Noticed
+              Drive Growth
             </span>
           </h1>
 
           {/* Description */}
           <p className="text-xl sm:text-2xl text-white/50 font-light max-w-3xl mx-auto leading-relaxed">
-            Creative advertising, branding, web design, and digital marketing that help businesses grow and stand out in a crowded market.
+            We help businesses attract more customers, build memorable brands, and increase sales through creative advertising, modern websites, and data-driven digital marketing.
           </p>
 
           {/* CTA Buttons */}

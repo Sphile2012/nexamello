@@ -6,32 +6,32 @@ export default function WhyChooseUs() {
     {
       icon: Lightbulb,
       title: "Creative Strategy",
-      description: "We don't just follow trends—we create them. Every campaign is backed by strategic thinking and creative innovation."
+      description: "We're your growth partner—not just a design studio. Every project is backed by strategic thinking that drives real business results."
     },
     {
       icon: BarChart3,
-      title: "Data-Driven Campaigns",
-      description: "Numbers don't lie. We use analytics and insights to optimize every campaign for maximum performance and ROI."
+      title: "Data-Driven Results",
+      description: "We measure what matters: more customers, higher sales, better brand recognition, and increased online visibility for your business."
     },
     {
       icon: Zap,
-      title: "Fast Delivery",
-      description: "Speed matters in advertising. We deliver quality work quickly without compromising on excellence or attention to detail."
+      title: "Lightning Fast Delivery",
+      description: "Websites delivered in 3-5 days. Marketing campaigns launched quickly. We move at the speed your business needs to grow."
     },
     {
       icon: Users,
-      title: "Experienced Team",
-      description: "Our team brings years of expertise across branding, design, development, and digital marketing to every project."
+      title: "Full-Service Agency",
+      description: "From logos to websites to marketing campaigns—we handle everything so you can focus on running your business."
     },
     {
       icon: DollarSign,
       title: "Transparent Pricing",
-      description: "No hidden fees, no surprises. Clear pricing and honest communication from the first consultation to final delivery."
+      description: "Clear pricing from R2,500 for websites to custom packages for ongoing marketing. No hidden fees, no surprises."
     },
     {
       icon: HeadphonesIcon,
-      title: "Ongoing Support",
-      description: "We don't disappear after launch. Dedicated support and continuous optimization keep your campaigns performing at their best."
+      title: "Your Long-Term Partner",
+      description: "We don't disappear after launch. Ongoing support, optimization, and strategic guidance to keep your business growing."
     }
   ];
 
@@ -55,7 +55,7 @@ export default function WhyChooseUs() {
             Why Choose<span className="font-normal"> Our Agency</span>
           </h2>
           <p className="text-xl text-white/50 font-light max-w-2xl mx-auto">
-            We combine creativity with strategy to deliver results that matter
+            More than a design studio—we're your partner in business growth
           </p>
         </motion.div>
 

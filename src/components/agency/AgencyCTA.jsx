@@ -39,7 +39,7 @@ export default function AgencyCTA() {
 
           {/* Description */}
           <p className="text-xl sm:text-2xl text-white/50 font-light max-w-2xl mx-auto mb-12 leading-relaxed">
-            Let's create something extraordinary together. Book a free consultation and discover how we can transform your brand.
+            Your customers aren't buying a website—they're buying more customers, better brand recognition, higher sales, and professional credibility. Let's grow your business together.
           </p>
 
           {/* CTA Buttons */}

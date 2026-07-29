@@ -4,56 +4,58 @@ import { Check, Star, ArrowRight } from "lucide-react";
 export default function AgencyPricing() {
   const packages = [
     {
-      name: "Starter",
+      name: "Website Package",
       price: "R2,500",
-      period: "/month",
-      description: "Perfect for small businesses getting started with digital marketing",
+      period: "once-off",
+      description: "Professional website delivered in 3-5 days to establish your online presence",
       features: [
-        "Social media management (2 platforms)",
-        "4 posts per week",
-        "Basic graphic design",
-        "Monthly analytics report",
-        "Email support",
-        "Content calendar"
+        "Professional website (3-5 days delivery)",
+        "Mobile-responsive design",
+        "SEO-friendly structure",
+        "Contact form & WhatsApp integration",
+        "Hosting included (first year)",
+        "SSL security certificate",
+        "Google Business setup",
+        "30-day support included"
       ],
       popular: false,
       cta: "Get Started"
     },
     {
-      name: "Business",
+      name: "Growth Package",
       price: "R7,500",
       period: "/month",
-      description: "Comprehensive marketing for growing businesses",
+      description: "Complete digital marketing to attract customers and grow your business",
       features: [
-        "Social media management (4 platforms)",
-        "10 posts per week",
-        "Advanced graphic design",
-        "Google Ads management",
+        "Website included (if needed)",
+        "Social media management (3 platforms)",
+        "8-12 posts per month",
+        "Google Ads or Meta Ads management",
         "SEO optimization",
-        "Weekly analytics reports",
-        "Priority support",
-        "Landing page design"
+        "Graphic design (flyers, posts, ads)",
+        "Monthly strategy & analytics reports",
+        "Priority WhatsApp support"
       ],
       popular: true,
       cta: "Most Popular"
     },
     {
-      name: "Enterprise",
+      name: "Full-Service Package",
       price: "R15,000",
       period: "/month",
-      description: "Full-service agency experience for established brands",
+      description: "Everything your business needs to dominate your market and scale fast",
       features: [
-        "Complete brand management",
-        "Unlimited content creation",
-        "Multi-channel campaigns",
-        "Video production",
-        "Influencer partnerships",
-        "24/7 dedicated support",
-        "Custom strategy sessions",
-        "Advanced analytics & insights"
+        "Complete brand identity & website",
+        "Multi-channel marketing campaigns",
+        "Unlimited content & graphic design",
+        "Video production & motion graphics",
+        "Google Ads + Meta Ads + SEO",
+        "Email marketing campaigns",
+        "24/7 dedicated account manager",
+        "Weekly strategy calls & optimization"
       ],
       popular: false,
-      cta: "Contact Us"
+      cta: "Scale Fast"
     }
   ];
 
@@ -163,7 +165,7 @@ export default function AgencyPricing() {
           className="mt-16 text-center"
         >
           <p className="text-white/50 font-light mb-6">
-            Need a custom solution? We create tailored packages for unique requirements.
+            Serving startups, SMEs, restaurants, salons, real estate, healthcare, retail, and professional services across South Africa.
           </p>
           <button
             onClick={() => {

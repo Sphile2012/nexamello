@@ -7,28 +7,28 @@ export default function AgencyProcess() {
       number: "01",
       icon: Search,
       title: "Discovery",
-      description: "We dive deep into your brand, audience, goals, and competitive landscape to understand what makes you unique.",
+      description: "We learn about your business, target customers, goals, and competitive landscape to create a winning strategy.",
       color: "from-blue-500 to-cyan-500"
     },
     {
       number: "02",
       icon: Lightbulb,
       title: "Strategy",
-      description: "Based on insights, we craft a comprehensive strategy that aligns creative vision with measurable business objectives.",
+      description: "We develop a comprehensive plan that aligns creative vision with your business goals—more customers, higher sales, stronger brand.",
       color: "from-purple-500 to-pink-500"
     },
     {
       number: "03",
       icon: Palette,
       title: "Design & Development",
-      description: "Our creative team brings the strategy to life with stunning design, compelling copy, and flawless execution.",
+      description: "Our team creates stunning designs, high-performance websites (3-5 days), and compelling campaigns that convert.",
       color: "from-orange-500 to-red-500"
     },
     {
       number: "04",
       icon: Rocket,
       title: "Launch & Grow",
-      description: "We launch your campaign, monitor performance, and continuously optimize to maximize results and scale success.",
+      description: "We launch fast, track results, and continuously optimize to maximize ROI and drive sustained business growth.",
       color: "from-green-500 to-emerald-500"
     }
   ];
@@ -59,7 +59,7 @@ export default function AgencyProcess() {
             How We<span className="font-normal"> Work</span>
           </h2>
           <p className="text-xl text-white/50 font-light max-w-2xl mx-auto">
-            A proven four-step process that transforms ideas into successful campaigns
+            A proven process that transforms businesses through strategic creative and digital marketing
           </p>
         </motion.div>
 
@@ -116,16 +116,16 @@ export default function AgencyProcess() {
         >
           <div className="text-center">
             <h3 className="text-3xl font-light text-white mb-4">
-              Average Project Timeline
+              Website Delivery Time
             </h3>
             <p className="text-white/50 font-light mb-8">
-              From initial consultation to campaign launch
+              From briefing to live website—we move fast
             </p>
             <div className="flex items-center justify-center gap-4">
-              <div className="text-6xl font-light text-white">2-4</div>
+              <div className="text-6xl font-light text-white">3-5</div>
               <div className="text-left">
-                <div className="text-2xl font-normal text-white">Weeks</div>
-                <div className="text-sm text-white/40">Typical Duration</div>
+                <div className="text-2xl font-normal text-white">Days</div>
+                <div className="text-sm text-white/40">Average Delivery</div>
               </div>
             </div>
           </div>

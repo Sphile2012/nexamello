@@ -13,51 +13,51 @@ import {
 export default function AgencyServices() {
   const services = [
     {
-      icon: Palette,
-      title: "Branding & Identity",
-      description: "Complete brand development from logo design to brand guidelines and visual identity systems.",
+      icon: Globe,
+      title: "Website Design & Development",
+      description: "High-performance websites delivered in 3-5 days that convert visitors into customers and drive business growth.",
       color: "from-blue-500 to-cyan-500"
     },
     {
-      icon: Globe,
-      title: "Website Design & Development",
-      description: "Custom websites that convert visitors into customers with stunning design and flawless functionality.",
+      icon: Palette,
+      title: "Logo & Brand Identity",
+      description: "Complete brand identity packages including logo design, color palettes, typography, and brand guidelines.",
       color: "from-purple-500 to-pink-500"
     },
     {
       icon: Share2,
-      title: "Social Media Marketing",
-      description: "Strategic social media campaigns that build communities and drive engagement across all platforms.",
+      title: "Social Media Management",
+      description: "Full social media management across all platforms—content creation, scheduling, engagement, and growth strategies.",
       color: "from-green-500 to-emerald-500"
     },
     {
       icon: TrendingUp,
-      title: "Google Ads",
-      description: "Data-driven PPC campaigns that maximize ROI and put your brand in front of the right audience.",
+      title: "Digital Marketing Campaigns",
+      description: "Integrated campaigns across Google Ads, Meta Ads, and more that deliver measurable results and ROI.",
       color: "from-orange-500 to-red-500"
     },
     {
       icon: Search,
-      title: "SEO",
-      description: "Search engine optimization that gets your website ranking on page one and driving organic traffic.",
+      title: "SEO & Local Visibility",
+      description: "Get found on Google with expert SEO strategies that drive organic traffic and qualified leads to your business.",
       color: "from-indigo-500 to-purple-500"
     },
     {
       icon: Image,
       title: "Graphic Design",
-      description: "Eye-catching visuals for print, digital, and social media that communicate your message effectively.",
+      description: "Flyers, brochures, posters, business cards, and all marketing materials designed to make your brand stand out.",
       color: "from-pink-500 to-rose-500"
     },
     {
       icon: Video,
-      title: "Video Production",
-      description: "Professional video content from concept to final edit that tells your brand story compellingly.",
+      title: "Video & Motion Graphics",
+      description: "Professional video production and motion graphics that capture attention and tell your story visually.",
       color: "from-yellow-500 to-orange-500"
     },
     {
       icon: FileText,
-      title: "Content Creation",
-      description: "Strategic content that educates, entertains, and converts your audience into loyal customers.",
+      title: "Content & Copywriting",
+      description: "Compelling content and persuasive copy that converts—from website copy to email campaigns and blog posts.",
       color: "from-teal-500 to-cyan-500"
     }
   ];
@@ -82,7 +82,7 @@ export default function AgencyServices() {
             Our<span className="font-normal"> Services</span>
           </h2>
           <p className="text-xl text-white/50 font-light max-w-2xl mx-auto">
-            Full-service advertising and marketing solutions for modern brands
+            Full-service creative and digital advertising solutions that drive real business results
           </p>
         </motion.div>
 
