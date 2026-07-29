@@ -40,6 +40,24 @@ export default function AgencyPricing() {
       cta: "Start Selling"
     },
     {
+      name: "Monthly Maintenance",
+      price: "From R250",
+      period: "/month",
+      description: "Keep your website updated, secure, and running smoothly with ongoing support",
+      features: [
+        "Content updates & changes",
+        "Security monitoring",
+        "Regular backups",
+        "Plugin & software updates",
+        "Technical support",
+        "Performance optimization",
+        "Uptime monitoring",
+        "Priority response time"
+      ],
+      popular: false,
+      cta: "Keep It Running"
+    },
+    {
       name: "Custom Solution",
       price: "Custom Quote",
       period: "",
@@ -79,12 +97,12 @@ export default function AgencyPricing() {
             Simple<span className="font-normal"> Pricing</span>
           </h2>
           <p className="text-xl text-white/50 font-light max-w-2xl mx-auto">
-            Professional websites from R2,500 • E-commerce from R5,000
+            Websites from R2,500 • E-commerce from R5,000 • Maintenance from R250/month
           </p>
         </motion.div>
 
         {/* Pricing Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {packages.map((pkg, index) => (
             <motion.div
               key={index}
