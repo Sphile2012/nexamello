@@ -8,45 +8,45 @@ export default function Navbar() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState("");
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
-      const sections = ["services", "hosting", "workflow", "addons", "value", "faq", "contact"];
-      for (const id of sections.reverse()) {
-        const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 120) { setActive(id); break; }
-      }
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
   const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "Services", href: "/services" },
+    { label: "Home",      href: "/" },
+    { label: "Services",  href: "/services" },
+    { label: "About",     href: "/about" },
     { label: "Portfolio", href: "/portfolio" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
+    { label: "Contact",   href: "/contact" },
   ];
 
-  const scrollTo = (href) => {
+  const goTo = (href) => {
     setIsOpen(false);
-    if (href.startsWith('#')) {
-      const el = document.querySelector(href);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
-    } else {
-      navigate(href);
-      if (!href.includes("#")) window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+    navigate(href);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const bookNow = () => {
+    setIsOpen(false);
+    navigate("/contact#booking");
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-      ? "bg-black/80 backdrop-blur-xl border-b border-white/10"
-      : "bg-transparent"
-      }`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "bg-black/85 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/30"
+          : "bg-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-[72px]">
 
@@ -55,45 +55,44 @@ export default function Navbar() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            onClick={() => window.location.href = '/'}
-            className="flex items-center gap-2.5 group"
+            onClick={() => goTo("/")}
+            className="flex items-center gap-2.5 group flex-shrink-0"
           >
-            <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-all duration-300 group-hover:scale-105 border border-cyan-400/30">
-              <span className="text-white font-bold text-xs">NW</span>
-              <div className="absolute inset-0 rounded-xl bg-cyan-400/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/50 transition-all duration-300 group-hover:scale-105">
+              <span className="text-white font-bold text-xs tracking-tight">NW</span>
             </div>
             <div className="text-left">
               <span className="font-sans font-bold text-[15px] sm:text-[17px] text-white tracking-tight leading-none block">
                 Nexa Web
               </span>
-              <span className="text-[9px] sm:text-[10px] font-sans text-cyan-400 leading-none block tracking-wide">
+              <span className="text-[9px] sm:text-[10px] font-sans text-blue-400 leading-none block tracking-wide">
                 Tech Solutions
               </span>
             </div>
           </motion.button>
 
-          {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-0.5">
+          {/* Desktop nav links */}
+          <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link, i) => {
-              const id = link.href.replace(/^\/+|#.*$/g, "");
-              const isActive = location.pathname === link.href || (location.pathname === "/" && active === id);
+              const isActive = location.pathname === link.href;
               return (
                 <motion.button
                   key={link.label}
                   initial={{ opacity: 0, y: -8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.05, duration: 0.3 }}
-                  onClick={() => scrollTo(link.href)}
-                  className={`relative px-3.5 py-2 text-sm font-dm font-medium rounded transition-all duration-200 ${isActive
-                    ? "text-white bg-white/10"
-                    : "text-white/70 hover:text-white hover:bg-white/5"
-                    }`}
+                  onClick={() => goTo(link.href)}
+                  className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                    isActive
+                      ? "text-white bg-white/10"
+                      : "text-white/65 hover:text-white hover:bg-white/5"
+                  }`}
                 >
                   {link.label}
                   {isActive && (
                     <motion.span
                       layoutId="nav-indicator"
-                      className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-primary rounded-full"
+                      className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-blue-400 rounded-full"
                     />
                   )}
                 </motion.button>
@@ -106,34 +105,43 @@ export default function Navbar() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex items-center gap-2"
+            className="hidden md:flex items-center gap-2"
           >
             <a
               href="https://wa.me/27823562239"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:flex items-center gap-1.5 text-sm font-dm font-semibold text-[#25D366] border border-[#25D366]/25 rounded px-4 py-2 hover:bg-[#25D366]/10 hover:border-[#25D366]/50 transition-all duration-200"
+              className="flex items-center gap-1.5 text-sm font-semibold text-[#25D366] border border-[#25D366]/25 rounded-lg px-4 py-2 hover:bg-[#25D366]/10 hover:border-[#25D366]/50 transition-all duration-200"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
               WhatsApp
             </a>
             <button
-              onClick={() => scrollTo("/contact#booking")}
-              className="min-h-11 flex items-center justify-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-dm font-medium bg-primary text-primary-foreground rounded px-2.5 sm:px-5 py-2 hover:bg-primary/90 shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-200"
+              onClick={bookNow}
+              className="flex items-center gap-1.5 text-sm font-semibold bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg px-5 py-2.5 hover:from-blue-400 hover:to-purple-500 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-200"
             >
-              <CalendarDays className="w-3.5 h-3.5" />
+              <CalendarDays className="w-4 h-4" />
               Book Now
             </button>
           </motion.div>
 
-          {/* Mobile toggle */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded bg-secondary text-foreground hover:bg-secondary/80 transition-all duration-300"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+          {/* Mobile: Book Now + hamburger */}
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={bookNow}
+              className="flex items-center gap-1.5 text-xs font-semibold bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg px-3 py-2 shadow-lg shadow-blue-500/25 transition-all duration-200"
+            >
+              <CalendarDays className="w-3.5 h-3.5" />
+              Book Now
+            </button>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all duration-200"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -145,37 +153,39 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-background/98 backdrop-blur-xl border-b border-border overflow-hidden"
+            className="md:hidden bg-black/95 backdrop-blur-xl border-b border-white/10 overflow-hidden"
           >
             <div className="px-4 py-4 space-y-1">
               {navLinks.map((link, i) => {
-                const id = link.href.replace(/^\/+|#.*$/g, "");
-                const isActive = location.pathname === link.href || (location.pathname === "/" && active === id);
+                const isActive = location.pathname === link.href;
                 return (
                   <motion.button
                     key={link.label}
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.04 }}
-                    onClick={() => scrollTo(link.href)}
-                    className={`block w-full text-left px-4 min-h-[44px] flex items-center text-sm font-dm font-medium rounded transition-all duration-200 ${isActive
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                      }`}
+                    onClick={() => goTo(link.href)}
+                    className={`block w-full text-left px-4 min-h-[48px] flex items-center text-sm font-medium rounded-lg transition-all duration-200 ${
+                      isActive
+                        ? "text-white bg-white/10"
+                        : "text-white/65 hover:text-white hover:bg-white/5"
+                    }`}
                   >
                     {link.label}
                   </motion.button>
                 );
               })}
-              <div className="pt-3">
+
+              {/* Mobile WhatsApp */}
+              <div className="pt-3 border-t border-white/10">
                 <a
                   href="https://wa.me/27823562239"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 min-h-[44px] rounded bg-[#25D366]/10 border border-[#25D366]/25 text-[#25D366] font-dm font-semibold text-sm transition-all duration-300 hover:bg-[#25D366]/20"
+                  className="flex items-center justify-center gap-2 min-h-[48px] rounded-lg bg-[#25D366]/10 border border-[#25D366]/25 text-[#25D366] font-semibold text-sm transition-all duration-200 hover:bg-[#25D366]/20"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
-                  WhatsApp
+                  Chat on WhatsApp
                 </a>
               </div>
             </div>
