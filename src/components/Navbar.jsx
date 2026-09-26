@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Globe, Zap } from "lucide-react";
+import { Menu, X, CalendarDays } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("");
@@ -25,7 +28,7 @@ export default function Navbar() {
     { label: "Services", href: "/services" },
     { label: "Portfolio", href: "/portfolio" },
     { label: "About", href: "/about" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Contact", href: "/contact" },
   ];
 
   const scrollTo = (href) => {
@@ -33,10 +36,9 @@ export default function Navbar() {
     if (href.startsWith('#')) {
       const el = document.querySelector(href);
       if (el) el.scrollIntoView({ behavior: "smooth" });
-    } else if (href.startsWith('/#')) {
-      window.location.href = href;
     } else {
-      window.location.href = href;
+      navigate(href);
+      if (!href.includes("#")) window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
@@ -73,8 +75,8 @@ export default function Navbar() {
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-0.5">
             {navLinks.map((link, i) => {
-              const id = link.href.replace("#", "");
-              const isActive = active === id;
+              const id = link.href.replace(/^\/+|#.*$/g, "");
+              const isActive = location.pathname === link.href || (location.pathname === "/" && active === id);
               return (
                 <motion.button
                   key={link.label}
@@ -104,23 +106,23 @@ export default function Navbar() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="hidden md:flex items-center gap-2.5"
+            className="flex items-center gap-2"
           >
             <a
               href="https://wa.me/27823562239"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-sm font-dm font-semibold text-[#25D366] border border-[#25D366]/25 rounded px-4 py-2 hover:bg-[#25D366]/10 hover:border-[#25D366]/50 transition-all duration-200"
+              className="hidden md:flex items-center gap-1.5 text-sm font-dm font-semibold text-[#25D366] border border-[#25D366]/25 rounded px-4 py-2 hover:bg-[#25D366]/10 hover:border-[#25D366]/50 transition-all duration-200"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
               WhatsApp
             </a>
             <button
-              onClick={() => scrollTo("#contact")}
-              className="flex items-center gap-1.5 text-sm font-dm font-medium bg-primary text-primary-foreground rounded px-5 py-2 hover:bg-primary/90 shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-200"
+              onClick={() => scrollTo("/contact#booking")}
+              className="min-h-11 flex items-center justify-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-dm font-medium bg-primary text-primary-foreground rounded px-2.5 sm:px-5 py-2 hover:bg-primary/90 shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-200"
             >
-              <Zap className="w-3.5 h-3.5" />
-              Free Quote
+              <CalendarDays className="w-3.5 h-3.5" />
+              Book Now
             </button>
           </motion.div>
 
@@ -147,8 +149,8 @@ export default function Navbar() {
           >
             <div className="px-4 py-4 space-y-1">
               {navLinks.map((link, i) => {
-                const id = link.href.replace("#", "");
-                const isActive = active === id;
+                const id = link.href.replace(/^\/+|#.*$/g, "");
+                const isActive = location.pathname === link.href || (location.pathname === "/" && active === id);
                 return (
                   <motion.button
                     key={link.label}
@@ -165,7 +167,7 @@ export default function Navbar() {
                   </motion.button>
                 );
               })}
-              <div className="pt-3 grid grid-cols-2 gap-2">
+              <div className="pt-3">
                 <a
                   href="https://wa.me/27823562239"
                   target="_blank"
@@ -175,13 +177,6 @@ export default function Navbar() {
                   <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
                   WhatsApp
                 </a>
-                <button
-                  onClick={() => scrollTo("#contact")}
-                  className="flex items-center justify-center gap-1.5 min-h-[44px] rounded bg-primary text-primary-foreground font-dm font-medium text-sm transition-all duration-300 hover:bg-primary/90"
-                >
-                  <Zap className="w-3.5 h-3.5" />
-                  Free Quote
-                </button>
               </div>
             </div>
           </motion.div>

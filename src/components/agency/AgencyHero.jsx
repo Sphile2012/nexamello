@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function AgencyHero() {
+  const navigate = useNavigate();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
       {/* Animated Background Elements */}
@@ -53,13 +56,10 @@ export default function AgencyHero() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                const message = encodeURIComponent("Hi! I'd like to get a free quote for my project.");
-                window.open(`https://wa.me/27823562239?text=${message}`, '_blank');
-              }}
+              onClick={() => navigate("/contact#booking")}
               className="group px-10 py-5 bg-white text-black rounded-full font-medium text-lg hover:bg-white/90 transition-all duration-300 flex items-center gap-3"
             >
-              Get a Free Quote
+              Book Now
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.button>
             
@@ -73,6 +73,12 @@ export default function AgencyHero() {
               View Our Work
             </motion.a>
           </div>
+
+          <p className="text-base sm:text-lg text-white/70 font-medium">
+            Websites from R2,500 <span className="px-2 text-white/30">·</span>
+            Online stores from R5,000 <span className="px-2 text-white/30">·</span>
+            Maintenance from R250/month
+          </p>
 
           {/* Stats */}
           <motion.div

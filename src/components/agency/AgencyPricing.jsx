@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { Check, Star, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function AgencyPricing() {
+  const navigate = useNavigate();
   const packages = [
     {
       name: "Professional Website",
@@ -157,6 +159,10 @@ export default function AgencyPricing() {
                 {/* CTA Button */}
                 <button
                   onClick={() => {
+                    if (pkg.cta === "Contact Us") {
+                      navigate("/contact");
+                      return;
+                    }
                     const message = encodeURIComponent(`Hi! I'm interested in the ${pkg.name} package.`);
                     window.open(`https://wa.me/27823562239?text=${message}`, '_blank');
                   }}

@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function AgencyCTA() {
+  const navigate = useNavigate();
+
   return (
     <section className="relative py-32 bg-black overflow-hidden">
       {/* Animated Background */}
@@ -47,10 +50,7 @@ export default function AgencyCTA() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                const message = encodeURIComponent("Hi! I'd like to book a free consultation.");
-                window.open(`https://wa.me/27823562239?text=${message}`, '_blank');
-              }}
+              onClick={() => navigate("/contact#booking")}
               className="group px-12 py-6 bg-white text-black rounded-full font-medium text-lg hover:bg-white/90 transition-all duration-300 flex items-center gap-3"
             >
               Book a Consultation
@@ -60,10 +60,7 @@ export default function AgencyCTA() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                const message = encodeURIComponent("Hi! I have a question about your services.");
-                window.open(`https://wa.me/27823562239?text=${message}`, '_blank');
-              }}
+              onClick={() => navigate("/contact")}
               className="group px-12 py-6 bg-white/5 border border-white/20 text-white rounded-full font-medium text-lg hover:bg-white/10 backdrop-blur-sm transition-all duration-300 flex items-center gap-3"
             >
               <MessageCircle className="w-5 h-5" />
