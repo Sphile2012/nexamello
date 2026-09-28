@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { addDays, format, startOfDay } from "date-fns";
-import { CalendarDays, Mail, MapPin, MessageSquare, Star, Phone } from "lucide-react";
+import { CalendarDays, Mail, MapPin, MessageSquare, Phone } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -40,16 +40,18 @@ const contactDetails = [
   },
 ];
 
-const testimonials = [
+const faqs = [
   {
-    text: "NexaWeb built our website in just 2 days! Customers now find us on Google and bookings have increased by 40%.",
-    author: "Sipho Dlamini",
-    business: "Dlamini Auto Repairs · Johannesburg",
+    q: "How long does a website take?",
+    a: "Standard websites are done in 3–5 days. E-commerce stores take 5–10 days depending on the number of products.",
   },
   {
-    text: "Our online store went live in under a week. Sales doubled within the first month. Absolutely worth every rand.",
-    author: "Naledi Khumalo",
-    business: "Khumalo Boutique · Pretoria",
+    q: "Is hosting included?",
+    a: "Yes — hosting and SSL are included in every package. No surprise fees after launch.",
+  },
+  {
+    q: "Can I make changes after launch?",
+    a: "Absolutely. WhatsApp us and we'll sort it out. Small updates are usually done same day.",
   },
 ];
 
@@ -91,17 +93,18 @@ export default function Contact() {
           >
             <div className="inline-block mb-4">
               <div className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10">
-                <span className="text-sm text-white/60 font-light">Get In Touch</span>
+                <span className="text-sm text-white/60 font-light">Contact Us</span>
               </div>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white mb-4 leading-tight">
-              Let's Build<br />
+              Get in touch —<br />
               <span className="font-normal bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Something Great
+                we move fast
               </span>
             </h1>
             <p className="text-lg text-white/50 font-light max-w-xl">
-              Book a free consultation or reach out directly. We respond fast — usually within the hour on WhatsApp.
+              WhatsApp us, or pick a time below and we'll confirm within the hour.
+              No long forms, no waiting days for a reply.
             </p>
           </motion.div>
         </div>
@@ -149,8 +152,8 @@ export default function Contact() {
 
               {/* Quick WhatsApp CTA */}
               <div className="mt-8 pt-6 border-t border-white/10">
-                <p className="text-sm text-white/50 mb-4 font-light">
-                  Fastest response — message us directly on WhatsApp:
+                <p className="text-sm text-white/50 font-light mb-4">
+                  Fastest way to reach us — message directly on WhatsApp:
                 </p>
                 <a
                   href="https://wa.me/27823562239?text=Hi%21%20I%27d%20like%20to%20discuss%20a%20project."
@@ -178,7 +181,7 @@ export default function Contact() {
                   <h2 className="text-xl font-medium text-white">Book a Free Consultation</h2>
                 </div>
                 <p className="text-sm text-white/50 font-light mb-8">
-                  Choose a preferred day and time. We'll confirm availability with you on WhatsApp within minutes.
+                  Pick a day and time that suits you. We'll confirm on WhatsApp — usually within the hour.
                 </p>
 
                 <div className="grid gap-8 sm:grid-cols-[1fr_180px]">
@@ -273,26 +276,32 @@ export default function Contact() {
               <div className="text-sm text-white/50 font-light">Average WhatsApp response time</div>
             </div>
 
-            {/* Client Reviews */}
-            <div className="space-y-4">
-              <h3 className="text-base font-medium text-white">What clients say</h3>
-              {testimonials.map((t, i) => (
-                <blockquote
-                  key={i}
-                  className="p-5 rounded-xl bg-white/5 border border-white/10"
-                >
-                  <div className="flex gap-1 mb-3" aria-label="5 stars">
-                    {Array.from({ length: 5 }).map((_, j) => (
-                      <Star key={j} className="w-3.5 h-3.5 text-amber-400 fill-current" />
-                    ))}
+            {/* What to expect */}
+            <div className="p-6 rounded-2xl bg-white/5 border border-white/10">
+              <h3 className="text-base font-medium text-white mb-5">What to expect</h3>
+              <div className="space-y-4">
+                {[
+                  { step: "01", text: "You WhatsApp or book a slot below" },
+                  { step: "02", text: "We chat about what you need — no forms, no decks" },
+                  { step: "03", text: "We send a clear quote, usually same day" },
+                  { step: "04", text: "Work starts within 24 hours of sign-off" },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <span className="text-xs font-semibold text-blue-400 mt-0.5 w-5 flex-shrink-0">{item.step}</span>
+                    <span className="text-sm text-white/65 font-light leading-snug">{item.text}</span>
                   </div>
-                  <p className="text-sm text-white/70 font-light leading-relaxed mb-3">
-                    "{t.text}"
-                  </p>
-                  <footer className="text-xs text-white/40">
-                    {t.author} · {t.business}
-                  </footer>
-                </blockquote>
+                ))}
+              </div>
+            </div>
+
+            {/* FAQs */}
+            <div className="space-y-3">
+              <h3 className="text-base font-medium text-white">Quick answers</h3>
+              {faqs.map((faq, i) => (
+                <div key={i} className="p-4 rounded-xl bg-white/5 border border-white/10">
+                  <p className="text-sm font-medium text-white mb-1.5">{faq.q}</p>
+                  <p className="text-xs text-white/50 font-light leading-relaxed">{faq.a}</p>
+                </div>
               ))}
             </div>
 

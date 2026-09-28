@@ -38,23 +38,23 @@ export default function AgencyHero() {
           >
             <div className="px-6 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
               <span className="text-sm text-white/70 font-light">
-                ✨ Creative Advertising Agency · South Africa
+                Web Design &amp; Digital Marketing · South Africa
               </span>
             </div>
           </motion.div>
 
           {/* Main Headline */}
           <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-white leading-[0.9] tracking-tight">
-            We Design Brands,<br />
+            Websites. Brands.<br />
             <span className="font-normal bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Drive Growth
+              More customers.
             </span>
           </h1>
 
-          {/* Subheadline */}
-          <p className="text-xl sm:text-2xl text-white/50 font-light max-w-3xl mx-auto leading-relaxed pt-2">
-            Stop losing customers to competitors with better websites. We build fast, beautiful sites
-            that turn visitors into paying customers — delivered in 3–5 days.
+          {/* Subheadline — plain and direct */}
+          <p className="text-xl sm:text-2xl text-white/50 font-light max-w-2xl mx-auto leading-relaxed pt-2">
+            We build websites and run digital marketing for South African businesses.
+            Fast delivery, honest pricing, and we actually pick up the phone.
           </p>
 
           {/* Pricing line */}
@@ -97,7 +97,7 @@ export default function AgencyHero() {
 
           {/* Trust micro-copy */}
           <p className="text-sm text-white/35 font-light pt-2">
-            Free consultation · No obligation · Reply within 1 hour
+            Free consultation &nbsp;·&nbsp; No contracts &nbsp;·&nbsp; Reply within 1 hour
           </p>
 
           {/* Stats */}

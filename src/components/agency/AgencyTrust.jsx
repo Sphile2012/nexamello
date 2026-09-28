@@ -1,36 +1,45 @@
 import { motion } from "framer-motion";
-import { Star, MapPin, MessageSquare, Shield, Zap, Users } from "lucide-react";
+import { MapPin, MessageSquare, Shield, Zap, Users, Clock, CheckCircle, Globe } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-const reviews = [
-  {
-    name: "Sipho Dlamini",
-    business: "Dlamini Auto Repairs",
-    location: "Johannesburg",
-    rating: 5,
-    text: "NexaWeb built our website in just 2 days! Customers now find us on Google and bookings are up 40%. Worth every rand.",
-  },
-  {
-    name: "Naledi Khumalo",
-    business: "Khumalo Boutique",
-    location: "Pretoria",
-    rating: 5,
-    text: "Our online store went live in under a week. Sales doubled in the first month. The team is fast, professional, and affordable.",
-  },
-  {
-    name: "Thabo Mokoena",
-    business: "TM Construction",
-    location: "Cape Town",
-    rating: 5,
-    text: "We were invisible online before NexaWeb. Now we rank on Google and get calls every day from our website. Game changer.",
-  },
+const trustBadges = [
+  { icon: Zap,       label: "3–5 Day Delivery",   sub: "Website live before the week is out" },
+  { icon: Shield,    label: "Hosting Included",    sub: "No extra setup costs, ever" },
+  { icon: Users,     label: "250+ Projects",       sub: "Businesses across SA and beyond" },
+  { icon: Clock,     label: "Fast Support",        sub: "We pick up — no ticket queues" },
 ];
 
-const trustBadges = [
-  { icon: Zap,          label: "3–5 Day Delivery",        sub: "Live fast, grow faster" },
-  { icon: Shield,       label: "Hosting Included",         sub: "No hidden setup fees" },
-  { icon: Users,        label: "250+ Projects Done",       sub: "Proven track record" },
-  { icon: MessageSquare,label: "WhatsApp Support",         sub: "Always available" },
+const whyItems = [
+  {
+    icon: CheckCircle,
+    title: "Straight talking",
+    body: "No jargon, no upselling. We tell you what you need, quote you a price, and get it done.",
+  },
+  {
+    icon: Globe,
+    title: "Built for South Africa",
+    body: "Mobile-first, data-conscious, and designed to load fast on SA networks — not just in Cape Town.",
+  },
+  {
+    icon: MessageSquare,
+    title: "WhatsApp-first",
+    body: "Drop us a message on WhatsApp and you'll be talking to a real person within the hour.",
+  },
+  {
+    icon: Zap,
+    title: "Websites that actually convert",
+    body: "We don't just make things look good — we make sure visitors know what to do and do it.",
+  },
+  {
+    icon: Shield,
+    title: "Everything included upfront",
+    body: "Hosting, SSL, mobile design, contact form — it's all in the price we quote you, not added later.",
+  },
+  {
+    icon: Users,
+    title: "We stick around",
+    body: "Once your site is live, we're still available. Need a change? Send a WhatsApp.",
+  },
 ];
 
 export default function AgencyTrust() {
@@ -38,12 +47,11 @@ export default function AgencyTrust() {
 
   return (
     <section className="relative py-24 bg-black">
-      {/* Top separator */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* Section heading */}
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,26 +59,19 @@ export default function AgencyTrust() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-block mb-5">
-            <div className="px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
-              <span className="text-sm text-white/60 font-light">Trusted by South African businesses</span>
-            </div>
+          <div className="inline-flex items-center gap-2 mb-5 px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+            <MapPin className="w-4 h-4 text-blue-400 flex-shrink-0" />
+            <span className="text-sm text-white/60 font-light">South Africa · Working with clients worldwide</span>
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-white mb-4">
-            Real Results,<span className="font-normal"> Real Reviews</span>
+            Why businesses<span className="font-normal"> choose us</span>
           </h2>
-          <p className="text-lg text-white/50 font-light max-w-xl mx-auto">
-            Over 250 businesses across South Africa trust Nexa Web to grow their online presence.
+          <p className="text-lg text-white/50 font-light max-w-lg mx-auto">
+            We keep things simple — good work, fair prices, and we actually answer the phone.
           </p>
-
-          {/* Location badge */}
-          <div className="inline-flex items-center gap-2 mt-5 px-4 py-2 rounded-full bg-white/5 border border-white/10">
-            <MapPin className="w-4 h-4 text-blue-400" />
-            <span className="text-sm text-white/60 font-light">South Africa · Serving clients globally</span>
-          </div>
         </motion.div>
 
-        {/* Trust badges */}
+        {/* Trust badges — 4 columns */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           {trustBadges.map((badge, i) => (
             <motion.div
@@ -78,60 +79,41 @@ export default function AgencyTrust() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="p-5 rounded-2xl bg-white/5 border border-white/10 text-center"
+              transition={{ duration: 0.45, delay: i * 0.08 }}
+              className="p-5 rounded-2xl bg-white/5 border border-white/10 text-center hover:bg-white/8 transition-colors duration-300"
             >
               <div className="w-10 h-10 mx-auto mb-3 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
                 <badge.icon className="w-5 h-5 text-blue-400" />
               </div>
-              <div className="text-sm font-medium text-white">{badge.label}</div>
-              <div className="text-xs text-white/40 font-light mt-1">{badge.sub}</div>
+              <div className="text-sm font-semibold text-white">{badge.label}</div>
+              <div className="text-xs text-white/40 font-light mt-1 leading-snug">{badge.sub}</div>
             </motion.div>
           ))}
         </div>
 
-        {/* Reviews grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          {reviews.map((review, i) => (
-            <motion.blockquote
+        {/* Why us grid — 6 items */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          {whyItems.map((item, i) => (
+            <motion.div
               key={i}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="p-7 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/8 hover:border-white/20 transition-all duration-300"
+              transition={{ duration: 0.45, delay: i * 0.07 }}
+              className="flex gap-4 p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/8 transition-colors duration-300"
             >
-              {/* Stars */}
-              <div className="flex gap-1 mb-4" aria-label={`${review.rating} out of 5 stars`}>
-                {Array.from({ length: review.rating }).map((_, j) => (
-                  <Star key={j} className="w-4 h-4 text-amber-400 fill-current" aria-hidden="true" />
-                ))}
+              <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center mt-0.5">
+                <item.icon className="w-4.5 h-4.5 text-blue-400 w-[18px] h-[18px]" />
               </div>
-
-              {/* Review text */}
-              <p className="text-white/75 font-light leading-relaxed mb-5 text-sm">
-                "{review.text}"
-              </p>
-
-              {/* Author */}
-              <footer className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500/30 to-purple-500/30 flex items-center justify-center flex-shrink-0">
-                  <span className="text-xs font-semibold text-white">
-                    {review.name.split(" ").map((n) => n[0]).join("")}
-                  </span>
-                </div>
-                <div>
-                  <div className="text-sm font-medium text-white">{review.name}</div>
-                  <div className="text-xs text-white/40 font-light">
-                    {review.business} · {review.location}
-                  </div>
-                </div>
-              </footer>
-            </motion.blockquote>
+              <div>
+                <h3 className="text-sm font-semibold text-white mb-1">{item.title}</h3>
+                <p className="text-sm text-white/50 font-light leading-relaxed">{item.body}</p>
+              </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* WhatsApp CTA strip */}
+        {/* Bottom CTA strip */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -140,8 +122,8 @@ export default function AgencyTrust() {
           className="flex flex-col sm:flex-row items-center justify-between gap-6 p-8 rounded-2xl bg-gradient-to-r from-[#25D366]/10 to-[#128C7E]/10 border border-[#25D366]/20"
         >
           <div>
-            <p className="text-lg font-medium text-white mb-1">Ready to grow your business?</p>
-            <p className="text-sm text-white/50 font-light">Message us now — we reply within the hour.</p>
+            <p className="text-lg font-semibold text-white mb-1">Let's talk about your project</p>
+            <p className="text-sm text-white/50 font-light">WhatsApp us now — we'll reply within the hour.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
             <a
