@@ -24,8 +24,7 @@ export default function AgencyHero() {
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-center bg-no-repeat opacity-[0.1] [background-size:min(96vw,1120px)]"
-        style={{ backgroundImage: "url('/nexa-wordmark.svg?v=glass2')" }}
+        className="pointer-events-none absolute inset-0 bg-[url('/nexa-wordmark.svg')] bg-center bg-no-repeat opacity-[0.1] [background-size:min(96vw,1120px)]"
       />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(5,7,13,0.3)_0%,rgba(5,7,13,0.62)_58%,#05070d_100%)]" />
 
