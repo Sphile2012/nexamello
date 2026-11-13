@@ -14,14 +14,14 @@ export default function AgencyProcess() {
       number: "02",
       icon: Lightbulb,
       title: "Strategy",
-      description: "We develop a comprehensive plan that aligns creative vision with your business goals—more customers, higher sales, stronger brand.",
+      description: "We develop a comprehensive plan that aligns creative vision with your business goals to attract more customers, increase sales, and strengthen your brand.",
       color: "from-purple-500 to-pink-500"
     },
     {
       number: "03",
       icon: Palette,
       title: "Design & Development",
-      description: "Our team creates stunning designs, high-performance websites (3-5 days), and compelling campaigns that convert.",
+      description: "Our team creates stunning designs, fast and reliable websites in 3 to 5 days, and compelling campaigns that convert.",
       color: "from-orange-500 to-red-500"
     },
     {
@@ -72,9 +72,11 @@ export default function AgencyProcess() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ y: -6, rotateX: 1.5, rotateY: index % 2 === 0 ? 1 : -1 }}
+              style={{ transformStyle: "preserve-3d" }}
               className="group relative"
             >
-              <div className="relative h-full p-10 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 backdrop-blur-sm transition-all duration-500">
+              <div className="relative h-full p-10 rounded-3xl bg-gradient-to-br from-white/[0.08] via-white/[0.035] to-slate-950/60 border border-white/10 shadow-[0_24px_60px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] hover:border-white/20 backdrop-blur-sm transition-all duration-300 [transform-style:preserve-3d]">
                 {/* Step Number */}
                 <div className="absolute top-8 right-8 text-8xl font-light text-white/5 group-hover:text-white/10 transition-colors">
                   {step.number}
@@ -82,7 +84,7 @@ export default function AgencyProcess() {
 
                 {/* Icon */}
                 <div className="mb-8 relative z-10">
-                  <div className={`inline-flex w-20 h-20 items-center justify-center rounded-2xl bg-gradient-to-br ${step.color} p-0.5`}>
+                  <div className={`inline-flex w-20 h-20 items-center justify-center rounded-2xl bg-gradient-to-br ${step.color} p-0.5 shadow-[0_18px_38px_rgba(37,99,235,0.2)] [transform:translateZ(28px)]`}>
                     <div className="w-full h-full bg-black rounded-2xl flex items-center justify-center">
                       <step.icon className="w-9 h-9 text-white" />
                     </div>
@@ -119,10 +121,10 @@ export default function AgencyProcess() {
               Website Delivery Time
             </h3>
             <p className="text-white/50 font-light mb-8">
-              From briefing to live website—we move fast
+              From briefing to live website, we move fast
             </p>
             <div className="flex items-center justify-center gap-4">
-              <div className="text-6xl font-light text-white">3-5</div>
+              <div className="text-6xl font-light text-white">3 to 5</div>
               <div className="text-left">
                 <div className="text-2xl font-normal text-white">Days</div>
                 <div className="text-sm text-white/40">Average Delivery</div>

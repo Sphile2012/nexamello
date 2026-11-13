@@ -109,7 +109,7 @@ export default function Footer() {
                 poomeigh503@gmail.com
               </a>
               <div className="pt-2">
-                <p className="text-xs font-dm text-muted-foreground/60 font-light">Mon–Fri: 8:00–18:00 · Sat: 9:00–14:00</p>
+                <p className="text-xs font-dm text-muted-foreground/60 font-light">Monday to Friday: 8:00 to 18:00 · Saturday: 9:00 to 14:00</p>
               </div>
             </div>
           </div>

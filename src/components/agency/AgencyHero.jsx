@@ -11,7 +11,7 @@ export default function AgencyHero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-[#05070d] pt-16">
       {/* Animated gradient blobs */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
@@ -22,104 +22,86 @@ export default function AgencyHero() {
       {/* Subtle grid */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)] pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-6 py-32 text-center">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-center bg-no-repeat opacity-[0.1] [background-size:min(96vw,1120px)]"
+        style={{ backgroundImage: "url('/nexa-wordmark.svg?v=glass2')" }}
+      />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(5,7,13,0.3)_0%,rgba(5,7,13,0.62)_58%,#05070d_100%)]" />
+
+      <div className="relative mx-auto flex w-full max-w-7xl items-center justify-center px-6 py-20 lg:py-24">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-6"
+          className="relative z-10 mx-auto max-w-5xl space-y-8 text-center [text-shadow:0_2px_18px_rgba(0,0,0,0.9)]"
         >
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-block"
-          >
-            <div className="px-6 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
-              <span className="text-sm text-white/70 font-light">
-                Web Design &amp; Digital Marketing · South Africa
-              </span>
-            </div>
-          </motion.div>
+          <div className="inline-flex rounded-full border border-blue-300/15 bg-blue-300/[0.06] px-5 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_12px_30px_rgba(37,99,235,0.12)] backdrop-blur-md">
+            <span className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-50 sm:text-base">
+              Web design &amp; digital marketing · South Africa
+            </span>
+          </div>
 
-          {/* Main Headline */}
-          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-white leading-[0.9] tracking-tight">
-            Websites. Brands.<br />
-            <span className="font-normal bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl font-semibold leading-[1.02] tracking-[-0.045em] text-white sm:text-7xl md:text-8xl lg:text-9xl">
+            Websites. Brands.
+            <span className="mt-2 block bg-gradient-to-r from-sky-300 via-blue-400 to-indigo-400 bg-clip-text pb-2 font-medium text-transparent">
               More customers.
             </span>
           </h1>
 
-          {/* Subheadline — plain and direct */}
-          <p className="text-xl sm:text-2xl text-white/50 font-light max-w-2xl mx-auto leading-relaxed pt-2">
-            We build websites and run digital marketing for South African businesses.
-            Fast delivery, honest pricing, and we actually pick up the phone.
+          <p className="mx-auto max-w-3xl text-xl font-normal leading-relaxed text-white/90 sm:text-2xl">
+            We build websites and run digital marketing for South African businesses, with thoughtful design, clear pricing, and support from real people.
           </p>
 
-          {/* Pricing line */}
-          <p className="text-base sm:text-lg text-white/70 font-medium">
-            Websites from{" "}
-            <span className="text-white font-semibold">R2,500</span>
-            <span className="px-2 text-white/30">·</span>
-            Online stores from{" "}
-            <span className="text-white font-semibold">R5,000</span>
-            <span className="px-2 text-white/30">·</span>
-            Maintenance from{" "}
-            <span className="text-white font-semibold">R250/month</span>
+          <p className="text-base font-semibold leading-relaxed text-white sm:text-lg">
+            Websites from <span className="text-white">R2,500</span>
+            <span className="px-2 text-white/25">·</span>
+            Online stores from <span className="text-white">R5,000</span>
+            <span className="px-2 text-white/25">·</span>
+            Maintenance from <span className="text-white">R250/month</span>
           </p>
 
-          {/* CTA Buttons — 2-click booking */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-            {/* Primary: Book Now → goes straight to /contact#booking */}
+          <div className="flex flex-col items-center justify-center gap-3 pt-2 sm:flex-row">
             <motion.button
-              whileHover={{ scale: 1.04 }}
+              whileHover={{ scale: 1.04, y: -2 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => navigate("/contact#booking")}
-              className="group w-full sm:w-auto px-10 py-5 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold text-lg hover:from-blue-400 hover:to-purple-500 shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 flex items-center justify-center gap-3"
+              className="group flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-br from-sky-400 via-blue-500 to-indigo-600 px-8 py-5 text-lg font-bold text-white shadow-[0_16px_40px_rgba(37,99,235,0.35),inset_0_1px_0_rgba(255,255,255,0.35)] transition-shadow hover:shadow-[0_22px_50px_rgba(37,99,235,0.5),inset_0_1px_0_rgba(255,255,255,0.4)] sm:w-auto"
             >
-              <CalendarDays className="w-5 h-5" />
+              <CalendarDays className="h-5 w-5" />
               Book Free Consultation
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </motion.button>
 
-            {/* Secondary: WhatsApp — instant 1-click contact */}
             <motion.button
-              whileHover={{ scale: 1.04 }}
+              whileHover={{ scale: 1.04, y: -2 }}
               whileTap={{ scale: 0.97 }}
               onClick={handleWhatsApp}
-              className="group w-full sm:w-auto px-10 py-5 bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] rounded-full font-semibold text-lg hover:bg-[#25D366]/20 hover:border-[#25D366]/60 backdrop-blur-sm transition-all duration-300 flex items-center justify-center gap-3"
+              className="flex w-full items-center justify-center gap-3 rounded-xl border border-[#25D366]/40 bg-[#25D366]/[0.1] px-8 py-5 text-lg font-bold text-[#8bf0ad] shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_12px_30px_rgba(0,0,0,0.2)] backdrop-blur-xl transition-colors hover:border-[#25D366]/60 hover:bg-[#25D366]/[0.16] sm:w-auto"
             >
-              <MessageSquare className="w-5 h-5" />
-              WhatsApp Us Now
+              <MessageSquare className="h-5 w-5" />
+              WhatsApp Us
             </motion.button>
           </div>
 
-          {/* Trust micro-copy */}
-          <p className="text-sm text-white/35 font-light pt-2">
-            Free consultation &nbsp;·&nbsp; No contracts &nbsp;·&nbsp; Reply within 1 hour
+          <p className="text-base font-medium text-white/75 sm:text-lg">
+            Free consultation <span className="px-2 text-white/20">·</span>
+            No contracts <span className="px-2 text-white/20">·</span>
+            Reply within 1 hour
           </p>
 
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-16 max-w-4xl mx-auto border-t border-white/10"
-          >
-            {[
-              { number: "250+", label: "Projects Completed" },
-              { number: "98%",  label: "Client Satisfaction" },
-              { number: "3–5",  label: "Days to Delivery" },
-              { number: "8+",   label: "Years Experience" },
-            ].map((stat, i) => (
-              <div key={i} className="text-center pt-8">
-                <div className="text-4xl sm:text-5xl font-light text-white mb-2">{stat.number}</div>
-                <div className="text-sm text-white/40 font-light">{stat.label}</div>
-              </div>
+          <div className="flex flex-wrap justify-center gap-2 pt-2">
+            {["Fast turnaround", "Straight talking support", "Made for local business"].map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-white/20 bg-black/40 px-5 py-2.5 text-sm font-medium text-white/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_8px_24px_rgba(0,0,0,0.25)] backdrop-blur-sm sm:text-base"
+              >
+                {item}
+              </span>
             ))}
-          </motion.div>
+          </div>
         </motion.div>
+
       </div>
 
       {/* Scroll indicator */}

@@ -5,13 +5,6 @@ import Footer from "../components/Footer";
 import StickyWhatsApp from "../components/StickyWhatsApp";
 
 export default function About() {
-  const stats = [
-    { value: "100+", label: "Projects Completed" },
-    { value: "50+", label: "Countries Served" },
-    { value: "5+", label: "Years Experience" },
-    { value: "99%", label: "Client Satisfaction" }
-  ];
-
   const values = [
     {
       icon: Globe,
@@ -61,31 +54,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="relative px-6 py-20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-5xl sm:text-6xl font-light text-white mb-3">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-white/50 font-light">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Story */}
       <section className="relative px-6 py-32 border-t border-white/10">
         <div className="max-w-4xl mx-auto">
@@ -100,13 +68,13 @@ export default function About() {
               Our<span className="font-normal"> Story</span>
             </h2>
             <p className="text-xl text-white/60 font-light leading-relaxed">
-              Founded in South Africa, Nexa Web Solutions started with a simple mission: make professional web design accessible to businesses of all sizes. What began as a local service has grown into a global operation, serving clients across 50+ countries.
+              Founded in South Africa, Nexa Web Solutions started with a simple mission: make professional web design accessible to businesses of all sizes. We work with clients locally and beyond our community.
             </p>
             <p className="text-xl text-white/60 font-light leading-relaxed">
               We believe that every business deserves a world-class online presence. That's why we combine cutting-edge technology with affordable pricing, delivering websites that look premium but remain accessible.
             </p>
             <p className="text-xl text-white/60 font-light leading-relaxed">
-              Today, we're proud to have helped over 100 businesses establish their digital footprint, from small startups to established enterprises, all while maintaining our commitment to quality, speed, and customer satisfaction.
+              Today, we're proud to help businesses establish their digital footprint, from small startups to established enterprises, while maintaining our commitment to quality, speed, and customer satisfaction.
             </p>
           </motion.div>
         </div>

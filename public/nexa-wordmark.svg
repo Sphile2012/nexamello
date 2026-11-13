@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" fill="none">
+  <defs>
+    <linearGradient id="face" x1="290" y1="110" x2="700" y2="330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DDF5FF" stop-opacity=".2"/>
+      <stop offset=".38" stop-color="#70C6FF" stop-opacity=".08"/>
+      <stop offset=".72" stop-color="#A3D9FF" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#E9F8FF" stop-opacity=".1"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="300" y1="120" x2="700" y2="335" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity=".98"/>
+      <stop offset=".42" stop-color="#A8E3FF" stop-opacity=".86"/>
+      <stop offset="1" stop-color="#E8F7FF" stop-opacity=".96"/>
+    </linearGradient>
+    <linearGradient id="reflection" x1="345" y1="165" x2="650" y2="260" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset=".38" stop-color="#FFFFFF" stop-opacity=".76"/>
+      <stop offset=".52" stop-color="#BDEBFF" stop-opacity=".42"/>
+      <stop offset=".72" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="letter-shapes">
+      <text x="500" y="315" font-family="Arial Black, Arial, sans-serif" font-size="190" font-weight="900" letter-spacing="-8" text-anchor="middle">NEXA</text>
+    </clipPath>
+  </defs>
+
+  <g font-family="Arial Black, Arial, sans-serif" font-size="190" font-weight="900" letter-spacing="-8" text-anchor="middle">
+    <text x="500" y="328" fill="#52B8FF" fill-opacity=".12" stroke="#81D2FF" stroke-opacity=".2" stroke-width="6" stroke-linejoin="round">NEXA</text>
+    <text x="500" y="315" fill="url(#face)" stroke="url(#edge)" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke fill">NEXA</text>
+    <text x="500" y="315" fill="none" stroke="#FFFFFF" stroke-opacity=".82" stroke-width="1.2" stroke-linejoin="round">NEXA</text>
+    <rect x="260" y="125" width="500" height="180" fill="url(#reflection)" clip-path="url(#letter-shapes)"/>
+  </g>
+</svg>

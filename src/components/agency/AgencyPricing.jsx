@@ -8,34 +8,34 @@ export default function AgencyPricing() {
     {
       name: "Professional Website",
       price: "R2,500",
-      period: "once-off",
-      description: "Professional website delivered in 3-5 days to establish your online presence",
+      period: "one time",
+      description: "Professional website delivered in 3 to 5 days to establish your online presence",
       features: [
-        "Professional website (3-5 days delivery)",
+        "Professional website (3 to 5 days delivery)",
         "Up to 10 pages",
-        "Mobile-responsive design",
-        "SEO-friendly structure",
+        "Mobile friendly design",
+        "Search optimized structure",
         "Contact form & WhatsApp integration",
         "Hosting included",
         "SSL security certificate",
-        "30-day support included"
+        "30 days of support included"
       ],
       popular: true,
       cta: "Get Started"
     },
     {
-      name: "E-Commerce Website",
+      name: "Online Store Website",
       price: "From R5,000",
-      period: "once-off",
+      period: "one time",
       description: "Complete online store with payment gateway and product management",
       features: [
-        "Full e-commerce setup",
+        "Complete online store setup",
         "Product management system",
         "Shopping cart & checkout",
         "Payment gateway integration",
         "Order management",
         "Inventory tracking",
-        "Mobile-responsive design",
+        "Mobile friendly design",
         "SEO optimization & analytics"
       ],
       popular: false,
@@ -63,11 +63,11 @@ export default function AgencyPricing() {
       name: "Custom Solution",
       price: "Custom Quote",
       period: "",
-      description: "Tailored solutions for unique business requirements and large-scale projects",
+      description: "Tailored solutions for unique business requirements and large projects",
       features: [
         "Custom features & functionality",
         "Advanced integrations",
-        "Multi-language support",
+        "Support for multiple languages",
         "Custom design & branding",
         "API development",
         "Advanced analytics",
@@ -99,7 +99,7 @@ export default function AgencyPricing() {
             Simple<span className="font-normal"> Pricing</span>
           </h2>
           <p className="text-xl text-white/50 font-light max-w-2xl mx-auto">
-            Websites from R2,500 • E-commerce from R5,000 • Maintenance from R250/month
+            Websites from R2,500 • Online stores from R5,000 • Maintenance from R250/month
           </p>
         </motion.div>
 
@@ -112,6 +112,8 @@ export default function AgencyPricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -6, rotateX: 1.5 }}
+              style={{ transformStyle: "preserve-3d" }}
               className={`relative ${pkg.popular ? 'lg:-mt-4 lg:mb-0' : ''}`}
             >
               {pkg.popular && (
@@ -125,9 +127,9 @@ export default function AgencyPricing() {
 
               <div className={`relative h-full p-10 rounded-3xl border backdrop-blur-sm transition-all duration-500 ${
                 pkg.popular 
-                  ? 'bg-gradient-to-br from-white/10 to-white/5 border-white/20 scale-105' 
-                  : 'bg-white/5 border-white/10 hover:bg-white/10'
-              }`}>
+                  ? 'bg-gradient-to-br from-blue-400/15 via-white/10 to-indigo-500/10 border-blue-200/25 scale-105 shadow-[0_35px_80px_rgba(37,99,235,0.2),inset_0_1px_0_rgba(255,255,255,0.15)]'
+                  : 'bg-gradient-to-br from-white/[0.07] to-white/[0.02] border-white/10 hover:border-white/20 shadow-[0_24px_60px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.08)]'
+              } [transform-style:preserve-3d]`}>
                 {/* Package Name */}
                 <div className="text-sm text-white/50 font-light mb-2">{pkg.name}</div>
                 
@@ -189,7 +191,7 @@ export default function AgencyPricing() {
           className="mt-16 text-center"
         >
           <p className="text-white/50 font-light mb-6">
-            All packages include hosting, SSL security, mobile-responsive design, and 30-day support.
+            All packages include hosting, SSL security, mobile friendly design, and 30 days of support.
           </p>
           <button
             onClick={() => {

@@ -15,7 +15,7 @@ export default function AgencyServices() {
     {
       icon: Globe,
       title: "Website Design & Development",
-      description: "High-performance websites delivered in 3-5 days that convert visitors into customers and drive business growth.",
+      description: "Fast, reliable websites delivered in 3 to 5 days that convert visitors into customers and drive business growth.",
       color: "from-blue-500 to-cyan-500"
     },
     {
@@ -27,7 +27,7 @@ export default function AgencyServices() {
     {
       icon: Share2,
       title: "Social Media Management",
-      description: "Full social media management across all platforms—content creation, scheduling, engagement, and growth strategies.",
+      description: "Full social media management across all platforms, including content creation, scheduling, engagement, and growth strategies.",
       color: "from-green-500 to-emerald-500"
     },
     {
@@ -57,7 +57,7 @@ export default function AgencyServices() {
     {
       icon: FileText,
       title: "Content & Copywriting",
-      description: "Compelling content and persuasive copy that converts—from website copy to email campaigns and blog posts.",
+      description: "Compelling content and persuasive copy that converts, from website copy to email campaigns and blog posts.",
       color: "from-teal-500 to-cyan-500"
     }
   ];
@@ -81,8 +81,8 @@ export default function AgencyServices() {
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-light text-white mb-6">
             Our<span className="font-normal"> Services</span>
           </h2>
-          <p className="text-xl text-white/50 font-light max-w-2xl mx-auto">
-            Full-service creative and digital advertising solutions that drive real business results
+          <p className="text-xl sm:text-2xl text-white/75 font-normal max-w-2xl mx-auto">
+            Full service creative and digital advertising solutions that drive real business results
           </p>
         </motion.div>
 
@@ -95,12 +95,14 @@ export default function AgencyServices() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -8 }}
-              className="group relative p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 backdrop-blur-sm transition-all duration-500"
+              whileHover={{ y: -8, rotateX: 2, rotateY: index % 2 === 0 ? 2 : -2 }}
+              style={{ transformStyle: "preserve-3d" }}
+              className="group relative [perspective:1000px]"
             >
+              <div className="relative h-full overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.035] to-slate-950/60 p-8 shadow-[0_20px_50px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-xl transition-all duration-300 hover:border-white/20 [transform-style:preserve-3d]">
               {/* Icon */}
               <div className="mb-6">
-                <div className={`inline-flex w-16 h-16 items-center justify-center rounded-xl bg-gradient-to-br ${service.color} p-0.5`}>
+                <div className={`inline-flex w-16 h-16 items-center justify-center rounded-xl bg-gradient-to-br ${service.color} p-0.5 shadow-[0_12px_30px_rgba(37,99,235,0.22)] [transform:translateZ(24px)]`}>
                   <div className="w-full h-full bg-black rounded-xl flex items-center justify-center">
                     <service.icon className="w-7 h-7 text-white" />
                   </div>
@@ -111,12 +113,13 @@ export default function AgencyServices() {
               <h3 className="text-2xl font-normal text-white mb-4 group-hover:text-white/80 transition-colors">
                 {service.title}
               </h3>
-              <p className="text-white/50 font-light leading-relaxed">
+              <p className="text-base sm:text-lg text-white/75 font-normal leading-relaxed">
                 {service.description}
               </p>
 
               {/* Hover Gradient */}
               <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+              </div>
             </motion.div>
           ))}
         </div>

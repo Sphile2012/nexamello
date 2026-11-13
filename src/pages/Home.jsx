@@ -15,10 +15,10 @@ export default function Home() {
       <Navbar />
       <AgencyHero />
       <AgencyServices />
-      <AgencyPricing />
-      <AgencyTrust />
       <WhyChooseUs />
       <AgencyProcess />
+      <AgencyPricing />
+      <AgencyTrust />
       <AgencyCTA />
       <Footer />
       <StickyWhatsApp />

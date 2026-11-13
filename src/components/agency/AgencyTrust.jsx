@@ -3,10 +3,10 @@ import { MapPin, MessageSquare, Shield, Zap, Users, Clock, CheckCircle, Globe } 
 import { useNavigate } from "react-router-dom";
 
 const trustBadges = [
-  { icon: Zap,       label: "3–5 Day Delivery",   sub: "Website live before the week is out" },
+  { icon: Zap,       label: "3 to 5 Day Delivery", sub: "Website live before the week is out" },
   { icon: Shield,    label: "Hosting Included",    sub: "No extra setup costs, ever" },
-  { icon: Users,     label: "250+ Projects",       sub: "Businesses across SA and beyond" },
-  { icon: Clock,     label: "Fast Support",        sub: "We pick up — no ticket queues" },
+  { icon: Users,     label: "Personal Support",    sub: "Talk directly with the person doing the work" },
+  { icon: Clock,     label: "Fast Support",        sub: "We pick up, with no ticket queues" },
 ];
 
 const whyItems = [
@@ -18,22 +18,22 @@ const whyItems = [
   {
     icon: Globe,
     title: "Built for South Africa",
-    body: "Mobile-first, data-conscious, and designed to load fast on SA networks — not just in Cape Town.",
+    body: "Designed for mobile, mindful of data, and built to load fast on networks throughout South Africa.",
   },
   {
     icon: MessageSquare,
-    title: "WhatsApp-first",
+    title: "WhatsApp support",
     body: "Drop us a message on WhatsApp and you'll be talking to a real person within the hour.",
   },
   {
     icon: Zap,
     title: "Websites that actually convert",
-    body: "We don't just make things look good — we make sure visitors know what to do and do it.",
+    body: "We don't just make things look good. We make sure visitors know what to do and do it.",
   },
   {
     icon: Shield,
     title: "Everything included upfront",
-    body: "Hosting, SSL, mobile design, contact form — it's all in the price we quote you, not added later.",
+    body: "Hosting, SSL, mobile design, and a contact form are all included in the price we quote, not added later.",
   },
   {
     icon: Users,
@@ -67,11 +67,11 @@ export default function AgencyTrust() {
             Why businesses<span className="font-normal"> choose us</span>
           </h2>
           <p className="text-lg text-white/50 font-light max-w-lg mx-auto">
-            We keep things simple — good work, fair prices, and we actually answer the phone.
+            We keep things simple with good work, fair prices, and real people who answer the phone.
           </p>
         </motion.div>
 
-        {/* Trust badges — 4 columns */}
+        {/* Trust badges */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           {trustBadges.map((badge, i) => (
             <motion.div
@@ -80,7 +80,9 @@ export default function AgencyTrust() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: i * 0.08 }}
-              className="p-5 rounded-2xl bg-white/5 border border-white/10 text-center hover:bg-white/8 transition-colors duration-300"
+              whileHover={{ y: -5, rotateX: 2 }}
+              style={{ transformStyle: "preserve-3d" }}
+              className="p-5 rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/10 text-center shadow-[0_16px_38px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.08)] hover:border-blue-300/20 transition-colors duration-300 [transform-style:preserve-3d]"
             >
               <div className="w-10 h-10 mx-auto mb-3 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
                 <badge.icon className="w-5 h-5 text-blue-400" />
@@ -91,7 +93,7 @@ export default function AgencyTrust() {
           ))}
         </div>
 
-        {/* Why us grid — 6 items */}
+        {/* Reasons grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {whyItems.map((item, i) => (
             <motion.div
@@ -100,9 +102,11 @@ export default function AgencyTrust() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: i * 0.07 }}
-              className="flex gap-4 p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/8 transition-colors duration-300"
+              whileHover={{ y: -5, rotateX: 1.5, rotateY: i % 2 === 0 ? 1 : -1 }}
+              style={{ transformStyle: "preserve-3d" }}
+              className="flex gap-4 rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.02] p-6 shadow-[0_18px_42px_rgba(0,0,0,0.24),inset_0_1px_0_rgba(255,255,255,0.08)] transition-colors duration-300 hover:border-blue-300/20 [transform-style:preserve-3d]"
             >
-              <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center mt-0.5">
+              <div className="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-blue-300/10 bg-gradient-to-br from-blue-500/20 to-purple-500/20 shadow-[0_8px_20px_rgba(37,99,235,0.15)] [transform:translateZ(18px)]">
                 <item.icon className="w-4.5 h-4.5 text-blue-400 w-[18px] h-[18px]" />
               </div>
               <div>
@@ -119,25 +123,25 @@ export default function AgencyTrust() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col sm:flex-row items-center justify-between gap-6 p-8 rounded-2xl bg-gradient-to-r from-[#25D366]/10 to-[#128C7E]/10 border border-[#25D366]/20"
+          className="flex flex-col sm:flex-row items-center justify-between gap-6 rounded-2xl border border-[#25D366]/20 bg-gradient-to-br from-[#25D366]/[0.12] via-[#128C7E]/[0.08] to-slate-950/60 p-8 shadow-[0_24px_60px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.08)] [transform-style:preserve-3d]"
         >
           <div>
             <p className="text-lg font-semibold text-white mb-1">Let's talk about your project</p>
-            <p className="text-sm text-white/50 font-light">WhatsApp us now — we'll reply within the hour.</p>
+            <p className="text-sm text-white/50 font-light">WhatsApp us now and we'll reply within the hour.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
             <a
               href="https://wa.me/27823562239?text=Hi%21%20I%27d%20like%20to%20get%20a%20website%20quote."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#25D366] text-black font-semibold rounded-full hover:bg-[#25D366]/90 transition-all duration-200 whitespace-nowrap"
+              className="inline-flex items-center gap-2.5 whitespace-nowrap rounded-xl bg-gradient-to-br from-[#7cf0a8] to-[#25D366] px-7 py-3.5 font-semibold text-black shadow-[0_12px_28px_rgba(37,211,102,0.2),inset_0_1px_0_rgba(255,255,255,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_34px_rgba(37,211,102,0.3)]"
             >
               <MessageSquare className="w-4 h-4" />
               WhatsApp Us Now
             </a>
             <button
               onClick={() => navigate("/contact#booking")}
-              className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-white/5 border border-white/20 text-white font-medium rounded-full hover:bg-white/10 transition-all duration-200 whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-xl border border-white/15 bg-white/[0.04] px-7 py-3.5 font-medium text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_10px_24px_rgba(0,0,0,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/[0.08]"
             >
               Book a Consultation
             </button>

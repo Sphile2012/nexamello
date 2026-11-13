@@ -58,8 +58,12 @@ export default function Navbar() {
             onClick={() => goTo("/")}
             className="flex items-center gap-2.5 group flex-shrink-0"
           >
-            <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/50 transition-all duration-300 group-hover:scale-105">
-              <span className="text-white font-bold text-xs tracking-tight">NW</span>
+            <div className="relative h-10 w-[96px] transition-all duration-300 group-hover:scale-105">
+              <img
+                src="/nexa-wordmark.svg?v=glass2"
+                alt="NEXA"
+                className="h-full w-full object-contain drop-shadow-[0_6px_12px_rgba(37,99,235,0.42)]"
+              />
             </div>
             <div className="text-left">
               <span className="font-sans font-bold text-[15px] sm:text-[17px] text-white tracking-tight leading-none block">
